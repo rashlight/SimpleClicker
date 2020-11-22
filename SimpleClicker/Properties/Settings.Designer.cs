@@ -118,5 +118,113 @@ namespace SimpleClicker.Properties {
                 this["timePrecision"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("all-durations")]
+        public string lapsAllowances {
+            get {
+                return ((string)(this["lapsAllowances"]));
+            }
+            set {
+                this["lapsAllowances"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("last-focused")]
+        public string lapsSorting {
+            get {
+                return ((string)(this["lapsSorting"]));
+            }
+            set {
+                this["lapsSorting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("real-time")]
+        public string lapsDisplayType {
+            get {
+                return ((string)(this["lapsDisplayType"]));
+            }
+            set {
+                this["lapsDisplayType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool isDelayTimeShows {
+            get {
+                return ((bool)(this["isDelayTimeShows"]));
+            }
+            set {
+                this["isDelayTimeShows"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color preparationTimeColor {
+            get {
+                return ((global::System.Drawing.Color)(this["preparationTimeColor"]));
+            }
+            set {
+                this["preparationTimeColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color delayTimeColor {
+            get {
+                return ((global::System.Drawing.Color)(this["delayTimeColor"]));
+            }
+            set {
+                this["delayTimeColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color startTimeColor {
+            get {
+                return ((global::System.Drawing.Color)(this["startTimeColor"]));
+            }
+            set {
+                this["startTimeColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isAlwaysOnTop {
+            get {
+                return ((bool)(this["isAlwaysOnTop"]));
+            }
+            set {
+                this["isAlwaysOnTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color pauseTimeColor {
+            get {
+                return ((global::System.Drawing.Color)(this["pauseTimeColor"]));
+            }
+            set {
+                this["pauseTimeColor"] = value;
+            }
+        }
     }
 }

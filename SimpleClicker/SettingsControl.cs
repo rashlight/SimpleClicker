@@ -12,6 +12,8 @@ namespace SimpleClicker
 {
     public partial class SettingsControl : UserControl
     {
+        public bool isDelayOverride = false;
+
         public SettingsControl()
         {
             InitializeComponent();
@@ -31,49 +33,80 @@ namespace SimpleClicker
             }
         }
 
-        public bool SaveOptions()
-        {
-            if (delayStartChooser.Value > delayStopChooser.Value)
-            {
-                MessageBox.Show("Start value of \"Delay Time\" should be smaller or equal to end value!", Name, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            Properties.Settings.Default.isLappingEnabled = lappingToggle.Checked;
-            Properties.Settings.Default.lappingCount = (int)lappingChooser.Value;
-            Properties.Settings.Default.delayTimeStart = (double)delayStartChooser.Value;
-            Properties.Settings.Default.delayTimeStop = (double)delayStopChooser.Value;
-            Properties.Settings.Default.timePrecision = (int)timePrecisionChooser.Value;
-            Properties.Settings.Default.updateThreshold = (int)updateThresholdChooser.Value;
-            Properties.Settings.Default.preparationTime = (double)prepTimeChooser.Value;
-            Properties.Settings.Default.language = "en-US";
-            Properties.Settings.Default.Save();
-            return true;
-        }
-
         private void lappingToggle_CheckedChanged(object sender, EventArgs e)
         {
             lappingChooser.Enabled = lappingToggle.Checked;
+            Properties.Settings.Default.isLappingEnabled = lappingToggle.Checked;
+            Properties.Settings.Default.Save();
         }
 
         private void defaultButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(
-                    "Are you sure to change ALL settings to default?\n" +
-                    "Your reflected values will NOT be saved.", 
-                    Name, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning
-                ) != DialogResult.OK) return;
-            lappingToggle.Checked = false;
-            lappingChooser.Value = 5;
-            delayStartChooser.Value = 0.5M;
-            delayStopChooser.Value = 1;
-            timePrecisionChooser.Value = 0;
-            updateThresholdChooser.Value = 10;
-            prepTimeChooser.Value = 3;
+
         }
 
         private void creditsLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://github.com/rashlight");
+            System.Diagnostics.Process.Start("http://github.com/rashlight/SimpleClicker");
+        }
+
+        private void delayStartChooser_ValueChanged(object sender, EventArgs e)
+        {
+            if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
+        }
+
+        private void delayStopChooser_ValueChanged(object sender, EventArgs e)
+        {
+            if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
+        }
+
+        private void UnfocusComponent_Enter(object sender, EventArgs e)
+        {
+            label1.Focus();
+        }
+
+        private void moreOptionsButton_Click(object sender, EventArgs e)
+        {
+            MoreOptionsForm mof = new MoreOptionsForm();
+            mof.ShowDialog();
+        }
+
+        private void delayStartChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.delayTimeStart = (double)delayStartChooser.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void delayStopChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.delayTimeStop = (double)delayStopChooser.Value;
+            if (delayStartChooser.Value == delayStopChooser.Value)
+                Properties.Settings.Default.delayTimeStart = (double)delayStartChooser.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void lappingChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.lappingCount = (int)lappingChooser.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void prepTimeChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.preparationTime = (double)prepTimeChooser.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void timePrecisionChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.timePrecision = (int)timePrecisionChooser.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void updateThresholdChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.updateThreshold = (int)updateThresholdChooser.Value;
+            Properties.Settings.Default.Save();
         }
 
         private void supportButton_Click(object sender, EventArgs e)
@@ -93,24 +126,9 @@ namespace SimpleClicker
             MessageBox.Show(supportData, System.Diagnostics.Process.GetCurrentProcess().ProcessName + " ver " + System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).ProductVersion, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void licenseText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void licenseLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html");
-        }
-
-        private void delayStartChooser_ValueChanged(object sender, EventArgs e)
-        {
-            if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
-        }
-
-        private void delayStopChooser_ValueChanged(object sender, EventArgs e)
-        {
-            if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
-        }
-
-        private void UnfocusComponent_Enter(object sender, EventArgs e)
-        {
-            flagBox.Focus();
         }
     }
 }

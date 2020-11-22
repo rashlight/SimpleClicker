@@ -118,8 +118,8 @@
         private System.Windows.Forms.Panel elementsPanel;
         private SettingsControl settingsControl;
         private System.Windows.Forms.TextBox mainTimerText;
-        private LapsControl lapsControl;
         private System.Windows.Forms.Timer timer;
+        private LapsControl lapsControl;
     }
 }
 

@@ -26,5 +26,32 @@
     <Setting Name="timePrecision" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
+    <Setting Name="lapsAllowances" Type="System.String" Scope="User">
+      <Value Profile="(Default)">all-durations</Value>
+    </Setting>
+    <Setting Name="lapsSorting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">last-focused</Value>
+    </Setting>
+    <Setting Name="lapsDisplayType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">real-time</Value>
+    </Setting>
+    <Setting Name="isDelayTimeShows" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="preparationTimeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="delayTimeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="startTimeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="isAlwaysOnTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="pauseTimeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

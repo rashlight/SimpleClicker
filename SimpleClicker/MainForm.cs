@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,6 +32,10 @@ namespace SimpleClicker
 
         public bool isStart = false;
         public bool isOptionsMenuOpened = false;
+        public bool isDelayTimeShows = true;
+        public bool isDelayLapAllowed = true;
+        public bool isStartLapAllowed = true;
+        public string displayType = LapDisplayType.REAL_TIME;
         public StopWatchMode currentMode = StopWatchMode.Default;
         public TimeSpan preparedTime = new TimeSpan();
         public TimeSpan delayTime = new TimeSpan();
@@ -42,10 +47,21 @@ namespace SimpleClicker
         private long lapsLastTicks = 0;
         private Size defaultFormSize = new Size(542, 226);
         private Size expandedFormSize = new Size(542, 529);
+        private Color defaultBackColor = Color.White;
+        private Color defaultForeColor = Color.Black;
+
+        private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        private static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+        private const UInt32 SWP_NOSIZE = 0x0001;
+        private const UInt32 SWP_NOMOVE = 0x0002;
+        private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
 
         public MainForm()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.isAlwaysOnTop) 
+                SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+
             preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
             delayTime = TimeSpan.FromSeconds(Properties.Settings.Default.delayTimeStop - Properties.Settings.Default.delayTimeStart);
             LocalizeUI();
@@ -69,36 +85,42 @@ namespace SimpleClicker
             {
                 case StopWatchMode.Options:
                     mainActionButton.Enabled = false;
-                    secondaryActionButton.Text = "Save";
+                    secondaryActionButton.Text = "Back";
                     break;
                 case StopWatchMode.Default:
                     mainActionButton.Enabled = true;
                     mainActionButton.Text = "Start";
                     secondaryActionButton.Text = "Options";
+                    mainTimerText.ForeColor = defaultForeColor;
                     break;
                 case StopWatchMode.Prepared:
                     mainActionButton.Enabled = false;
                     secondaryActionButton.Enabled = false;
                     mainActionButton.Text = "WAIT";
                     secondaryActionButton.Text = "Lap";
+                    mainTimerText.ForeColor = Properties.Settings.Default.preparationTimeColor;
                     break;
                 case StopWatchMode.Delayed:
-                    secondaryActionButton.Enabled = true;
+                    if (isDelayLapAllowed) secondaryActionButton.Enabled = true;
                     mainActionButton.Text = "WAIT";
                     secondaryActionButton.Text = "Lap";
                     if (!Properties.Settings.Default.isLappingEnabled || Properties.Settings.Default.lappingCount == 0) secondaryActionButton.Enabled = false;
+                    mainTimerText.ForeColor = Properties.Settings.Default.delayTimeColor;
                     break;
                 case StopWatchMode.Started:
                     mainActionButton.Enabled = true;
+                    if (isStartLapAllowed) secondaryActionButton.Enabled = true;
+                    else secondaryActionButton.Enabled = false;
                     mainActionButton.Text = "Stop";
                     secondaryActionButton.Text = "Lap";
-                    if (!Properties.Settings.Default.isLappingEnabled) secondaryActionButton.Enabled = false;
-                    else if (Properties.Settings.Default.lappingCount == 0) secondaryActionButton.Enabled = true;
+                    if (!Properties.Settings.Default.isLappingEnabled  || (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0)) secondaryActionButton.Enabled = false;
+                    mainTimerText.ForeColor = Properties.Settings.Default.startTimeColor;
                     break;
                 case StopWatchMode.Paused:
                     secondaryActionButton.Enabled = true;
                     mainActionButton.Text = "Start";
                     secondaryActionButton.Text = "Reset";
+                    mainTimerText.ForeColor = Properties.Settings.Default.pauseTimeColor;
                     break;
                 default:
                     break;
@@ -125,7 +147,6 @@ namespace SimpleClicker
                 case StopWatchMode.Prepared:
                     if (stopWatch.Elapsed.Ticks >= preparedTime.Ticks)
                     {
-                        stopWatch.Stop();
                         tempDelayTicks = stopWatch.Elapsed.Ticks - preparedTime.Ticks + delayTime.Ticks;
                         stopWatch.Reset();
                         currentMode = StopWatchMode.Delayed;
@@ -143,7 +164,7 @@ namespace SimpleClicker
                         ChangeModeUI(currentMode);
                         stopWatch.Start();
                     }
-                    DisplayTime(TimeSpan.FromTicks(tempDelayTicks - stopWatch.Elapsed.Ticks));
+                    if (isDelayTimeShows) DisplayTime(TimeSpan.FromTicks(tempDelayTicks - stopWatch.Elapsed.Ticks));
                     break;
                 case StopWatchMode.Started:
                     DisplayTime(TimeSpan.FromTicks(trueElapsedTicks + stopWatch.Elapsed.Ticks));
@@ -176,15 +197,17 @@ namespace SimpleClicker
                     currentMode = StopWatchMode.Prepared;
                     stopWatch.Reset();
                     delayTime = TimeSpan.FromSeconds(GetRandomNumber(Properties.Settings.Default.delayTimeStart, Properties.Settings.Default.delayTimeStop));
+                    isDelayTimeShows = Properties.Settings.Default.isDelayTimeShows;
+                    isDelayLapAllowed = new[] { LapAllowances.DELAYS_ONLY, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowances);
+                    isStartLapAllowed = new[] { LapAllowances.AFTER_DELAYS, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowances);
+                    displayType = Properties.Settings.Default.lapsDisplayType;
                     ChangeModeUI(currentMode);
                     timer.Enabled = true;
                     stopWatch.Start();
                     break;
                 case StopWatchMode.Prepared:
-                    MessageBox.Show("Please wait for the signal...", Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Delayed:
-                    MessageBox.Show("Please wait for the signal...", Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Started:
                     stopWatch.Stop();
@@ -196,8 +219,8 @@ namespace SimpleClicker
                 case StopWatchMode.Paused:
                     currentMode = StopWatchMode.Started;
                     ChangeModeUI(currentMode);
-                    stopWatch.Start();
                     timer.Enabled = true;
+                    stopWatch.Start();
                     break;
                 default:
                     break;
@@ -209,7 +232,6 @@ namespace SimpleClicker
             switch (currentMode)
             {
                 case StopWatchMode.Options:
-                    if (!settingsControl.SaveOptions()) return;
                     timer.Interval = Properties.Settings.Default.updateThreshold;
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     currentMode = StopWatchMode.Default;
@@ -231,20 +253,31 @@ namespace SimpleClicker
                     lapsControl.Visible = true;
                     Size = expandedFormSize;
                     lapsControl.AddLap(true, TimeSpan.FromTicks(Math.Abs(stopWatch.Elapsed.Ticks - tempDelayTicks)));
-                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount) secondaryActionButton.Enabled = false;
+                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Started:
                     settingsControl.Visible = false;
                     lapsControl.Visible = true;
                     Size = expandedFormSize;
-                    lapsControl.AddLap(false, TimeSpan.FromTicks(trueElapsedTicks + stopWatch.Elapsed.Ticks - lapsLastTicks));
+                    switch (displayType)
+                    {
+                        case LapDisplayType.TIME_PER_LAPS:
+                            lapsControl.AddLap(false, TimeSpan.FromTicks(trueElapsedTicks + stopWatch.Elapsed.Ticks - lapsLastTicks));
+                            break;
+                        case LapDisplayType.REAL_TIME:
+                            lapsControl.AddLap(false, TimeSpan.FromTicks(trueElapsedTicks + stopWatch.Elapsed.Ticks));
+                            break;
+                        default:
+                            break;
+                    }
                     lapsLastTicks = trueElapsedTicks + stopWatch.Elapsed.Ticks;
-                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount) secondaryActionButton.Enabled = false;
+                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Paused:
                     currentMode = StopWatchMode.Default;
                     tempDelayTicks = 0;
                     trueElapsedTicks = 0;
+                    lapsLastTicks = 0;
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     lapsControl.ResetLap();
                     Size = defaultFormSize;
@@ -268,5 +301,9 @@ namespace SimpleClicker
         {
             elementsPanel.Focus();
         }
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
     }
 }

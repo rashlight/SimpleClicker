@@ -36,22 +36,18 @@
             this.prepTimeChooser = new System.Windows.Forms.NumericUpDown();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.updateThresholdChooser = new System.Windows.Forms.NumericUpDown();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.flagBox = new System.Windows.Forms.PictureBox();
-            this.languageChooser = new MetroFramework.Controls.MetroComboBox();
-            this.defaultButton = new System.Windows.Forms.Button();
             this.supportButton = new System.Windows.Forms.Button();
+            this.moreOptionsButton = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.timePrecisionChooser = new System.Windows.Forms.NumericUpDown();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.delayStartChooser = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.delayStopChooser = new System.Windows.Forms.NumericUpDown();
-            this.licenseText = new System.Windows.Forms.LinkLabel();
+            this.licenseLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.lappingChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepTimeChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateThresholdChooser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flagBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timePrecisionChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delayStartChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delayStopChooser)).BeginInit();
@@ -76,7 +72,7 @@
             this.lappingToggle.AutoSize = true;
             this.lappingToggle.BackColor = System.Drawing.SystemColors.Control;
             this.lappingToggle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lappingToggle.Location = new System.Drawing.Point(19, 53);
+            this.lappingToggle.Location = new System.Drawing.Point(19, 56);
             this.lappingToggle.Name = "lappingToggle";
             this.lappingToggle.Size = new System.Drawing.Size(80, 21);
             this.lappingToggle.TabIndex = 4;
@@ -102,7 +98,7 @@
             // lappingChooser
             // 
             this.lappingChooser.Enabled = false;
-            this.lappingChooser.Location = new System.Drawing.Point(105, 53);
+            this.lappingChooser.Location = new System.Drawing.Point(105, 56);
             this.lappingChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -124,6 +120,7 @@
             0,
             0,
             0});
+            this.lappingChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lappingChooser_MouseUp);
             // 
             // textBox1
             // 
@@ -147,7 +144,7 @@
             0,
             0,
             131072});
-            this.prepTimeChooser.Location = new System.Drawing.Point(262, 53);
+            this.prepTimeChooser.Location = new System.Drawing.Point(262, 56);
             this.prepTimeChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -164,6 +161,7 @@
             0,
             0,
             0});
+            this.prepTimeChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.prepTimeChooser_MouseUp);
             // 
             // textBox2
             // 
@@ -171,7 +169,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox2.Location = new System.Drawing.Point(19, 154);
+            this.textBox2.Location = new System.Drawing.Point(20, 183);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(244, 29);
             this.textBox2.TabIndex = 14;
@@ -182,7 +180,7 @@
             // updateThresholdChooser
             // 
             this.updateThresholdChooser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.updateThresholdChooser.Location = new System.Drawing.Point(269, 153);
+            this.updateThresholdChooser.Location = new System.Drawing.Point(270, 182);
             this.updateThresholdChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -204,61 +202,29 @@
             0,
             0,
             0});
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox4.Location = new System.Drawing.Point(19, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 29);
-            this.textBox4.TabIndex = 16;
-            this.textBox4.Text = "Language";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
-            // 
-            // flagBox
-            // 
-            this.flagBox.Location = new System.Drawing.Point(160, 191);
-            this.flagBox.Name = "flagBox";
-            this.flagBox.Size = new System.Drawing.Size(47, 29);
-            this.flagBox.TabIndex = 17;
-            this.flagBox.TabStop = false;
-            // 
-            // languageChooser
-            // 
-            this.languageChooser.FormattingEnabled = true;
-            this.languageChooser.ItemHeight = 24;
-            this.languageChooser.Items.AddRange(new object[] {
-            "Work in progress..."});
-            this.languageChooser.Location = new System.Drawing.Point(214, 189);
-            this.languageChooser.Name = "languageChooser";
-            this.languageChooser.Size = new System.Drawing.Size(268, 30);
-            this.languageChooser.TabIndex = 18;
-            // 
-            // defaultButton
-            // 
-            this.defaultButton.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.defaultButton.Location = new System.Drawing.Point(19, 225);
-            this.defaultButton.Name = "defaultButton";
-            this.defaultButton.Size = new System.Drawing.Size(303, 40);
-            this.defaultButton.TabIndex = 19;
-            this.defaultButton.Text = "Reset to default";
-            this.defaultButton.UseVisualStyleBackColor = true;
-            this.defaultButton.Click += new System.EventHandler(this.defaultButton_Click);
+            this.updateThresholdChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.updateThresholdChooser_MouseUp);
             // 
             // supportButton
             // 
             this.supportButton.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.supportButton.Location = new System.Drawing.Point(328, 225);
+            this.supportButton.Location = new System.Drawing.Point(328, 223);
             this.supportButton.Name = "supportButton";
             this.supportButton.Size = new System.Drawing.Size(154, 39);
-            this.supportButton.TabIndex = 20;
+            this.supportButton.TabIndex = 19;
             this.supportButton.Text = "Support...";
             this.supportButton.UseVisualStyleBackColor = true;
             this.supportButton.Click += new System.EventHandler(this.supportButton_Click);
+            // 
+            // moreOptionsButton
+            // 
+            this.moreOptionsButton.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.moreOptionsButton.Location = new System.Drawing.Point(20, 223);
+            this.moreOptionsButton.Name = "moreOptionsButton";
+            this.moreOptionsButton.Size = new System.Drawing.Size(302, 39);
+            this.moreOptionsButton.TabIndex = 20;
+            this.moreOptionsButton.Text = "More options...";
+            this.moreOptionsButton.UseVisualStyleBackColor = true;
+            this.moreOptionsButton.Click += new System.EventHandler(this.moreOptionsButton_Click);
             // 
             // textBox5
             // 
@@ -266,7 +232,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox5.Location = new System.Drawing.Point(19, 119);
+            this.textBox5.Location = new System.Drawing.Point(20, 138);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(189, 29);
             this.textBox5.TabIndex = 21;
@@ -277,7 +243,7 @@
             // timePrecisionChooser
             // 
             this.timePrecisionChooser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.timePrecisionChooser.Location = new System.Drawing.Point(216, 119);
+            this.timePrecisionChooser.Location = new System.Drawing.Point(217, 138);
             this.timePrecisionChooser.Maximum = new decimal(new int[] {
             7,
             0,
@@ -294,6 +260,7 @@
             0,
             0,
             0});
+            this.timePrecisionChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.timePrecisionChooser_MouseUp);
             // 
             // textBox6
             // 
@@ -301,7 +268,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox6.Location = new System.Drawing.Point(19, 84);
+            this.textBox6.Location = new System.Drawing.Point(19, 93);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(144, 29);
             this.textBox6.TabIndex = 23;
@@ -318,7 +285,7 @@
             0,
             0,
             131072});
-            this.delayStartChooser.Location = new System.Drawing.Point(169, 83);
+            this.delayStartChooser.Location = new System.Drawing.Point(169, 92);
             this.delayStartChooser.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -335,12 +302,13 @@
             0,
             65536});
             this.delayStartChooser.ValueChanged += new System.EventHandler(this.delayStartChooser_ValueChanged);
+            this.delayStartChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.delayStartChooser_MouseUp);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(312, 86);
+            this.label1.Location = new System.Drawing.Point(312, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 25);
             this.label1.TabIndex = 25;
@@ -355,7 +323,7 @@
             0,
             0,
             131072});
-            this.delayStopChooser.Location = new System.Drawing.Point(346, 83);
+            this.delayStopChooser.Location = new System.Drawing.Point(346, 92);
             this.delayStopChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -378,38 +346,36 @@
             0,
             0});
             this.delayStopChooser.ValueChanged += new System.EventHandler(this.delayStopChooser_ValueChanged);
+            this.delayStopChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.delayStopChooser_MouseUp);
             // 
-            // licenseText
+            // licenseLabel
             // 
-            this.licenseText.ActiveLinkColor = System.Drawing.Color.Maroon;
-            this.licenseText.AutoSize = true;
-            this.licenseText.BackColor = System.Drawing.Color.White;
-            this.licenseText.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Bold);
-            this.licenseText.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.licenseText.Location = new System.Drawing.Point(297, 270);
-            this.licenseText.Name = "licenseText";
-            this.licenseText.Size = new System.Drawing.Size(179, 23);
-            this.licenseText.TabIndex = 27;
-            this.licenseText.TabStop = true;
-            this.licenseText.Text = "Licensed by GPL 3.0";
-            this.licenseText.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.licenseText_LinkClicked);
+            this.licenseLabel.ActiveLinkColor = System.Drawing.Color.Maroon;
+            this.licenseLabel.AutoSize = true;
+            this.licenseLabel.BackColor = System.Drawing.Color.White;
+            this.licenseLabel.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Bold);
+            this.licenseLabel.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.licenseLabel.Location = new System.Drawing.Point(297, 270);
+            this.licenseLabel.Name = "licenseLabel";
+            this.licenseLabel.Size = new System.Drawing.Size(179, 23);
+            this.licenseLabel.TabIndex = 27;
+            this.licenseLabel.TabStop = true;
+            this.licenseLabel.Text = "Licensed by GPL 3.0";
+            this.licenseLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.licenseLabel_LinkClicked);
             // 
             // SettingsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.licenseText);
+            this.Controls.Add(this.licenseLabel);
             this.Controls.Add(this.delayStopChooser);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.delayStartChooser);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.timePrecisionChooser);
             this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.moreOptionsButton);
             this.Controls.Add(this.supportButton);
-            this.Controls.Add(this.defaultButton);
-            this.Controls.Add(this.languageChooser);
-            this.Controls.Add(this.flagBox);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.updateThresholdChooser);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.prepTimeChooser);
@@ -423,7 +389,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lappingChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepTimeChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateThresholdChooser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flagBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timePrecisionChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delayStartChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delayStopChooser)).EndInit();
@@ -442,17 +407,14 @@
         private System.Windows.Forms.NumericUpDown prepTimeChooser;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.NumericUpDown updateThresholdChooser;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox flagBox;
-        private MetroFramework.Controls.MetroComboBox languageChooser;
-        private System.Windows.Forms.Button defaultButton;
         private System.Windows.Forms.Button supportButton;
+        private System.Windows.Forms.Button moreOptionsButton;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.NumericUpDown timePrecisionChooser;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.NumericUpDown delayStartChooser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown delayStopChooser;
-        private System.Windows.Forms.LinkLabel licenseText;
+        private System.Windows.Forms.LinkLabel licenseLabel;
     }
 }

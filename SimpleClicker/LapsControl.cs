@@ -7,20 +7,79 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace SimpleClicker
 {
     public partial class LapsControl : UserControl
     {
         public List<Tuple<bool, TimeSpan>> laps = new List<Tuple<bool, TimeSpan>>();
+        public Random random = new Random();
 
         public LapsControl()
         {
             InitializeComponent();
         }
 
+        public void SortLaps()
+        {
+            // Sorts items
+            switch (Properties.Settings.Default.lapsSorting)
+            {
+                case LapSorting.FIRST_FOCUSED:
+                    break;
+                case LapSorting.LAST_FOCUSED:
+                    break;
+                case LapSorting.BEST_TO_WORST:
+                    laps = laps.OrderBy(item => item.Item1).ThenBy(item => item.Item2.TotalSeconds).ToList();
+                    break;
+                case LapSorting.WORST_TO_BEST:
+                    laps = laps.OrderByDescending(item => item.Item2.TotalSeconds).ToList();
+                    break;
+                case LapSorting.RANDOMIZE:
+                    int randTime = laps.Count;
+                    while (randTime > 1)
+                    {
+                        randTime--;
+                        int randNum = random.Next(randTime + 1);
+                        var value = laps[randNum];
+                        laps[randNum] = laps[randTime];
+                        laps[randTime] = value;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            // Check items overflow
+            if (Properties.Settings.Default.lappingCount > 0 && laps.Count > Properties.Settings.Default.lappingCount)
+            {
+                switch (Properties.Settings.Default.lapsSorting)
+                {
+                    case LapSorting.FIRST_FOCUSED:
+                        laps.RemoveAt(laps.Count - 1);
+                        break;
+                    case LapSorting.LAST_FOCUSED:
+                        laps.RemoveAt(0);
+                        break;
+                    case LapSorting.BEST_TO_WORST:
+                        laps.RemoveAt(laps.Count - 1);
+                        break;
+                    case LapSorting.WORST_TO_BEST:
+                        laps.RemoveAt(laps.Count - 1);
+                        break;
+                    case LapSorting.RANDOMIZE:
+                        laps.RemoveAt(random.Next(0, laps.Count));
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
         public void DisplayLaps()
         {
+            lapsListBox.BeginUpdate();
             lapsListBox.Items.Clear();
             for (int i = 0; i < laps.Count; i++)
             {
@@ -34,38 +93,16 @@ namespace SimpleClicker
                     (Math.Round(laps[i].Item2.TotalSeconds - Math.Truncate((double)laps[i].Item2.TotalSeconds), Properties.Settings.Default.timePrecision) + " units").Substring(2)
                 );
             }
+            lapsListBox.EndUpdate();
+
+            if (Properties.Settings.Default.lapsSorting == LapSorting.LAST_FOCUSED) lapsListBox.TopIndex = lapsListBox.Items.Count - 1;
         }
 
         public void AddLap(bool isDelayed, TimeSpan time)
         {
             laps.Add(new Tuple<bool, TimeSpan>(isDelayed, time));
-
-            if (Properties.Settings.Default.lappingCount > 0)
-            {
-                // Ascending
-                if (laps.Count > Properties.Settings.Default.lappingCount) return;
-
-                /* -- Decending, TODO
-                bool isModified = false;
-                while (laps.Count >= Properties.Settings.Default.lappingCount)
-                {
-                    isModified = true;
-                    laps.RemoveAt(0);
-                }
-                if (isModified) DisplayLaps();
-                */
-            }
-
-            string delayDisplay = (isDelayed) ? "-" : "";
-            string hoursDisplay = time.Hours < 10 ? "0" + time.Hours : time.Hours.ToString();
-            string minutesDisplay = time.Minutes < 10 ? "0" + time.Minutes : time.Minutes.ToString();
-            string secondsDisplay = time.Seconds < 10 ? "0" + time.Seconds : time.Seconds.ToString();
-            lapsListBox.Items.Add(
-                "Lap " + (lapsListBox.Items.Count + 1) + ": " +
-                delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay + "." +
-                (Math.Round(time.TotalSeconds - Math.Truncate((double)time.TotalSeconds), Properties.Settings.Default.timePrecision) + " units").Substring(2)
-            );
-            lapsListBox.TopIndex = lapsListBox.Items.Count - 1;
+            SortLaps();
+            DisplayLaps();
         }
 
         public void RemoveLap(int index)
@@ -77,11 +114,6 @@ namespace SimpleClicker
         {
             laps.Clear();
             lapsListBox.Items.Clear();
-        }
-
-        private void richTextBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
