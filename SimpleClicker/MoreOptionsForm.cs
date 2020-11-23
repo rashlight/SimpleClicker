@@ -59,6 +59,7 @@ namespace SimpleClicker
             if (Properties.Settings.Default.isAlwaysOnTop)
                 SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
             LoadSavedData();
+            languageComboBox.SelectedIndex = 0;
         }
 
         [DllImport("user32.dll")]
@@ -125,6 +126,11 @@ namespace SimpleClicker
 
             isDelayTimeToggle.Checked = Properties.Settings.Default.isDelayTimeShows;
             alwaysOnTopToggle.Checked = Properties.Settings.Default.isAlwaysOnTop;
+
+            preparationColorBox.BackColor = Properties.Settings.Default.preparationTimeColor;
+            delayColorBox.BackColor = Properties.Settings.Default.delayTimeColor;
+            startColorBox.BackColor = Properties.Settings.Default.startTimeColor;
+            pauseColorBox.BackColor = Properties.Settings.Default.pauseTimeColor;
         }
 
         private void lapAllowancesComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,8 +223,9 @@ namespace SimpleClicker
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.preparationTimeColor = colorDialog.Color;
+                Properties.Settings.Default.Save();
+                preparationColorBox.BackColor = Properties.Settings.Default.preparationTimeColor;
             }
-            Properties.Settings.Default.Save();
         }
 
         private void delayColorPicker_Click(object sender, EventArgs e)
@@ -227,8 +234,9 @@ namespace SimpleClicker
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.delayTimeColor = colorDialog.Color;
+                Properties.Settings.Default.Save();
+                delayColorBox.BackColor = Properties.Settings.Default.delayTimeColor;
             }
-            Properties.Settings.Default.Save();
         }
 
         private void startColorPicker_Click(object sender, EventArgs e)
@@ -237,8 +245,10 @@ namespace SimpleClicker
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.startTimeColor = colorDialog.Color;
+                Properties.Settings.Default.Save();
+                startColorBox.BackColor = Properties.Settings.Default.startTimeColor;
             }
-            Properties.Settings.Default.Save();
+            
         }
 
         private void pauseColorPicker_Click(object sender, EventArgs e)
@@ -247,8 +257,9 @@ namespace SimpleClicker
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.pauseTimeColor = colorDialog.Color;
+                Properties.Settings.Default.Save();
+                pauseColorBox.BackColor = Properties.Settings.Default.pauseTimeColor;
             }
-            Properties.Settings.Default.Save();
         }
 
         private void resetTimeButton_Click(object sender, EventArgs e)

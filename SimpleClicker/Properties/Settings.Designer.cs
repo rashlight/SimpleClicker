@@ -25,7 +25,7 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool isLappingEnabled {
             get {
                 return ((bool)(this["isLappingEnabled"]));
@@ -37,7 +37,7 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
         public int lappingCount {
             get {
                 return ((int)(this["lappingCount"]));
