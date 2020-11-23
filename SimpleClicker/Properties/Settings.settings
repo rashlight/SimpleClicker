@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="isLappingEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="lappingCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">-1</Value>
     </Setting>
     <Setting Name="delayTimeStart" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.5</Value>

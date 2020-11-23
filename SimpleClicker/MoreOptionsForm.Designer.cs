@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoreOptionsForm));
             this.interfacesTab = new MetroFramework.Controls.MetroTabPage();
             this.pauseColorPicker = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -74,6 +75,10 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.preparationColorBox = new System.Windows.Forms.PictureBox();
+            this.delayColorBox = new System.Windows.Forms.PictureBox();
+            this.startColorBox = new System.Windows.Forms.PictureBox();
+            this.pauseColorBox = new System.Windows.Forms.PictureBox();
             this.interfacesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.isAlwaysOnTopHelp)).BeginInit();
@@ -91,10 +96,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.languageHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.preparationColorBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delayColorBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startColorBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pauseColorBox)).BeginInit();
             this.SuspendLayout();
             // 
             // interfacesTab
             // 
+            this.interfacesTab.Controls.Add(this.pauseColorBox);
+            this.interfacesTab.Controls.Add(this.startColorBox);
+            this.interfacesTab.Controls.Add(this.delayColorBox);
+            this.interfacesTab.Controls.Add(this.preparationColorBox);
             this.interfacesTab.Controls.Add(this.pauseColorPicker);
             this.interfacesTab.Controls.Add(this.pictureBox2);
             this.interfacesTab.Controls.Add(this.label11);
@@ -124,7 +137,7 @@
             // pauseColorPicker
             // 
             this.pauseColorPicker.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.pauseColorPicker.Location = new System.Drawing.Point(245, 230);
+            this.pauseColorPicker.Location = new System.Drawing.Point(245, 228);
             this.pauseColorPicker.Name = "pauseColorPicker";
             this.pauseColorPicker.Size = new System.Drawing.Size(153, 35);
             this.pauseColorPicker.TabIndex = 40;
@@ -136,18 +149,19 @@
             // 
             this.pictureBox2.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(419, 232);
+            this.pictureBox2.Location = new System.Drawing.Point(421, 230);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 39;
             this.pictureBox2.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBox2, "Changes color in pause phase.");
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.label11.Location = new System.Drawing.Point(35, 231);
+            this.label11.Location = new System.Drawing.Point(35, 229);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 30);
             this.label11.TabIndex = 38;
@@ -178,7 +192,7 @@
             // startColorPicker
             // 
             this.startColorPicker.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.startColorPicker.Location = new System.Drawing.Point(245, 184);
+            this.startColorPicker.Location = new System.Drawing.Point(245, 186);
             this.startColorPicker.Name = "startColorPicker";
             this.startColorPicker.Size = new System.Drawing.Size(153, 35);
             this.startColorPicker.TabIndex = 24;
@@ -200,7 +214,7 @@
             // delayColorPicker
             // 
             this.delayColorPicker.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.delayColorPicker.Location = new System.Drawing.Point(245, 140);
+            this.delayColorPicker.Location = new System.Drawing.Point(245, 142);
             this.delayColorPicker.Name = "delayColorPicker";
             this.delayColorPicker.Size = new System.Drawing.Size(153, 35);
             this.delayColorPicker.TabIndex = 22;
@@ -272,36 +286,40 @@
             this.isAlwaysOnTopHelp.Size = new System.Drawing.Size(30, 30);
             this.isAlwaysOnTopHelp.TabIndex = 37;
             this.isAlwaysOnTopHelp.TabStop = false;
+            this.toolTip.SetToolTip(this.isAlwaysOnTopHelp, "This includes all window(s) related to this application.");
             // 
             // startColorHelp
             // 
             this.startColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
             this.startColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.startColorHelp.Location = new System.Drawing.Point(419, 187);
+            this.startColorHelp.Location = new System.Drawing.Point(421, 187);
             this.startColorHelp.Name = "startColorHelp";
             this.startColorHelp.Size = new System.Drawing.Size(30, 30);
             this.startColorHelp.TabIndex = 34;
             this.startColorHelp.TabStop = false;
+            this.toolTip.SetToolTip(this.startColorHelp, "Changes color in start phase.");
             // 
             // delayColorHelp
             // 
             this.delayColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
             this.delayColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.delayColorHelp.Location = new System.Drawing.Point(419, 143);
+            this.delayColorHelp.Location = new System.Drawing.Point(421, 143);
             this.delayColorHelp.Name = "delayColorHelp";
             this.delayColorHelp.Size = new System.Drawing.Size(30, 30);
             this.delayColorHelp.TabIndex = 33;
             this.delayColorHelp.TabStop = false;
+            this.toolTip.SetToolTip(this.delayColorHelp, "Changes color in delay phase.");
             // 
             // preparationColorHelp
             // 
             this.preparationColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
             this.preparationColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.preparationColorHelp.Location = new System.Drawing.Point(419, 98);
+            this.preparationColorHelp.Location = new System.Drawing.Point(421, 100);
             this.preparationColorHelp.Name = "preparationColorHelp";
             this.preparationColorHelp.Size = new System.Drawing.Size(30, 30);
             this.preparationColorHelp.TabIndex = 32;
             this.preparationColorHelp.TabStop = false;
+            this.toolTip.SetToolTip(this.preparationColorHelp, "Changes color in preparation phase.");
             // 
             // isShowDelayTimeHelp
             // 
@@ -312,6 +330,7 @@
             this.isShowDelayTimeHelp.Size = new System.Drawing.Size(30, 30);
             this.isShowDelayTimeHelp.TabIndex = 29;
             this.isShowDelayTimeHelp.TabStop = false;
+            this.toolTip.SetToolTip(this.isShowDelayTimeHelp, "On: Shows the remaining time on delay phase.\r\nOff: Doesn\'t show on delay phase.");
             // 
             // lapsOptionsTab
             // 
@@ -448,11 +467,11 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.lapsOptionsTab);
-            this.metroTabControl1.Controls.Add(this.extrasTab);
             this.metroTabControl1.Controls.Add(this.interfacesTab);
+            this.metroTabControl1.Controls.Add(this.extrasTab);
             this.metroTabControl1.Location = new System.Drawing.Point(8, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(469, 305);
             this.metroTabControl1.TabIndex = 9;
             // 
@@ -611,6 +630,42 @@
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
+            // preparationColorBox
+            // 
+            this.preparationColorBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.preparationColorBox.Location = new System.Drawing.Point(404, 98);
+            this.preparationColorBox.Name = "preparationColorBox";
+            this.preparationColorBox.Size = new System.Drawing.Size(10, 34);
+            this.preparationColorBox.TabIndex = 41;
+            this.preparationColorBox.TabStop = false;
+            // 
+            // delayColorBox
+            // 
+            this.delayColorBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.delayColorBox.Location = new System.Drawing.Point(404, 143);
+            this.delayColorBox.Name = "delayColorBox";
+            this.delayColorBox.Size = new System.Drawing.Size(10, 34);
+            this.delayColorBox.TabIndex = 42;
+            this.delayColorBox.TabStop = false;
+            // 
+            // startColorBox
+            // 
+            this.startColorBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.startColorBox.Location = new System.Drawing.Point(404, 187);
+            this.startColorBox.Name = "startColorBox";
+            this.startColorBox.Size = new System.Drawing.Size(10, 34);
+            this.startColorBox.TabIndex = 43;
+            this.startColorBox.TabStop = false;
+            // 
+            // pauseColorBox
+            // 
+            this.pauseColorBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pauseColorBox.Location = new System.Drawing.Point(404, 228);
+            this.pauseColorBox.Name = "pauseColorBox";
+            this.pauseColorBox.Size = new System.Drawing.Size(10, 34);
+            this.pauseColorBox.TabIndex = 44;
+            this.pauseColorBox.TabStop = false;
+            // 
             // MoreOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -618,6 +673,8 @@
             this.ClientSize = new System.Drawing.Size(485, 379);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MoreOptionsForm";
             this.Text = "More options...";
             this.interfacesTab.ResumeLayout(false);
@@ -640,6 +697,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.languageHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.preparationColorBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delayColorBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startColorBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pauseColorBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -691,5 +752,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button pauseColorPicker;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pauseColorBox;
+        private System.Windows.Forms.PictureBox startColorBox;
+        private System.Windows.Forms.PictureBox delayColorBox;
+        private System.Windows.Forms.PictureBox preparationColorBox;
     }
 }
