@@ -72,7 +72,7 @@ namespace SimpleClicker
         private double GetRandomNumber(double minimum, double maximum)
         {
             Random random = new Random();
-            return random.NextDouble() * (maximum - minimum) + minimum;
+            return (random.NextDouble() * (maximum - minimum)) + minimum;
         }
 
         private void DisplayTime(TimeSpan time)

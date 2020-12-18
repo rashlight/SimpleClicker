@@ -455,7 +455,6 @@ namespace SimpleClicker
                 default:
                     break;
             }
-            
         }
 
         private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)

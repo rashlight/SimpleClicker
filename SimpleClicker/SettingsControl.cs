@@ -54,11 +54,6 @@ namespace SimpleClicker
             Properties.Settings.Default.Save();
         }
 
-        private void defaultButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void creditsLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://github.com/rashlight/SimpleClicker");
