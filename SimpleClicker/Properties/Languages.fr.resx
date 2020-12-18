@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="backButtonText" xml:space="preserve">
+    <value>Retour</value>
+  </data>
+  <data name="infoWaitForSignal" xml:space="preserve">
+    <value>Veuillez attendre le signal...</value>
+  </data>
+  <data name="startButtonText" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="lapButtonText" xml:space="preserve">
+    <value>Tour</value>
+  </data>
+  <data name="resetButtonText" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="optionsButtonText" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="stopButtonText" xml:space="preserve">
+    <value>Arrêtez</value>
+  </data>
+  <data name="tickIdleText" xml:space="preserve">
+    <value>Prêt à commencer.</value>
+  </data>
+  <data name="timeUnitText" xml:space="preserve">
+    <value>unités</value>
+  </data>
+  <data name="waitButtonText" xml:space="preserve">
+    <value>WAIT</value>
+  </data>
+  <data name="warningNoStartTimer" xml:space="preserve">
+    <value>Impossible de démarrer la minuterie lorsque le menu des options est ouvert!</value>
+  </data>
+  <data name="infoNoLapRecord" xml:space="preserve">
+    <value>Le chronomètre n'enregistre pas les tours lorsque la limite est à 0 ! Êtes-vous sûr de continuer ? (Passez à -1 si vous voulez un nombre de tours illimité)</value>
+  </data>
+  <data name="delayTimeText" xml:space="preserve">
+    <value>Délai D'attente</value>
+  </data>
+  <data name="enableLappingText" xml:space="preserve">
+    <value>Activer le rodage</value>
+  </data>
+  <data name="moreOptionsButtonText" xml:space="preserve">
+    <value>D'autres options...</value>
+  </data>
+  <data name="preparationTimeText" xml:space="preserve">
+    <value>Temps de prép</value>
+  </data>
+  <data name="supportText" xml:space="preserve">
+    <value>Assistance...</value>
+  </data>
+  <data name="timePrecisionText" xml:space="preserve">
+    <value>Précision Temporelle</value>
+  </data>
+  <data name="updateThresholdText" xml:space="preserve">
+    <value>Seuil De Mise À Jour</value>
+  </data>
+  <data name="delayToText" xml:space="preserve">
+    <value>à</value>
+  </data>
+  <data name="lapAllowanceOption0" xml:space="preserve">
+    <value>Toutes durées (Par défaut)</value>
+  </data>
+  <data name="lapAllowanceOption1" xml:space="preserve">
+    <value>Après les retards</value>
+  </data>
+  <data name="lapAllowanceOption2" xml:space="preserve">
+    <value>Délais uniquement</value>
+  </data>
+  <data name="lapAllowanceText" xml:space="preserve">
+    <value>Prévoir des tours</value>
+  </data>
+  <data name="lapSortingText" xml:space="preserve">
+    <value>Trier les tours par</value>
+  </data>
+  <data name="lapSortingOption0" xml:space="preserve">
+    <value>D'abord concentrés</value>
+  </data>
+  <data name="lapSortingOption1" xml:space="preserve">
+    <value>Dernier focus (par défaut)</value>
+  </data>
+  <data name="lapSortingOption2" xml:space="preserve">
+    <value>Du meilleur au pire</value>
+  </data>
+  <data name="lapSortingOption3" xml:space="preserve">
+    <value>Du pire au meilleur</value>
+  </data>
+  <data name="lapDisplayTypeText" xml:space="preserve">
+    <value>Afficher l'tours par</value>
+  </data>
+  <data name="lapDisplayTypeOption0" xml:space="preserve">
+    <value>Temps par tours</value>
+  </data>
+  <data name="lapDisplayTypeOption1" xml:space="preserve">
+    <value>En temps réel (par défaut)</value>
+  </data>
+  <data name="alwaysOnTopText" xml:space="preserve">
+    <value>Toujours au top</value>
+  </data>
+  <data name="delayTimeColorText" xml:space="preserve">
+    <value>Couleur du retard</value>
+  </data>
+  <data name="delayTimeShowsText" xml:space="preserve">
+    <value>Afficher le délai d'attente</value>
+  </data>
+  <data name="pauseTimeColorText" xml:space="preserve">
+    <value>Couleur de la pause</value>
+  </data>
+  <data name="preparationTimeColorText" xml:space="preserve">
+    <value>Temps de prép. couleur</value>
+  </data>
+  <data name="startTimeColorText" xml:space="preserve">
+    <value>Couleur de départ</value>
+  </data>
+  <data name="languageText" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="secretText" xml:space="preserve">
+    <value>Entrez le (s) secret (s):</value>
+  </data>
+  <data name="secretButtonIdleText" xml:space="preserve">
+    <value>Exécuter!</value>
+  </data>
+  <data name="secretButtonSuccessText" xml:space="preserve">
+    <value>Vous l'avez trouvé!</value>
+  </data>
+  <data name="resetAllText" xml:space="preserve">
+    <value>RÉINIT. TOUTES LES OPTIONS PAR DÉFAUT</value>
+  </data>
+  <data name="resetExtraText" xml:space="preserve">
+    <value>Réinit. ex. options...</value>
+  </data>
+  <data name="resetTimeText" xml:space="preserve">
+    <value>Réinit. du temps...</value>
+  </data>
+  <data name="languageHelpText" xml:space="preserve">
+    <value>***** TRAVAUX EN COURS *****
+Change la langue. Notez que certains peuvent ne pas
+être traduits intégralement / correctement.</value>
+  </data>
+  <data name="alwaysOnTopHelpText" xml:space="preserve">
+    <value>Cela comprend tous les guichets liés à cette demande.</value>
+  </data>
+  <data name="delayColorHelpText" xml:space="preserve">
+    <value>Changes color in delay phase.</value>
+  </data>
+  <data name="lapDisplayHelpText" xml:space="preserve">
+    <value>Comment afficher le tour de piste :
+  - Temps par tour : Une révolution par tour
+  - En temps réel : Temps d'horloge</value>
+  </data>
+  <data name="lapsAllowanceHelpText" xml:space="preserve">
+    <value>Définit la façon dont les tours sont enregistrés :
+  - Toutes les durées : Tous les tours seront enregistrés.
+  - Après les retards : Seuls les tours après un retard sont enregistrés.
+  - Retards seulement : Seuls les tours en retard sont enregistrés.</value>
+  </data>
+  <data name="lapsSortingHelpText" xml:space="preserve">
+    <value>Trie les tours :
+  - D'abord concentré : Le premier tour est concentré.
+  - Dernier concentré : Le dernier tour est concentré.
+  - Du meilleur au pire : Du plus petit au plus grand tour.
+  - Du pire au dernier : Du plus grand au plus petit tour.</value>
+  </data>
+  <data name="pauseColorHelpText" xml:space="preserve">
+    <value>Changement de couleur en phase de pause.</value>
+  </data>
+  <data name="startColorHelpText" xml:space="preserve">
+    <value>Changement de couleur en phase de démarrage.</value>
+  </data>
+  <data name="lapSortingOption_1" xml:space="preserve">
+    <value>Randomiseur</value>
+  </data>
+  <data name="delayTimeShowsHelpText" xml:space="preserve">
+    <value>On : Indique le temps restant sur la phase de retard.
+Éteint : Ne s'affiche pas sur la phase de retardement.</value>
+  </data>
+  <data name="secretHelpText" xml:space="preserve">
+    <value>Note : UN seul secret peut être appliqué à la fois.</value>
+  </data>
+  <data name="extrasTabText" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="interfaceTabText" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="lapsTabText" xml:space="preserve">
+    <value>Laps</value>
+  </data>
+  <data name="moreOptionsFormText" xml:space="preserve">
+    <value>D'autres options...</value>
+  </data>
+  <data name="changeOptionText" xml:space="preserve">
+    <value>Changer...</value>
+  </data>
+  <data name="warningResetExtraOptions" xml:space="preserve">
+    <value>ÊTES-VOUS SÛR DE POUVOIR RÉINITIALISER DES PARAMÈTRES SUPPLÉMENTAIRES ? CETTE ACTION EST IRRÉVERSIBLE !</value>
+  </data>
+  <data name="warningResetTimeOptions" xml:space="preserve">
+    <value>ÊTES-VOUS SÛR DE RÉINITIALISER LES PARAMÈTRES DE L'HEURE ? CETTE ACTION EST IRRÉVERSIBLE !</value>
+  </data>
+  <data name="warningResetAllOptions" xml:space="preserve">
+    <value>ÊTES-VOUS SÛR DE RÉINITIALISER TOUS LES PARAMÈTRES ? CETTE ACTION EST IRRÉVERSIBLE !</value>
+  </data>
+  <data name="preparationColorHelpText" xml:space="preserve">
+    <value>Changement de couleur en phase de préparation.</value>
+  </data>
+  <data name="infoResetCompleted" xml:space="preserve">
+    <value>Réinitialisation réussie. L'application va maintenant redémarrer.</value>
+  </data>
+  <data name="lapIntervalText" xml:space="preserve">
+    <value>Lap</value>
+  </data>
+</root>

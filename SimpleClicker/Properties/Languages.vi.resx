@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="backButtonText" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="infoWaitForSignal" xml:space="preserve">
+    <value>Vui lòng đợi tín hiệu...</value>
+  </data>
+  <data name="startButtonText" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="lapButtonText" xml:space="preserve">
+    <value>Vòng</value>
+  </data>
+  <data name="optionsButtonText" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="resetButtonText" xml:space="preserve">
+    <value>Đặt lại</value>
+  </data>
+  <data name="stopButtonText" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="tickIdleText" xml:space="preserve">
+    <value>Sẵn sàng chạy.</value>
+  </data>
+  <data name="timeUnitText" xml:space="preserve">
+    <value>đvtg</value>
+  </data>
+  <data name="waitButtonText" xml:space="preserve">
+    <value>ĐỢI</value>
+  </data>
+  <data name="warningNoStartTimer" xml:space="preserve">
+    <value>Không thể bật đồng hồ khi phần cài đặt đang hiển thị!</value>
+  </data>
+  <data name="infoNoLapRecord" xml:space="preserve">
+    <value>Không thể ghi lịch sử vòng nếu giới hạn bằng 0! Bạn có muốn tiếp tục? (Chuyển giá trị sang -1 nếu muốn không giới hạn vòng)</value>
+  </data>
+  <data name="delayTimeText" xml:space="preserve">
+    <value>Thời Gian Chờ</value>
+  </data>
+  <data name="enableLappingText" xml:space="preserve">
+    <value>C.Phép Ghi Vòng</value>
+  </data>
+  <data name="moreOptionsButtonText" xml:space="preserve">
+    <value>Tùy chỉnh mở rộng...</value>
+  </data>
+  <data name="updateThresholdText" xml:space="preserve">
+    <value>Tần Suất Cập Nhật</value>
+  </data>
+  <data name="timePrecisionText" xml:space="preserve">
+    <value>Độ Chính Xác</value>
+  </data>
+  <data name="supportText" xml:space="preserve">
+    <value>Hỗ trợ...</value>
+  </data>
+  <data name="preparationTimeText" xml:space="preserve">
+    <value>T.Gian Chuẩn Bị</value>
+  </data>
+  <data name="delayToText" xml:space="preserve">
+    <value>và</value>
+  </data>
+  <data name="alwaysOnTopHelpText" xml:space="preserve">
+    <value>Bao gồm tất cả các cửa sổ liên quan đến ứng dụng này.</value>
+  </data>
+  <data name="alwaysOnTopText" xml:space="preserve">
+    <value>Hiện cửa sổ lên đầu</value>
+  </data>
+  <data name="delayColorHelpText" xml:space="preserve">
+    <value>Chuyển màu trong thời gian chờ.</value>
+  </data>
+  <data name="delayTimeColorText" xml:space="preserve">
+    <value>Màu thời gian chờ</value>
+  </data>
+  <data name="delayTimeShowsText" xml:space="preserve">
+    <value>Hiện t.gian chờ còn lại</value>
+  </data>
+  <data name="languageHelpText" xml:space="preserve">
+    <value>***** CHẾ ĐỘ THỬ NGHIỆM *****
+Thay đổi ngôn ngữ. Một số phần của ngôn ngữ
+có thể không đầy đủ / chính xâc.</value>
+  </data>
+  <data name="languageText" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="lapAllowanceOption0" xml:space="preserve">
+    <value>Tất cả t.điểm (Mặc định)</value>
+  </data>
+  <data name="lapAllowanceOption1" xml:space="preserve">
+    <value>Sau t.gian chờ</value>
+  </data>
+  <data name="lapAllowanceOption2" xml:space="preserve">
+    <value>Chỉ trong t.gian chờ</value>
+  </data>
+  <data name="lapAllowanceText" xml:space="preserve">
+    <value>Hiện ghi vòng</value>
+  </data>
+  <data name="lapDisplayHelpText" xml:space="preserve">
+    <value>Chỉnh kiểu hiện của các vòng:
+  - T.gian / vòng: T.gian trong 1 vòng
+  - T.gian thực: T.gian của đồng hồ</value>
+  </data>
+  <data name="lapDisplayTypeOption0" xml:space="preserve">
+    <value>T.gian / vòng</value>
+  </data>
+  <data name="lapDisplayTypeOption1" xml:space="preserve">
+    <value>T.gian thực</value>
+  </data>
+  <data name="lapDisplayTypeText" xml:space="preserve">
+    <value>Kiểu hiện vòng</value>
+  </data>
+  <data name="lapsAllowanceHelpText" xml:space="preserve">
+    <value>Chỉnh thời điểm vòng có thể được ghi:
+  - Tất cả t.điểm (Mặc định): Tất cả các vòng sẽ được ghi.
+  - Sau t.gian chờ: Chỉ ghi vòng sau t.gian chờ.
+  - Chỉ trong t.gian chờ: Chỉ ghi vòng trong t.gian chờ.</value>
+  </data>
+  <data name="lapsSortingHelpText" xml:space="preserve">
+    <value>Sắp xếp vòng:
+  - Chỉnh lên đầu: Vòng đầu sẽ được t.trung.
+  - Chỉnh xuống cuối: Vòng cuối sẽ được t.trung.
+  - Trên xuống: Từ vòng tốt nhất đến tệ nhất.
+  - Dưới lên: Từ vòng tệ nhất đến tốt nhất.</value>
+  </data>
+  <data name="lapSortingOption0" xml:space="preserve">
+    <value>Chỉnh lên đầu</value>
+  </data>
+  <data name="lapSortingOption1" xml:space="preserve">
+    <value>Chỉnh xuống cuối (Mặc định)</value>
+  </data>
+  <data name="lapSortingOption3" xml:space="preserve">
+    <value>Dưới lên</value>
+  </data>
+  <data name="lapSortingText" xml:space="preserve">
+    <value>Sắp xếp vòng</value>
+  </data>
+  <data name="lapSortingOption2" xml:space="preserve">
+    <value>Trên xuống</value>
+  </data>
+  <data name="pauseColorHelpText" xml:space="preserve">
+    <value>Chuyển màu trong thời gian dừng.</value>
+  </data>
+  <data name="pauseTimeColorText" xml:space="preserve">
+    <value>Màu chế độ dừng</value>
+  </data>
+  <data name="preparationTimeColorText" xml:space="preserve">
+    <value>Màu chế độ chuẩn bị</value>
+  </data>
+  <data name="resetAllText" xml:space="preserve">
+    <value>KHÔI PHỤC TOÀN BỘ DỮ LIỆU</value>
+  </data>
+  <data name="resetExtraText" xml:space="preserve">
+    <value>K.phục t.chọn thêm...</value>
+  </data>
+  <data name="resetTimeText" xml:space="preserve">
+    <value>K.phục t.chọn t.gian...</value>
+  </data>
+  <data name="secretButtonIdleText" xml:space="preserve">
+    <value>Thực thi!</value>
+  </data>
+  <data name="secretButtonSuccessText" xml:space="preserve">
+    <value>Chúc mừng!</value>
+  </data>
+  <data name="secretText" xml:space="preserve">
+    <value>Nhập mật mã:</value>
+  </data>
+  <data name="startColorHelpText" xml:space="preserve">
+    <value>Chuyển màu trong thời gian chạy.</value>
+  </data>
+  <data name="startTimeColorText" xml:space="preserve">
+    <value>Màu chế độ bắt đầu</value>
+  </data>
+  <data name="lapSortingOption_1" xml:space="preserve">
+    <value>Ngẫu tự</value>
+  </data>
+  <data name="delayTimeShowsHelpText" xml:space="preserve">
+    <value>On: Hiện thời gian đợi.
+Off: Không hiện thời gian đợi.</value>
+  </data>
+  <data name="secretHelpText" xml:space="preserve">
+    <value>Chú ý: Chỉ MỘT mật mã có thể được dùng.</value>
+  </data>
+  <data name="extrasTabText" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="interfaceTabText" xml:space="preserve">
+    <value>Giao diện</value>
+  </data>
+  <data name="lapsTabText" xml:space="preserve">
+    <value>Vòng</value>
+  </data>
+  <data name="moreOptionsFormText" xml:space="preserve">
+    <value>Tùy chỉnh mở rộng...</value>
+  </data>
+  <data name="changeOptionText" xml:space="preserve">
+    <value>Thay đổi...</value>
+  </data>
+  <data name="warningResetAllOptions" xml:space="preserve">
+    <value>BẠN CÓ CHẮC CHẮN MUỐN KHÔI PHỤC TOÀN BỘ CÀI ĐẶT? HÀNH ĐỘNG NÀY KHÔNG THỂ ĐƯỢC HOÀN TÁC!</value>
+  </data>
+  <data name="warningResetExtraOptions" xml:space="preserve">
+    <value>BẠN CÓ CHẮC CHẮN MUỐN KHÔI PHỤC CÀI ĐẶT THÊM? HÀNH ĐỘNG NÀY KHÔNG THỂ ĐƯỢC HOÀN TÁC!</value>
+  </data>
+  <data name="warningResetTimeOptions" xml:space="preserve">
+    <value>BẠN CÓ CHẮC CHẮN MUỐN KHÔI PHỤC CÀI ĐẶT THỜI GIAN? HÀNH ĐỘNG NÀY KHÔNG THỂ ĐƯỢC HOÀN TÁC!</value>
+  </data>
+  <data name="preparationColorHelpText" xml:space="preserve">
+    <value>Chuyển màu trong thời gian chuẩn bị.</value>
+  </data>
+  <data name="infoResetCompleted" xml:space="preserve">
+    <value>Khôi phục thành công, Ứng dụng sẽ khởi động lại.</value>
+  </data>
+  <data name="lapIntervalText" xml:space="preserve">
+    <value>Vòng</value>
+  </data>
+</root>
