@@ -21,7 +21,7 @@
       <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en-US</Value>
+      <Value Profile="(Default)">vi-VN</Value>
     </Setting>
     <Setting Name="timePrecision" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.enableLappingText = new System.Windows.Forms.TextBox();
             this.lappingToggle = new MetroFramework.Controls.MetroToggle();
             this.creditsLabel = new System.Windows.Forms.LinkLabel();
             this.lappingChooser = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.preparationTimeText = new System.Windows.Forms.TextBox();
             this.prepTimeChooser = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.updateThresholdText = new System.Windows.Forms.TextBox();
             this.updateThresholdChooser = new System.Windows.Forms.NumericUpDown();
             this.supportButton = new System.Windows.Forms.Button();
             this.moreOptionsButton = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.timePrecisionText = new System.Windows.Forms.TextBox();
             this.timePrecisionChooser = new System.Windows.Forms.NumericUpDown();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.delayTimeText = new System.Windows.Forms.TextBox();
             this.delayStartChooser = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.delayToText = new System.Windows.Forms.Label();
             this.delayStopChooser = new System.Windows.Forms.NumericUpDown();
             this.licenseLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.lappingChooser)).BeginInit();
@@ -53,19 +53,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.delayStopChooser)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox3
+            // enableLappingText
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox3.Location = new System.Drawing.Point(19, 16);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(236, 29);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "Enable Lapping";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
+            this.enableLappingText.BackColor = System.Drawing.Color.White;
+            this.enableLappingText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enableLappingText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.enableLappingText.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.enableLappingText.Location = new System.Drawing.Point(19, 16);
+            this.enableLappingText.Name = "enableLappingText";
+            this.enableLappingText.Size = new System.Drawing.Size(236, 29);
+            this.enableLappingText.TabIndex = 5;
+            this.enableLappingText.Text = "Enable Lapping";
+            this.enableLappingText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.enableLappingText.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
             // 
             // lappingToggle
             // 
@@ -122,19 +122,19 @@
             0});
             this.lappingChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lappingChooser_MouseUp);
             // 
-            // textBox1
+            // preparationTimeText
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox1.Location = new System.Drawing.Point(262, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 29);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "Preparation Time";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
+            this.preparationTimeText.BackColor = System.Drawing.Color.White;
+            this.preparationTimeText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.preparationTimeText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.preparationTimeText.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.preparationTimeText.Location = new System.Drawing.Point(262, 16);
+            this.preparationTimeText.Name = "preparationTimeText";
+            this.preparationTimeText.Size = new System.Drawing.Size(221, 29);
+            this.preparationTimeText.TabIndex = 12;
+            this.preparationTimeText.Text = "Preparation Time";
+            this.preparationTimeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.preparationTimeText.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
             // 
             // prepTimeChooser
             // 
@@ -163,19 +163,19 @@
             0});
             this.prepTimeChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.prepTimeChooser_MouseUp);
             // 
-            // textBox2
+            // updateThresholdText
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox2.Location = new System.Drawing.Point(20, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 29);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "Update Threshold";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
+            this.updateThresholdText.BackColor = System.Drawing.Color.White;
+            this.updateThresholdText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.updateThresholdText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.updateThresholdText.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.updateThresholdText.Location = new System.Drawing.Point(19, 183);
+            this.updateThresholdText.Name = "updateThresholdText";
+            this.updateThresholdText.Size = new System.Drawing.Size(245, 29);
+            this.updateThresholdText.TabIndex = 14;
+            this.updateThresholdText.Text = "Update Threshold";
+            this.updateThresholdText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.updateThresholdText.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
             // 
             // updateThresholdChooser
             // 
@@ -226,19 +226,19 @@
             this.moreOptionsButton.UseVisualStyleBackColor = true;
             this.moreOptionsButton.Click += new System.EventHandler(this.moreOptionsButton_Click);
             // 
-            // textBox5
+            // timePrecisionText
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox5.Location = new System.Drawing.Point(20, 138);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(189, 29);
-            this.textBox5.TabIndex = 21;
-            this.textBox5.Text = "Time Precision";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox5.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
+            this.timePrecisionText.BackColor = System.Drawing.Color.White;
+            this.timePrecisionText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.timePrecisionText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.timePrecisionText.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.timePrecisionText.Location = new System.Drawing.Point(19, 138);
+            this.timePrecisionText.Name = "timePrecisionText";
+            this.timePrecisionText.Size = new System.Drawing.Size(190, 29);
+            this.timePrecisionText.TabIndex = 21;
+            this.timePrecisionText.Text = "Time Precision";
+            this.timePrecisionText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.timePrecisionText.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
             // 
             // timePrecisionChooser
             // 
@@ -262,19 +262,19 @@
             0});
             this.timePrecisionChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.timePrecisionChooser_MouseUp);
             // 
-            // textBox6
+            // delayTimeText
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.textBox6.Location = new System.Drawing.Point(19, 93);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(144, 29);
-            this.textBox6.TabIndex = 23;
-            this.textBox6.Text = "Delay Time";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox6.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
+            this.delayTimeText.BackColor = System.Drawing.Color.White;
+            this.delayTimeText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.delayTimeText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.delayTimeText.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.delayTimeText.Location = new System.Drawing.Point(18, 93);
+            this.delayTimeText.Name = "delayTimeText";
+            this.delayTimeText.Size = new System.Drawing.Size(145, 29);
+            this.delayTimeText.TabIndex = 23;
+            this.delayTimeText.Text = "Delay Time";
+            this.delayTimeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delayTimeText.Enter += new System.EventHandler(this.UnfocusComponent_Enter);
             // 
             // delayStartChooser
             // 
@@ -304,15 +304,15 @@
             this.delayStartChooser.ValueChanged += new System.EventHandler(this.delayStartChooser_ValueChanged);
             this.delayStartChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.delayStartChooser_MouseUp);
             // 
-            // label1
+            // delayToText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(312, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 25);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "to";
+            this.delayToText.AutoSize = true;
+            this.delayToText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.delayToText.Location = new System.Drawing.Point(312, 94);
+            this.delayToText.Name = "delayToText";
+            this.delayToText.Size = new System.Drawing.Size(28, 25);
+            this.delayToText.TabIndex = 25;
+            this.delayToText.Text = "to";
             // 
             // delayStopChooser
             // 
@@ -329,11 +329,6 @@
             -1,
             -1,
             0});
-            this.delayStopChooser.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.delayStopChooser.Name = "delayStopChooser";
             this.delayStopChooser.ReadOnly = true;
             this.delayStopChooser.Size = new System.Drawing.Size(136, 30);
@@ -369,20 +364,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.licenseLabel);
             this.Controls.Add(this.delayStopChooser);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.delayToText);
             this.Controls.Add(this.delayStartChooser);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.delayTimeText);
             this.Controls.Add(this.timePrecisionChooser);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.timePrecisionText);
             this.Controls.Add(this.moreOptionsButton);
             this.Controls.Add(this.supportButton);
             this.Controls.Add(this.updateThresholdChooser);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.updateThresholdText);
             this.Controls.Add(this.prepTimeChooser);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.preparationTimeText);
             this.Controls.Add(this.lappingChooser);
             this.Controls.Add(this.creditsLabel);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.enableLappingText);
             this.Controls.Add(this.lappingToggle);
             this.Name = "SettingsControl";
             this.Size = new System.Drawing.Size(507, 300);
@@ -399,21 +394,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox enableLappingText;
         private MetroFramework.Controls.MetroToggle lappingToggle;
         private System.Windows.Forms.LinkLabel creditsLabel;
         private System.Windows.Forms.NumericUpDown lappingChooser;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox preparationTimeText;
         private System.Windows.Forms.NumericUpDown prepTimeChooser;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox updateThresholdText;
         private System.Windows.Forms.NumericUpDown updateThresholdChooser;
         private System.Windows.Forms.Button supportButton;
         private System.Windows.Forms.Button moreOptionsButton;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox timePrecisionText;
         private System.Windows.Forms.NumericUpDown timePrecisionChooser;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox delayTimeText;
         private System.Windows.Forms.NumericUpDown delayStartChooser;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label delayToText;
         private System.Windows.Forms.NumericUpDown delayStopChooser;
         private System.Windows.Forms.LinkLabel licenseLabel;
     }

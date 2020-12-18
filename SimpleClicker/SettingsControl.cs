@@ -31,6 +31,20 @@ namespace SimpleClicker
             {
                 lappingChooser.Enabled = false;
             }
+
+            LocalizeUI();
+        }
+
+        private void LocalizeUI()
+        {
+            enableLappingText.Text = Properties.Languages.enableLappingText;
+            preparationTimeText.Text = Properties.Languages.preparationTimeText;
+            delayTimeText.Text = Properties.Languages.delayTimeText;
+            delayToText.Text = Properties.Languages.delayToText;
+            timePrecisionText.Text = Properties.Languages.timePrecisionText;
+            updateThresholdText.Text = Properties.Languages.updateThresholdText;
+            moreOptionsButton.Text = Properties.Languages.moreOptionsButtonText;
+            supportButton.Text = Properties.Languages.supportText;
         }
 
         private void lappingToggle_CheckedChanged(object sender, EventArgs e)
@@ -38,11 +52,6 @@ namespace SimpleClicker
             lappingChooser.Enabled = lappingToggle.Checked;
             Properties.Settings.Default.isLappingEnabled = lappingToggle.Checked;
             Properties.Settings.Default.Save();
-        }
-
-        private void defaultButton_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void creditsLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -62,7 +71,7 @@ namespace SimpleClicker
 
         private void UnfocusComponent_Enter(object sender, EventArgs e)
         {
-            label1.Focus();
+            delayToText.Focus();
         }
 
         private void moreOptionsButton_Click(object sender, EventArgs e)

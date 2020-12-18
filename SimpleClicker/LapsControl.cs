@@ -87,10 +87,11 @@ namespace SimpleClicker
                 string hoursDisplay = laps[i].Item2.Hours < 10 ? "0" + laps[i].Item2.Hours : laps[i].Item2.Hours.ToString();
                 string minutesDisplay = laps[i].Item2.Minutes < 10 ? "0" + laps[i].Item2.Minutes : laps[i].Item2.Minutes.ToString();
                 string secondsDisplay = laps[i].Item2.Seconds < 10 ? "0" + laps[i].Item2.Seconds : laps[i].Item2.Seconds.ToString();
+                string unitsDisplay = Math.Round(laps[i].Item2.TotalSeconds - Math.Truncate((double)laps[i].Item2.TotalSeconds), Properties.Settings.Default.timePrecision).ToString();
                 lapsListBox.Items.Add(
-                    "Lap " + (lapsListBox.Items.Count + 1) + ": " +
-                    delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay + "." +
-                    (Math.Round(laps[i].Item2.TotalSeconds - Math.Truncate((double)laps[i].Item2.TotalSeconds), Properties.Settings.Default.timePrecision) + " units").Substring(2)
+                    Properties.Languages.lapIntervalText + " " + (lapsListBox.Items.Count + 1) + ": " +
+                    delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay +
+                    ((unitsDisplay.Length > 2 ? ("." + unitsDisplay.ToString().Substring(2)) : "") + " " + Properties.Languages.timeUnitText)
                 );
             }
             lapsListBox.EndUpdate();
