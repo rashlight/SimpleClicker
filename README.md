@@ -1,5 +1,8 @@
 # SimpleClicker
 [![Build status](https://ci.appveyor.com/api/projects/status/hd2qx03k0ako0shj/branch/main?svg=true)](https://ci.appveyor.com/project/rashlight/simpleclicker/branch/main)
+[![CodeFactor](https://www.codefactor.io/repository/github/rashlight/simpleclicker/badge)](https://www.codefactor.io/repository/github/rashlight/simpleclicker)
+
+## [Download latest version](https://github.com/rashlight/SimpleClicker/releases)
 
 A stopwatch / timer with a preparation phase, a random delay and precise timing. Made possible by [MetroFramework](https://thielj.github.io/MetroFramework/)
 
