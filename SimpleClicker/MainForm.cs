@@ -193,8 +193,12 @@ namespace SimpleClicker
                             currentMode = StopWatchMode.Delayed;
                             ChangeModeUI(currentMode);
                         }
-                        // Needs positive time, since ChangeModeUI() already toggles negative mode
-                        DisplayTime(delayTime + preparedTime - stopWatch.Elapsed);
+
+                        if (isDelayTimeShows)
+                        {
+                            // Needs positive time, since ChangeModeUI() already toggles negative mode
+                            DisplayTime(delayTime + preparedTime - stopWatch.Elapsed);
+                        }
                     }
                     else if (currentMode != StopWatchMode.Prepared)
                     {
