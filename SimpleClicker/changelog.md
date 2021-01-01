@@ -1,4 +1,11 @@
-﻿## Version 0.9.2.0 (Localisation Update):
+﻿## Version 1.0.0.0 (Tweaking Update):
+	- Further changing UI transcriptions.
+	- Change support button to an about form with similar functionality.
+	- The settings' tab will also be saved.
+	- Added ability to change theme (dark, light, etc.).
+	- Added ability to change border color.
+
+## Version 0.9.2.0 (Localisation Update):
 	- Implements localisation for French and Vietnamese.
 	- Removed delay minimum lower limit (from 0.1 to 0).
 	- Fixed a bug that displays "1 units" in the decimal units.

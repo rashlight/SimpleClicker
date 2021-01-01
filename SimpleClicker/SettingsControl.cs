@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace SimpleClicker
 {
@@ -33,6 +34,8 @@ namespace SimpleClicker
             }
 
             LocalizeUI();
+            ChangeTheme(Properties.Settings.Default.darkModeType);
+            ChangeBorder(Properties.Settings.Default.borderColorType);
         }
 
         private void LocalizeUI()
@@ -44,7 +47,17 @@ namespace SimpleClicker
             timePrecisionText.Text = Properties.Languages.timePrecisionText;
             updateThresholdText.Text = Properties.Languages.updateThresholdText;
             moreOptionsButton.Text = Properties.Languages.moreOptionsButtonText;
-            supportButton.Text = Properties.Languages.supportText;
+            aboutButton.Text = Properties.Languages.supportText;
+        }
+
+        public void ChangeTheme(MetroThemeStyle theme)
+        {
+            metroStyleManager.Theme = theme;
+        }
+
+        public void ChangeBorder(MetroColorStyle color)
+        {
+            metroStyleManager.Style = color;
         }
 
         private void lappingToggle_CheckedChanged(object sender, EventArgs e)
@@ -118,21 +131,10 @@ namespace SimpleClicker
             Properties.Settings.Default.Save();
         }
 
-        private void supportButton_Click(object sender, EventArgs e)
+        private void aboutButton_Click(object sender, EventArgs e)
         {
-            string supportData =
-                "OSVersion: " + Environment.OSVersion + "\n" +
-                "Is64BitOS: " + Environment.Is64BitOperatingSystem + "\n" +
-                "Is64BitBinary: " + Environment.Is64BitProcess + "\n" +
-                "StopwatchFrequency: " + System.Diagnostics.Stopwatch.Frequency + "\n" +
-                "IsStopwatchHighResolution: " + System.Diagnostics.Stopwatch.IsHighResolution + "\n" +
-                "IsElevated: " + System.Security.Principal.WindowsIdentity.GetCurrent().Owner.IsWellKnown(System.Security.Principal.WellKnownSidType.BuiltinAdministratorsSid) + "\n" +
-                "ProcessorCount: " + Environment.ProcessorCount + "\n" +
-                "SystemPageSize: " + Environment.SystemPageSize + "\n" +
-                "PriorityIndex: " + System.Threading.Thread.CurrentThread.Priority + "\n" +
-                "Language: " + System.Threading.Thread.CurrentThread.CurrentCulture + "\n";
-
-            MessageBox.Show(supportData, System.Diagnostics.Process.GetCurrentProcess().ProcessName + " ver " + System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).ProductVersion, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
 
         private void licenseLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

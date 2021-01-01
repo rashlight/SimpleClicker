@@ -20,16 +20,13 @@
     <Setting Name="preparationTime" Type="System.Double" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting Name="language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">vi-VN</Value>
-    </Setting>
     <Setting Name="timePrecision" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
-    <Setting Name="lapsAllowances" Type="System.String" Scope="User">
+    <Setting Name="lapsAllowancesType" Type="System.String" Scope="User">
       <Value Profile="(Default)">all-durations</Value>
     </Setting>
-    <Setting Name="lapsSorting" Type="System.String" Scope="User">
+    <Setting Name="lapsSortingType" Type="System.String" Scope="User">
       <Value Profile="(Default)">last-focused</Value>
     </Setting>
     <Setting Name="lapsDisplayType" Type="System.String" Scope="User">
@@ -39,19 +36,40 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="preparationTimeColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Black</Value>
+      <Value Profile="(Default)">Silver</Value>
     </Setting>
     <Setting Name="delayTimeColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Black</Value>
+      <Value Profile="(Default)">255, 128, 0</Value>
     </Setting>
     <Setting Name="startTimeColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Black</Value>
+      <Value Profile="(Default)">Green</Value>
     </Setting>
     <Setting Name="isAlwaysOnTop" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="pauseTimeColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Black</Value>
+      <Value Profile="(Default)">0, 128, 255</Value>
+    </Setting>
+    <Setting Name="language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="moreOptionsLastSelTab" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="darkModeType" Type="MetroFramework.MetroThemeStyle" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+    <Setting Name="borderColorType" Type="MetroFramework.MetroColorStyle" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="aboutIconType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">blue</Value>
+    </Setting>
+    <Setting Name="sunriseTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="sunsetTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">19</Value>
     </Setting>
   </Settings>
 </SettingsFile>

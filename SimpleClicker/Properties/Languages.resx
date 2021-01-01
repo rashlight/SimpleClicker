@@ -166,7 +166,7 @@
     <value>Preparation Time</value>
   </data>
   <data name="supportText" xml:space="preserve">
-    <value>Support...</value>
+    <value>About...</value>
   </data>
   <data name="timePrecisionText" xml:space="preserve">
     <value>Time Precision</value>
@@ -193,8 +193,7 @@
     <value>Show remaining delay time</value>
   </data>
   <data name="languageHelpText" xml:space="preserve">
-    <value>***** WORK IN PROGRESS *****
-Changes the language. Note that some may not
+    <value>Changes the language. Note that some may not
 be translated fully / correctly.</value>
   </data>
   <data name="languageText" xml:space="preserve">
@@ -329,5 +328,56 @@ Off: Doesn't show on delay phase.</value>
   </data>
   <data name="lapIntervalText" xml:space="preserve">
     <value>Lap</value>
+  </data>
+  <data name="borderColorHelpText" xml:space="preserve">
+    <value>Changes the border color on top of the window.</value>
+  </data>
+  <data name="borderColorText" xml:space="preserve">
+    <value>Border color</value>
+  </data>
+  <data name="darkModeHelpText" xml:space="preserve">
+    <value>Changes dark mode options. When set to "System", this will changes theme depends on day / night.</value>
+  </data>
+  <data name="darkModeOption1" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="darkModeOption2" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="darkModeOption3" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="darkModeText" xml:space="preserve">
+    <value>Dark Mode</value>
+  </data>
+  <data name="themeTabText" xml:space="preserve">
+    <value>Themes</value>
+  </data>
+  <data name="warningCloseWhenRunning" xml:space="preserve">
+    <value>The timer is still running! Do you really want to exit?</value>
+  </data>
+  <data name="attributionTabText" xml:space="preserve">
+    <value>Attribution</value>
+  </data>
+  <data name="infoTabText" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="licenseTabText" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="systemInfoTabText" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="sunriseHelpText" xml:space="preserve">
+    <value>The time to change theme to Off in "Default" dark mode option.</value>
+  </data>
+  <data name="sunriseText" xml:space="preserve">
+    <value>Sunrise time</value>
+  </data>
+  <data name="sunsetHelpText" xml:space="preserve">
+    <value>Will changes theme to On in "Default" dark mode option.</value>
+  </data>
+  <data name="sunsetText" xml:space="preserve">
+    <value>Sunset time</value>
   </data>
 </root>

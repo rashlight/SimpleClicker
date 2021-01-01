@@ -97,18 +97,6 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("vi-VN")]
-        public string language {
-            get {
-                return ((string)(this["language"]));
-            }
-            set {
-                this["language"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int timePrecision {
             get {
@@ -122,24 +110,24 @@ namespace SimpleClicker.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("all-durations")]
-        public string lapsAllowances {
+        public string lapsAllowancesType {
             get {
-                return ((string)(this["lapsAllowances"]));
+                return ((string)(this["lapsAllowancesType"]));
             }
             set {
-                this["lapsAllowances"] = value;
+                this["lapsAllowancesType"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("last-focused")]
-        public string lapsSorting {
+        public string lapsSortingType {
             get {
-                return ((string)(this["lapsSorting"]));
+                return ((string)(this["lapsSortingType"]));
             }
             set {
-                this["lapsSorting"] = value;
+                this["lapsSortingType"] = value;
             }
         }
         
@@ -169,7 +157,7 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
         public global::System.Drawing.Color preparationTimeColor {
             get {
                 return ((global::System.Drawing.Color)(this["preparationTimeColor"]));
@@ -181,7 +169,7 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 128, 0")]
         public global::System.Drawing.Color delayTimeColor {
             get {
                 return ((global::System.Drawing.Color)(this["delayTimeColor"]));
@@ -193,7 +181,7 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Green")]
         public global::System.Drawing.Color startTimeColor {
             get {
                 return ((global::System.Drawing.Color)(this["startTimeColor"]));
@@ -217,13 +205,97 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 128, 255")]
         public global::System.Drawing.Color pauseTimeColor {
             get {
                 return ((global::System.Drawing.Color)(this["pauseTimeColor"]));
             }
             set {
                 this["pauseTimeColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("en-US")]
+        public string language {
+            get {
+                return ((string)(this["language"]));
+            }
+            set {
+                this["language"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int moreOptionsLastSelTab {
+            get {
+                return ((int)(this["moreOptionsLastSelTab"]));
+            }
+            set {
+                this["moreOptionsLastSelTab"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Default")]
+        public global::MetroFramework.MetroThemeStyle darkModeType {
+            get {
+                return ((global::MetroFramework.MetroThemeStyle)(this["darkModeType"]));
+            }
+            set {
+                this["darkModeType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Blue")]
+        public global::MetroFramework.MetroColorStyle borderColorType {
+            get {
+                return ((global::MetroFramework.MetroColorStyle)(this["borderColorType"]));
+            }
+            set {
+                this["borderColorType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("blue")]
+        public string aboutIconType {
+            get {
+                return ((string)(this["aboutIconType"]));
+            }
+            set {
+                this["aboutIconType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int sunriseTime {
+            get {
+                return ((int)(this["sunriseTime"]));
+            }
+            set {
+                this["sunriseTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("19")]
+        public int sunsetTime {
+            get {
+                return ((int)(this["sunsetTime"]));
+            }
+            set {
+                this["sunsetTime"] = value;
             }
         }
     }

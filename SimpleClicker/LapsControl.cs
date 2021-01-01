@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using MetroFramework;
 
 namespace SimpleClicker
 {
@@ -19,12 +20,24 @@ namespace SimpleClicker
         public LapsControl()
         {
             InitializeComponent();
+            ChangeTheme(Properties.Settings.Default.darkModeType);
+            ChangeBorder(Properties.Settings.Default.borderColorType);
+        }
+
+        public void ChangeTheme(MetroThemeStyle theme)
+        {
+            metroStyleManager.Theme = theme;
+        }
+
+        public void ChangeBorder(MetroColorStyle color)
+        {
+            metroStyleManager.Style = color;
         }
 
         public void SortLaps()
         {
             // Sorts items
-            switch (Properties.Settings.Default.lapsSorting)
+            switch (Properties.Settings.Default.lapsSortingType)
             {
                 case LapSorting.FIRST_FOCUSED:
                     break;
@@ -54,7 +67,7 @@ namespace SimpleClicker
             // Check items overflow
             if (Properties.Settings.Default.lappingCount > 0 && laps.Count > Properties.Settings.Default.lappingCount)
             {
-                switch (Properties.Settings.Default.lapsSorting)
+                switch (Properties.Settings.Default.lapsSortingType)
                 {
                     case LapSorting.FIRST_FOCUSED:
                         laps.RemoveAt(laps.Count - 1);
@@ -96,7 +109,7 @@ namespace SimpleClicker
             }
             lapsListBox.EndUpdate();
 
-            if (Properties.Settings.Default.lapsSorting == LapSorting.LAST_FOCUSED) lapsListBox.TopIndex = lapsListBox.Items.Count - 1;
+            if (Properties.Settings.Default.lapsSortingType == LapSorting.LAST_FOCUSED) lapsListBox.TopIndex = lapsListBox.Items.Count - 1;
         }
 
         public void AddLap(bool isDelayed, TimeSpan time)

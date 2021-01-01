@@ -93,6 +93,26 @@ namespace SimpleClicker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap blue_simpleclicker {
+            get {
+                object obj = ResourceManager.GetObject("blue_simpleclicker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap brown_simpleclicker {
+            get {
+                object obj = ResourceManager.GetObject("brown_simpleclicker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap us_uk {
             get {
                 object obj = ResourceManager.GetObject("us_uk", resourceCulture);

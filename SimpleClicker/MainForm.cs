@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 using MetroFramework.Forms;
 
 namespace SimpleClicker
@@ -30,7 +31,7 @@ namespace SimpleClicker
 
     public partial class MainForm : MetroForm
     {
-        public static int stopWatchFrequency = 0; // Used for SettingControl
+        public static int stopWatchFrequency = 0; // Used for AboutForm
 
         public bool isStart = false;
         public bool isOptionsMenuOpened = false;
@@ -46,7 +47,7 @@ namespace SimpleClicker
         public ResourceManager localizationManager = new ResourceManager(typeof(Properties.Resources));
 
         private Size defaultFormSize = new Size(542, 226);
-        private Size expandedFormSize = new Size(542, 529);
+        private Size expandedFormSize = new Size(542, 502);
         private Color defaultBackColor = Color.White;
         private Color defaultForeColor = Color.Black;
 
@@ -67,6 +68,40 @@ namespace SimpleClicker
             delayTime = TimeSpan.FromSeconds(Properties.Settings.Default.delayTimeStop - Properties.Settings.Default.delayTimeStart);
             ChangeModeUI(StopWatchMode.Default);
             ToggleOptionsMenuSize(defaultFormSize);
+            ChangeTheme(Properties.Settings.Default.darkModeType);
+            ChangeBorder(Properties.Settings.Default.borderColorType);
+        }
+
+        public void ChangeTheme(MetroThemeStyle theme)
+        {
+            if (theme == MetroThemeStyle.Default)
+            {
+                if (DateTime.Now.Hour >= Properties.Settings.Default.sunriseTime && DateTime.Now.Hour < Properties.Settings.Default.sunsetTime)
+                {
+                    metroStyleManager.Theme = MetroThemeStyle.Light;
+                }
+                else metroStyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else metroStyleManager.Theme = theme;
+            settingsControl.ChangeTheme(metroStyleManager.Theme);
+            lapsControl.ChangeTheme(metroStyleManager.Theme);
+        }
+
+        public void ChangeBorder(MetroColorStyle color)
+        {
+            metroStyleManager.Style = color;
+            settingsControl.ChangeBorder(color);
+            lapsControl.ChangeBorder(color);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (stopWatch.IsRunning && 
+                MessageBox.Show(Properties.Languages.warningCloseWhenRunning, "Simple Clicker",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private double GetRandomNumber(double minimum, double maximum)
@@ -100,7 +135,10 @@ namespace SimpleClicker
                     mainActionButton.Text = Properties.Languages.startButtonText;
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
                     tickTimerText.Text = Properties.Languages.tickIdleText;
+                    // Temporary disable theme to properly apply dark mode (when possible)
+                    metroStyleExtender.SetApplyMetroTheme(mainTimerText, false);
                     mainTimerText.ForeColor = defaultForeColor;
+                    metroStyleExtender.SetApplyMetroTheme(mainTimerText, true);
                     break;
                 case StopWatchMode.Prepared:
                     mainActionButton.Enabled = false;
@@ -228,8 +266,8 @@ namespace SimpleClicker
                     delayTime = TimeSpan.FromSeconds(GetRandomNumber(Properties.Settings.Default.delayTimeStart, Properties.Settings.Default.delayTimeStop));
                     lastLap = delayTime + preparedTime;
                     isDelayTimeShows = Properties.Settings.Default.isDelayTimeShows;
-                    isDelayLapAllowed = new[] { LapAllowances.DELAYS_ONLY, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowances);
-                    isStartLapAllowed = new[] { LapAllowances.AFTER_DELAYS, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowances);
+                    isDelayLapAllowed = new[] { LapAllowances.DELAYS_ONLY, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowancesType);
+                    isStartLapAllowed = new[] { LapAllowances.AFTER_DELAYS, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowancesType);
                     displayType = Properties.Settings.Default.lapsDisplayType;
                     ChangeModeUI(currentMode);
                     timer.Enabled = true;
@@ -320,5 +358,6 @@ namespace SimpleClicker
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
     }
 }

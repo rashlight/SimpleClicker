@@ -79,6 +79,15 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attribution.
+        /// </summary>
+        public static string attributionTabText {
+            get {
+                return ResourceManager.GetString("attributionTabText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string backButtonText {
@@ -88,11 +97,74 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Changes the border color on top of the window..
+        /// </summary>
+        public static string borderColorHelpText {
+            get {
+                return ResourceManager.GetString("borderColorHelpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border color.
+        /// </summary>
+        public static string borderColorText {
+            get {
+                return ResourceManager.GetString("borderColorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change....
         /// </summary>
         public static string changeOptionText {
             get {
                 return ResourceManager.GetString("changeOptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes dark mode options. When set to &quot;System&quot;, this will changes theme depends on day / night..
+        /// </summary>
+        public static string darkModeHelpText {
+            get {
+                return ResourceManager.GetString("darkModeHelpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string darkModeOption1 {
+            get {
+                return ResourceManager.GetString("darkModeOption1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        public static string darkModeOption2 {
+            get {
+                return ResourceManager.GetString("darkModeOption2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string darkModeOption3 {
+            get {
+                return ResourceManager.GetString("darkModeOption3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark Mode.
+        /// </summary>
+        public static string darkModeText {
+            get {
+                return ResourceManager.GetString("darkModeText", resourceCulture);
             }
         }
         
@@ -188,6 +260,15 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        public static string infoTabText {
+            get {
+                return ResourceManager.GetString("infoTabText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait for the signal....
         /// </summary>
         public static string infoWaitForSignal {
@@ -206,8 +287,7 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ***** WORK IN PROGRESS *****
-        ///Changes the language. Note that some may not
+        ///   Looks up a localized string similar to Changes the language. Note that some may not
         ///be translated fully / correctly..
         /// </summary>
         public static string languageHelpText {
@@ -406,6 +486,15 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to License.
+        /// </summary>
+        public static string licenseTabText {
+            get {
+                return ResourceManager.GetString("licenseTabText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More options....
         /// </summary>
         public static string moreOptionsButtonText {
@@ -586,11 +675,65 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Support....
+        ///   Looks up a localized string similar to The time to change theme to Off in &quot;Default&quot; dark mode option..
+        /// </summary>
+        public static string sunriseHelpText {
+            get {
+                return ResourceManager.GetString("sunriseHelpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunrise time.
+        /// </summary>
+        public static string sunriseText {
+            get {
+                return ResourceManager.GetString("sunriseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Will changes theme to On in &quot;Default&quot; dark mode option..
+        /// </summary>
+        public static string sunsetHelpText {
+            get {
+                return ResourceManager.GetString("sunsetHelpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunset time.
+        /// </summary>
+        public static string sunsetText {
+            get {
+                return ResourceManager.GetString("sunsetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About....
         /// </summary>
         public static string supportText {
             get {
                 return ResourceManager.GetString("supportText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Info.
+        /// </summary>
+        public static string systemInfoTabText {
+            get {
+                return ResourceManager.GetString("systemInfoTabText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Themes.
+        /// </summary>
+        public static string themeTabText {
+            get {
+                return ResourceManager.GetString("themeTabText", resourceCulture);
             }
         }
         
@@ -636,6 +779,15 @@ namespace SimpleClicker.Properties {
         public static string waitButtonText {
             get {
                 return ResourceManager.GetString("waitButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The timer is still running! Do you really want to exit?.
+        /// </summary>
+        public static string warningCloseWhenRunning {
+            get {
+                return ResourceManager.GetString("warningCloseWhenRunning", resourceCulture);
             }
         }
         
