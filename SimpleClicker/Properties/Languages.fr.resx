@@ -363,10 +363,10 @@ Off : Ne s'affiche pas sur la phase de retardement.</value>
     <value>Change le thème à Off dans l'option "Default" en mode sombre.</value>
   </data>
   <data name="sunriseText" xml:space="preserve">
-    <value>Heure du lever du soleil</value>
+    <value>Lever soleil</value>
   </data>
   <data name="sunsetText" xml:space="preserve">
-    <value>Heure du coucher du soleil</value>
+    <value>Coucher soleil</value>
   </data>
   <data name="sunsetHelpText" xml:space="preserve">
     <value>Change le thème à On dans l'option "Default" en mode sombre.</value>

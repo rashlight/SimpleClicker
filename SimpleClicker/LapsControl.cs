@@ -20,13 +20,25 @@ namespace SimpleClicker
         public LapsControl()
         {
             InitializeComponent();
+        }
+
+        private void LapsControl_Load(object sender, EventArgs e)
+        {
             ChangeTheme(Properties.Settings.Default.darkModeType);
             ChangeBorder(Properties.Settings.Default.borderColorType);
         }
 
         public void ChangeTheme(MetroThemeStyle theme)
         {
-            metroStyleManager.Theme = theme;
+            if (theme == MetroThemeStyle.Default)
+            {
+                if (DateTime.Now.Hour >= Properties.Settings.Default.sunriseTime && DateTime.Now.Hour < Properties.Settings.Default.sunsetTime)
+                {
+                    metroStyleManager.Theme = MetroThemeStyle.Light;
+                }
+                else metroStyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else metroStyleManager.Theme = theme;
         }
 
         public void ChangeBorder(MetroColorStyle color)
@@ -128,6 +140,11 @@ namespace SimpleClicker
         {
             laps.Clear();
             lapsListBox.Items.Clear();
+        }
+
+        private void LapsControl_VisibleChanged(object sender, EventArgs e)
+        {
+            ChangeTheme(Properties.Settings.Default.darkModeType);
         }
     }
 }

@@ -47,6 +47,7 @@
             // mainActionButton
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.mainActionButton, true);
+            this.mainActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mainActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 22F);
             this.mainActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mainActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -56,12 +57,13 @@
             this.mainActionButton.Size = new System.Drawing.Size(157, 67);
             this.mainActionButton.TabIndex = 4;
             this.mainActionButton.Text = "Start";
-            this.mainActionButton.UseVisualStyleBackColor = true;
+            this.mainActionButton.UseVisualStyleBackColor = false;
             this.mainActionButton.Click += new System.EventHandler(this.mainActionButton_Click);
             // 
             // secondaryActionButton
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.secondaryActionButton, true);
+            this.secondaryActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.secondaryActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 19F);
             this.secondaryActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.secondaryActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -71,7 +73,7 @@
             this.secondaryActionButton.Size = new System.Drawing.Size(157, 67);
             this.secondaryActionButton.TabIndex = 5;
             this.secondaryActionButton.Text = "Options";
-            this.secondaryActionButton.UseVisualStyleBackColor = true;
+            this.secondaryActionButton.UseVisualStyleBackColor = false;
             this.secondaryActionButton.Click += new System.EventHandler(this.secondaryActionButton_Click);
             // 
             // tickTimerText
@@ -124,7 +126,10 @@
             // 
             // lapsControl
             // 
-            this.lapsControl.Location = new System.Drawing.Point(0, 0);
+            this.metroStyleExtender.SetApplyMetroTheme(this.lapsControl, true);
+            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lapsControl.Location = new System.Drawing.Point(0, 3);
             this.lapsControl.Name = "lapsControl";
             this.lapsControl.Size = new System.Drawing.Size(507, 279);
             this.lapsControl.TabIndex = 1;
@@ -132,10 +137,14 @@
             // 
             // settingsControl
             // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.settingsControl, true);
+            this.settingsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.settingsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.settingsControl.Location = new System.Drawing.Point(0, 0);
             this.settingsControl.Name = "settingsControl";
             this.settingsControl.Size = new System.Drawing.Size(507, 279);
             this.settingsControl.TabIndex = 0;
+            this.settingsControl.Visible = true;
             // 
             // metroStyleManager
             // 
@@ -145,6 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(542, 502);
             this.Controls.Add(this.elementsPanel);
             this.Controls.Add(this.secondaryActionButton);
@@ -158,6 +168,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "Simple Clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.elementsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);

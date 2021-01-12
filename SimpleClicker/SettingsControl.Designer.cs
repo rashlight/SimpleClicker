@@ -91,7 +91,7 @@
             this.lappingChooser.Enabled = false;
             this.lappingChooser.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lappingChooser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lappingChooser.Location = new System.Drawing.Point(104, 53);
+            this.lappingChooser.Location = new System.Drawing.Point(112, 53);
             this.lappingChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -104,7 +104,7 @@
             -2147483648});
             this.lappingChooser.Name = "lappingChooser";
             this.lappingChooser.ReadOnly = true;
-            this.lappingChooser.Size = new System.Drawing.Size(150, 27);
+            this.lappingChooser.Size = new System.Drawing.Size(136, 27);
             this.lappingChooser.TabIndex = 11;
             this.lappingChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lappingChooser.ThousandsSeparator = true;
@@ -376,8 +376,8 @@
             // SettingsControl
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this, true);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.delayStopChooser);
             this.Controls.Add(this.delayToText);
             this.Controls.Add(this.delayStartChooser);
@@ -396,6 +396,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Name = "SettingsControl";
             this.Size = new System.Drawing.Size(507, 279);
+            this.Load += new System.EventHandler(this.SettingsControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lappingChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepTimeChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateThresholdChooser)).EndInit();

@@ -228,13 +228,13 @@ có thể không đầy đủ / chính xâc.</value>
   <data name="lapsAllowanceHelpText" xml:space="preserve">
     <value>Chỉnh thời điểm vòng có thể được ghi:
   - Tất cả t.điểm (Mặc định): Tất cả các vòng sẽ được ghi.
-  - Sau t.gian chờ: Chỉ ghi vòng sau t.gian chờ.
-  - Chỉ trong t.gian chờ: Chỉ ghi vòng trong t.gian chờ.</value>
+  - Sau t.gian chờ: Chỉ ghi vòng sau thời gian chờ.
+  - Chỉ trong t.gian chờ: Chỉ ghi vòng trong thời gian chờ.</value>
   </data>
   <data name="lapsSortingHelpText" xml:space="preserve">
     <value>Sắp xếp vòng:
-  - Chỉnh lên đầu: Vòng đầu sẽ được t.trung.
-  - Chỉnh xuống cuối: Vòng cuối sẽ được t.trung.
+  - Chỉnh lên đầu: Vòng đầu sẽ được tập trung.
+  - Chỉnh xuống cuối: Vòng cuối sẽ được tập trung.
   - Trên xuống: Từ vòng chậm nhất đến nhanh nhất.
   - Dưới lên: Từ vòng nhanh nhất đến chậm nhất.</value>
   </data>
@@ -266,10 +266,10 @@ có thể không đầy đủ / chính xâc.</value>
     <value>KHÔI PHỤC TOÀN BỘ DỮ LIỆU</value>
   </data>
   <data name="resetExtraText" xml:space="preserve">
-    <value>K.phục t.chọn thêm...</value>
+    <value>K.phục c.đặt thêm...</value>
   </data>
   <data name="resetTimeText" xml:space="preserve">
-    <value>K.phục t.chọn t.gian...</value>
+    <value>K.phục c.đặt t.gian...</value>
   </data>
   <data name="secretButtonIdleText" xml:space="preserve">
     <value>Thực thi!</value>
@@ -290,8 +290,8 @@ có thể không đầy đủ / chính xâc.</value>
     <value>Ngẫu tự</value>
   </data>
   <data name="delayTimeShowsHelpText" xml:space="preserve">
-    <value>On: Hiện thời gian đợi.
-Off: Không hiện thời gian đợi.</value>
+    <value>On: Hiện thời gian chờ.
+Off: Không hiện thời gian chờ.</value>
   </data>
   <data name="secretHelpText" xml:space="preserve">
     <value>Chú ý: Chỉ MỘT mật mã có thể được dùng.</value>

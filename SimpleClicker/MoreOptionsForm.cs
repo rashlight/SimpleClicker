@@ -63,6 +63,11 @@ namespace SimpleClicker
             if (Properties.Settings.Default.isAlwaysOnTop)
                 SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
 
+            ChangeUIScaling();
+        }
+
+        private void MoreOptionsForm_Load(object sender, EventArgs e)
+        {
             LocalizeUI();
             ChangeColorTooltip();
             LoadSavedData();
@@ -71,6 +76,18 @@ namespace SimpleClicker
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private void ChangeUIScaling()
+        {
+            if (!MainForm.isScalable)
+            {
+                // WMI is disabled, rather having it blur than to make mess-up UI
+                this.Name += " (Compatibility Mode)";
+                this.AutoScaleMode = AutoScaleMode.None;
+                this.PerformAutoScale();
+                return;
+            }
+        }
 
         private void LocalizeUI()
         {
@@ -300,9 +317,34 @@ namespace SimpleClicker
                     metroStyleManager.Theme = MetroThemeStyle.Light;
                 }            
                 else metroStyleManager.Theme = MetroThemeStyle.Dark;
-                InvokeThemeOtherForm(metroStyleManager.Theme);
+                
+                InvokeThemeOtherForm(metroStyleManager.Theme, typeof(MainForm));
             }
             else metroStyleManager.Theme = theme;
+
+            foreach (MetroFramework.Controls.MetroTabPage tab in new[] { lapsTab, interfacesTab, themesTab, extrasTab })
+            {
+                foreach (PictureBox helpImage in tab.Controls.OfType<PictureBox>().ToList())
+                {
+                    if (helpImage.Name != flagPictureBox.Name && !helpImage.Name.Contains("ColorBox"))
+                    {
+                        if (metroStyleManager.Theme == MetroThemeStyle.Dark)
+                        {
+                            helpImage.BackgroundImage = Properties.Resources.help_icon_dark;
+                        }
+                        else helpImage.BackgroundImage = Properties.Resources.help_icon_light;
+                    }
+                }
+            }
+
+            foreach (PictureBox helpImage in defaultDarkModePanel.Controls.OfType<PictureBox>().ToList())
+            {
+                if (metroStyleManager.Theme == MetroThemeStyle.Dark)
+                {
+                    helpImage.BackgroundImage = Properties.Resources.help_icon_dark;
+                }
+                else helpImage.BackgroundImage = Properties.Resources.help_icon_light;
+            }
         }
 
         public void ChangeBorder(MetroColorStyle color)
@@ -310,19 +352,37 @@ namespace SimpleClicker
             metroStyleManager.Style = color;
         }
 
-        private void InvokeThemeOtherForm(MetroThemeStyle theme)
+        private void InvokeThemeOtherForm(MetroThemeStyle theme, Type formType)
         {
             // Using delegate instead of reflection to improve performance
-            MethodInfo methodInfo = typeof(MainForm).GetMethod("ChangeTheme", new Type[] { typeof(MetroThemeStyle) });
-            Action<MetroThemeStyle> action = (Action<MetroThemeStyle>)Delegate.CreateDelegate(typeof(Action<MetroThemeStyle>), Application.OpenForms[0], methodInfo);
+            MethodInfo methodInfo = formType.GetMethod("ChangeTheme", new Type[] { typeof(MetroThemeStyle) });
+            int invokeIndex = 0;
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i].GetType() == formType)
+                {
+                    invokeIndex = i;
+                    break;
+                }
+            }
+            Action<MetroThemeStyle> action = (Action<MetroThemeStyle>)Delegate.CreateDelegate(typeof(Action<MetroThemeStyle>), Application.OpenForms[invokeIndex], methodInfo, true);
             action.Invoke(theme);
         }
 
-        private void InvokeBorderOtherForm(MetroColorStyle color)
+        private void InvokeBorderOtherForm(MetroColorStyle color, Type formType)
         {
             // Using delegate instead of reflection to improve performance
-            MethodInfo methodInfo = typeof(MainForm).GetMethod("ChangeBorder", new Type[] { typeof(MetroColorStyle) });
-            Action<MetroColorStyle> action = (Action<MetroColorStyle>)Delegate.CreateDelegate(typeof(Action<MetroColorStyle>), Application.OpenForms[0], methodInfo);
+            MethodInfo methodInfo = formType.GetMethod("ChangeBorder", new Type[] { typeof(MetroColorStyle) });
+            int invokeIndex = 0;
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i].GetType() == formType)
+                {
+                    invokeIndex = i;
+                    break;
+                }
+            }
+            Action<MetroColorStyle> action = (Action<MetroColorStyle>)Delegate.CreateDelegate(typeof(Action<MetroColorStyle>), Application.OpenForms[invokeIndex], methodInfo);
             action.Invoke(color);
         }
 
@@ -481,16 +541,24 @@ namespace SimpleClicker
         private void resetExtraButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Properties.Languages.warningResetExtraOptions, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
-            Properties.Settings.Default.language = "en-US";
+            // Laps tab
             Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
             Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
             Properties.Settings.Default.lapsDisplayType = LapDisplayType.REAL_TIME;
+            // Interfaces tab
             Properties.Settings.Default.isDelayTimeShows = true;
             Properties.Settings.Default.isAlwaysOnTop = false;
-            Properties.Settings.Default.preparationTimeColor = Color.Black;
-            Properties.Settings.Default.delayTimeColor = Color.Black;
-            Properties.Settings.Default.startTimeColor = Color.Black;
-            Properties.Settings.Default.pauseTimeColor = Color.Black;
+            Properties.Settings.Default.preparationTimeColor = Color.Silver;
+            Properties.Settings.Default.delayTimeColor = Color.FromArgb(255, 128, 0); // Orange-ish
+            Properties.Settings.Default.startTimeColor = Color.Green;
+            Properties.Settings.Default.pauseTimeColor = Color.FromArgb(0, 128, 255); // Blue-ish
+            // Themes tab
+            Properties.Settings.Default.darkModeType = MetroThemeStyle.Default;
+            Properties.Settings.Default.borderColorType = MetroColorStyle.Blue;
+            Properties.Settings.Default.sunriseTime = 7;
+            Properties.Settings.Default.sunsetTime = 19;
+            // Extra tab
+            Properties.Settings.Default.language = "en-US";
             Properties.Settings.Default.Save();
             MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Restart();
@@ -500,6 +568,7 @@ namespace SimpleClicker
         private void resetAllButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Properties.Languages.warningResetAllOptions, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+            // Settings tab
             Properties.Settings.Default.isLappingEnabled = true;
             Properties.Settings.Default.preparationTime = 3;
             Properties.Settings.Default.lappingCount = -1;
@@ -507,20 +576,27 @@ namespace SimpleClicker
             Properties.Settings.Default.delayTimeStop = 3;
             Properties.Settings.Default.timePrecision = 4;
             Properties.Settings.Default.updateThreshold = 10;
-            Properties.Settings.Default.language = "en-US";
+            // Laps tab
             Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
             Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
             Properties.Settings.Default.lapsDisplayType = LapDisplayType.REAL_TIME;
+            // Interfaces tab
             Properties.Settings.Default.isDelayTimeShows = true;
             Properties.Settings.Default.isAlwaysOnTop = false;
-            Properties.Settings.Default.preparationTimeColor = Color.Black;
-            Properties.Settings.Default.delayTimeColor = Color.Black;
-            Properties.Settings.Default.startTimeColor = Color.Black;
-            Properties.Settings.Default.pauseTimeColor = Color.Black;
+            Properties.Settings.Default.preparationTimeColor = Color.Silver;
+            Properties.Settings.Default.delayTimeColor = Color.FromArgb(255, 128, 0); // Orange-ish
+            Properties.Settings.Default.startTimeColor = Color.Green;
+            Properties.Settings.Default.pauseTimeColor = Color.FromArgb(0, 128, 255); // Blue-ish
+            // Themes tab
+            Properties.Settings.Default.darkModeType = MetroThemeStyle.Default;
+            Properties.Settings.Default.borderColorType = MetroColorStyle.Blue;
+            Properties.Settings.Default.sunriseTime = 7;
+            Properties.Settings.Default.sunsetTime = 19;
+            // Extra tab
+            Properties.Settings.Default.language = "en-US";
             Properties.Settings.Default.Save();
             MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Restart();
-            Environment.Exit(0);
         }
 
         private void secretButton_Click(object sender, EventArgs e)
@@ -550,22 +626,22 @@ namespace SimpleClicker
             {
                 case 0:
                     Properties.Settings.Default.language = "en-US";
-                    flagPictureBox.Image = Properties.Resources.us_uk;
+                    flagPictureBox.BackgroundImage = Properties.Resources.us_uk;
                     break;
                 case 1:
                     Properties.Settings.Default.language = "fr-FR";
-                    flagPictureBox.Image = Properties.Resources._1280px_Flag_of_France_svg;
+                    flagPictureBox.BackgroundImage = Properties.Resources._1280px_Flag_of_France_svg;
                     break;
                 case 2:
                     Properties.Settings.Default.language = "vi-VN";
-                    flagPictureBox.Image = Properties.Resources._1280px_Flag_of_Vietnam_svg;
+                    flagPictureBox.BackgroundImage = Properties.Resources._1280px_Flag_of_Vietnam_svg;
                     break;
                 default:
                     break;
             }
 
-            if (isRequestLanguageChange) ChangeLanguage(Properties.Settings.Default.language);
             Properties.Settings.Default.Save();
+            if (isRequestLanguageChange) ChangeLanguage(Properties.Settings.Default.language);
         }
 
         private void moreOptionsTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -595,14 +671,14 @@ namespace SimpleClicker
                 default:
                     break;
             }
-            InvokeThemeOtherForm(metroStyleManager.Theme); 
+            InvokeThemeOtherForm(metroStyleManager.Theme, typeof(MainForm)); 
             Properties.Settings.Default.Save();
         }
 
         private void borderColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeBorder((MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), borderColorComboBox.SelectedItem.ToString()));
-            InvokeBorderOtherForm(metroStyleManager.Style);
+            InvokeBorderOtherForm(metroStyleManager.Style, typeof(MainForm));
             Properties.Settings.Default.borderColorType = metroStyleManager.Style;
             Properties.Settings.Default.Save();
         }

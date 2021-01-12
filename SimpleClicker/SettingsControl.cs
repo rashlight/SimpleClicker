@@ -18,7 +18,10 @@ namespace SimpleClicker
         public SettingsControl()
         {
             InitializeComponent();
+        }
 
+        private void SettingsControl_Load(object sender, EventArgs e)
+        {
             lappingToggle.Checked = Properties.Settings.Default.isLappingEnabled;
             lappingChooser.Value = Properties.Settings.Default.lappingCount;
             delayStartChooser.Value = (decimal)Properties.Settings.Default.delayTimeStart;
@@ -26,7 +29,6 @@ namespace SimpleClicker
             timePrecisionChooser.Value = Properties.Settings.Default.timePrecision;
             updateThresholdChooser.Value = Properties.Settings.Default.updateThreshold;
             prepTimeChooser.Value = (decimal)Properties.Settings.Default.preparationTime;
-            // "en-US" = Properties.Settings.Default.language = ;
 
             if (!lappingToggle.Checked)
             {
@@ -52,7 +54,15 @@ namespace SimpleClicker
 
         public void ChangeTheme(MetroThemeStyle theme)
         {
-            metroStyleManager.Theme = theme;
+            if (theme == MetroThemeStyle.Default)
+            {
+                if (DateTime.Now.Hour >= Properties.Settings.Default.sunriseTime && DateTime.Now.Hour < Properties.Settings.Default.sunsetTime)
+                {
+                    metroStyleManager.Theme = MetroThemeStyle.Light;
+                }
+                else metroStyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else metroStyleManager.Theme = theme;
         }
 
         public void ChangeBorder(MetroColorStyle color)

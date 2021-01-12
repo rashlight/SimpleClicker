@@ -98,6 +98,11 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
@@ -111,6 +116,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -213,6 +219,7 @@
     <EmbeddedResource Include="SettingsControl.resx">
       <DependentUpon>SettingsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="changelog.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -232,6 +239,7 @@
     <Content Include="favicon_black.ico" />
     <Content Include="favicon_white.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\baseline_help_outline_white_18dp.png" />
     <None Include="Resources\brown_simpleclicker.png" />
     <None Include="Resources\blue_simpleclicker.png" />
     <None Include="Resources\1280px-Flag_of_Vietnam.svg.png" />

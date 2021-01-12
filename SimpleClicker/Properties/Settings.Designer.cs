@@ -265,18 +265,6 @@ namespace SimpleClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("blue")]
-        public string aboutIconType {
-            get {
-                return ((string)(this["aboutIconType"]));
-            }
-            set {
-                this["aboutIconType"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("7")]
         public int sunriseTime {
             get {
@@ -296,6 +284,18 @@ namespace SimpleClicker.Properties {
             }
             set {
                 this["sunsetTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isCompatibilityMode {
+            get {
+                return ((bool)(this["isCompatibilityMode"]));
+            }
+            set {
+                this["isCompatibilityMode"] = value;
             }
         }
     }

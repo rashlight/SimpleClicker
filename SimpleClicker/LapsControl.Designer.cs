@@ -55,12 +55,14 @@
             // LapsControl
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this, true);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.lapsListBox);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Name = "LapsControl";
             this.Size = new System.Drawing.Size(507, 279);
+            this.Load += new System.EventHandler(this.LapsControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.LapsControl_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
 

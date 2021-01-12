@@ -60,11 +60,11 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(146, 51);
+            this.label1.Location = new System.Drawing.Point(134, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 54);
+            this.label1.Size = new System.Drawing.Size(290, 54);
             this.label1.TabIndex = 12;
-            this.label1.Text = "SimpleClicker";
+            this.label1.Text = "Simple Clicker";
             // 
             // versionText
             // 
@@ -221,8 +221,9 @@
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(632, 339);
             this.Controls.Add(this.aboutTabControl);
             this.Controls.Add(this.versionText);

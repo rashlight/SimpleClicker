@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -26,11 +27,25 @@ namespace SimpleClicker
             InitializeComponent();
             if (Properties.Settings.Default.isAlwaysOnTop)
                 SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+
+            ChangeUIScaling();
         }
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private void ChangeUIScaling()
+        {
+            if (!MainForm.isScalable)
+            {
+                // WMI is disabled, rather having it blur than to make mess-up UI
+                this.Name += " (Compatibility Mode)";
+                this.AutoScaleMode = AutoScaleMode.None;
+                this.PerformAutoScale();
+                return;
+            }
+        }
 
         public void ChangeTheme(MetroThemeStyle theme)
         {
@@ -54,14 +69,35 @@ namespace SimpleClicker
         {
             versionText.Text = "ver. " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
+            string dpiWidth = "Unknown";
+            string dpiHeight = "Unknown";
+
+            try
+            {
+                ManagementObjectSearcher searcher =
+                    new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT PixelsPerXLogicalInch, PixelsPerYLogicalInch FROM Win32_DesktopMonitor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    dpiWidth = queryObj["PixelsPerXLogicalInch"].ToString();
+                    dpiHeight = queryObj["PixelsPerYLogicalInch"].ToString();
+                }
+            }
+            catch
+            {
+            }
+
             string supportData =
                 "SimpleClicker has detected the following information:\n" +
                 "  - OSVersion: " + Environment.OSVersion + "\n" +
                 "  - Is64BitOS: " + Environment.Is64BitOperatingSystem + "\n" +
                 "  - Is64BitBinary: " + Environment.Is64BitProcess + "\n" +
+                "  - Resolution: " + Screen.PrimaryScreen.Bounds.Size.Width + "x" + Screen.PrimaryScreen.Bounds.Size.Height + "\n" +
+                "  - DPI: " + dpiWidth + "x" + dpiHeight + "\n" +
                 "  - StopwatchFrequency: " + System.Diagnostics.Stopwatch.Frequency + "\n" +
                 "  - IsStopwatchHighResolution: " + System.Diagnostics.Stopwatch.IsHighResolution + "\n" +
-                "  - IsElevated: " + System.Security.Principal.WindowsIdentity.GetCurrent().Owner.IsWellKnown(System.Security.Principal.WellKnownSidType.BuiltinAdministratorsSid) + "\n" +
+                "  - IsAdministator: " + System.Security.Principal.WindowsIdentity.GetCurrent().Owner.IsWellKnown(System.Security.Principal.WellKnownSidType.BuiltinAdministratorsSid) + "\n" +
                 "  - ProcessorCount: " + Environment.ProcessorCount + "\n" +
                 "  - SystemPageSize: " + Environment.SystemPageSize + "\n" +
                 "  - PriorityIndex: " + System.Threading.Thread.CurrentThread.Priority + "\n" +
@@ -81,7 +117,7 @@ namespace SimpleClicker
             bool isDefaultInDarkMode = DateTime.Now.Hour < Properties.Settings.Default.sunriseTime || DateTime.Now.Hour >= Properties.Settings.Default.sunsetTime;
             if (Properties.Settings.Default.darkModeType == MetroThemeStyle.Dark || (Properties.Settings.Default.darkModeType == MetroThemeStyle.Default && isDefaultInDarkMode))
             {
-                iconPictureBox.Image = Properties.Resources.brown_simpleclicker;
+                iconPictureBox.BackgroundImage = Properties.Resources.brown_simpleclicker;
             }
         }
 

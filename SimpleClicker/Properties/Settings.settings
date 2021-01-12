@@ -62,14 +62,14 @@
     <Setting Name="borderColorType" Type="MetroFramework.MetroColorStyle" Scope="User">
       <Value Profile="(Default)">Blue</Value>
     </Setting>
-    <Setting Name="aboutIconType" Type="System.String" Scope="User">
-      <Value Profile="(Default)">blue</Value>
-    </Setting>
     <Setting Name="sunriseTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">7</Value>
     </Setting>
     <Setting Name="sunsetTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">19</Value>
+    </Setting>
+    <Setting Name="isCompatibilityMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

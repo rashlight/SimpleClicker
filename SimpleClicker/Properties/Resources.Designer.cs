@@ -83,16 +83,6 @@ namespace SimpleClicker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap baseline_help_outline_black_18dp {
-            get {
-                object obj = ResourceManager.GetObject("baseline_help_outline_black_18dp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap blue_simpleclicker {
             get {
                 object obj = ResourceManager.GetObject("blue_simpleclicker", resourceCulture);
@@ -106,6 +96,26 @@ namespace SimpleClicker.Properties {
         public static System.Drawing.Bitmap brown_simpleclicker {
             get {
                 object obj = ResourceManager.GetObject("brown_simpleclicker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap help_icon_dark {
+            get {
+                object obj = ResourceManager.GetObject("help_icon_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap help_icon_light {
+            get {
+                object obj = ResourceManager.GetObject("help_icon_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

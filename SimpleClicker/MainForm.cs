@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
@@ -51,8 +52,14 @@ namespace SimpleClicker
         private Color defaultBackColor = Color.White;
         private Color defaultForeColor = Color.Black;
 
+        public static bool isScalable = true;
+        public static float scalingFactorWidth = 1f;
+        public static float scalingFactorHeight = 1f;
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         private static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+
+        public const float BUILD_DPI_WIDTH = 120;
+        public const float BUILD_DPI_HEIGHT = 120;
         private const UInt32 SWP_NOSIZE = 0x0001;
         private const UInt32 SWP_NOMOVE = 0x0002;
         private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
@@ -66,10 +73,62 @@ namespace SimpleClicker
 
             preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
             delayTime = TimeSpan.FromSeconds(Properties.Settings.Default.delayTimeStop - Properties.Settings.Default.delayTimeStart);
+
+            ChangeUIScaling();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
             ChangeModeUI(StopWatchMode.Default);
-            ToggleOptionsMenuSize(defaultFormSize);
+            ToggleOptionsMenuSize(true);
             ChangeTheme(Properties.Settings.Default.darkModeType);
             ChangeBorder(Properties.Settings.Default.borderColorType);
+        }
+
+        private int GetGCD(int a, int b)
+        {
+            return b == 0 ? a : GetGCD(b, a % b);
+        }
+
+        private void ChangeUIScaling()
+        {
+            try
+            {
+                string dpiWidth = "Unknown";
+                string dpiHeight = "Unknown";
+
+                ManagementObjectSearcher searcher =
+                        new ManagementObjectSearcher("root\\CIMV2",
+                        "SELECT PixelsPerXLogicalInch, PixelsPerYLogicalInch FROM Win32_DesktopMonitor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    dpiWidth = queryObj["PixelsPerXLogicalInch"].ToString();
+                    dpiHeight = queryObj["PixelsPerYLogicalInch"].ToString();
+                }
+
+                scalingFactorWidth = Convert.ToSingle(dpiWidth) / BUILD_DPI_WIDTH;
+                scalingFactorHeight = Convert.ToSingle(dpiHeight) / BUILD_DPI_HEIGHT;
+
+                defaultFormSize = new Size(
+                    (int)(defaultFormSize.Width * scalingFactorWidth),
+                    (int)(defaultFormSize.Height * scalingFactorHeight)
+                );
+
+                expandedFormSize = new Size(
+                    (int)(expandedFormSize.Width * scalingFactorWidth),
+                    (int)(expandedFormSize.Height * scalingFactorHeight)
+                );
+            }
+            catch
+            {
+                // WMI is disabled, rather having it blur than to make mess-up UI
+                isScalable = false;
+                this.Name += " (Compatibility Mode)";
+                this.AutoScaleMode = AutoScaleMode.None;
+                this.PerformAutoScale();
+            }
+
         }
 
         public void ChangeTheme(MetroThemeStyle theme)
@@ -83,6 +142,7 @@ namespace SimpleClicker
                 else metroStyleManager.Theme = MetroThemeStyle.Dark;
             }
             else metroStyleManager.Theme = theme;
+
             settingsControl.ChangeTheme(metroStyleManager.Theme);
             lapsControl.ChangeTheme(metroStyleManager.Theme);
         }
@@ -129,12 +189,14 @@ namespace SimpleClicker
                 case StopWatchMode.Options:
                     mainActionButton.Enabled = false;
                     secondaryActionButton.Text = Properties.Languages.backButtonText;
+                    settingsControl.Visible = true;
                     break;
                 case StopWatchMode.Default:
                     mainActionButton.Enabled = true;
                     mainActionButton.Text = Properties.Languages.startButtonText;
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
                     tickTimerText.Text = Properties.Languages.tickIdleText;
+                    settingsControl.Visible = false;
                     // Temporary disable theme to properly apply dark mode (when possible)
                     metroStyleExtender.SetApplyMetroTheme(mainTimerText, false);
                     mainTimerText.ForeColor = defaultForeColor;
@@ -174,9 +236,16 @@ namespace SimpleClicker
             }
         }
         
-        private void ToggleOptionsMenuSize(Size size)
+        private void ToggleOptionsMenuSize(bool isMinimized)
         {
-            this.Size = size;
+            if (isMinimized)
+            {
+                this.Size = defaultFormSize;
+            }
+            else
+            {
+                this.Size = expandedFormSize;
+            }
         }
 
         private void AddDelayLap()
@@ -304,13 +373,13 @@ namespace SimpleClicker
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     currentMode = StopWatchMode.Default;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuSize(defaultFormSize);
+                    ToggleOptionsMenuSize(true);
                     break;
                 case StopWatchMode.Default:
                     // Options button
                     currentMode = StopWatchMode.Options;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuSize(expandedFormSize);
+                    ToggleOptionsMenuSize(false);
                     currentMode = StopWatchMode.Options;
                     break;
                 case StopWatchMode.Prepared:
@@ -358,6 +427,5 @@ namespace SimpleClicker
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-
     }
 }

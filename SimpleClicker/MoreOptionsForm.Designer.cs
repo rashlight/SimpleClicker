@@ -365,7 +365,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.pauseColorHelp, true);
             this.pauseColorHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pauseColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.pauseColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.pauseColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pauseColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pauseColorHelp.Location = new System.Drawing.Point(421, 229);
@@ -378,7 +378,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.alwaysOnTopHelp, true);
             this.alwaysOnTopHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.alwaysOnTopHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.alwaysOnTopHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.alwaysOnTopHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.alwaysOnTopHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.alwaysOnTopHelp.Location = new System.Drawing.Point(421, 59);
@@ -391,7 +391,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.startColorHelp, true);
             this.startColorHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.startColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.startColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.startColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.startColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.startColorHelp.Location = new System.Drawing.Point(421, 186);
@@ -404,7 +404,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.delayColorHelp, true);
             this.delayColorHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.delayColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.delayColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.delayColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.delayColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.delayColorHelp.Location = new System.Drawing.Point(421, 142);
@@ -417,7 +417,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.preparationColorHelp, true);
             this.preparationColorHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.preparationColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.preparationColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.preparationColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.preparationColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.preparationColorHelp.Location = new System.Drawing.Point(421, 100);
@@ -430,7 +430,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.delayTimeShowsHelp, true);
             this.delayTimeShowsHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.delayTimeShowsHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.delayTimeShowsHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.delayTimeShowsHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.delayTimeShowsHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.delayTimeShowsHelp.Location = new System.Drawing.Point(420, 18);
@@ -493,7 +493,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.lapDisplayHelp, true);
             this.lapDisplayHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lapDisplayHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.lapDisplayHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.lapDisplayHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lapDisplayHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lapDisplayHelp.Location = new System.Drawing.Point(428, 217);
@@ -506,7 +506,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.lapsSortingHelp, true);
             this.lapsSortingHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lapsSortingHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.lapsSortingHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.lapsSortingHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lapsSortingHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lapsSortingHelp.Location = new System.Drawing.Point(428, 137);
@@ -519,7 +519,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.lapsAllowanceHelp, true);
             this.lapsAllowanceHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lapsAllowanceHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.lapsAllowanceHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.lapsAllowanceHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lapsAllowanceHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lapsAllowanceHelp.Location = new System.Drawing.Point(428, 56);
@@ -622,7 +622,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.sunsetHelp, true);
             this.sunsetHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.sunsetHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.sunsetHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.sunsetHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sunsetHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sunsetHelp.Location = new System.Drawing.Point(423, 63);
@@ -635,7 +635,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.sunriseHelp, true);
             this.sunriseHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.sunriseHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.sunriseHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.sunriseHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sunriseHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sunriseHelp.Location = new System.Drawing.Point(423, 15);
@@ -775,7 +775,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.borderColorHelp, true);
             this.borderColorHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.borderColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.borderColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.borderColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.borderColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.borderColorHelp.Location = new System.Drawing.Point(426, 126);
@@ -788,7 +788,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.darkModeHelp, true);
             this.darkModeHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.darkModeHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.darkModeHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.darkModeHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.darkModeHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.darkModeHelp.Location = new System.Drawing.Point(427, 53);
@@ -862,7 +862,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.secretHelp, true);
             this.secretHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.secretHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.secretHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.secretHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.secretHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.secretHelp.Location = new System.Drawing.Point(422, 102);
@@ -888,7 +888,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.languageHelp, true);
             this.languageHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.languageHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.languageHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.languageHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.languageHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.languageHelp.Location = new System.Drawing.Point(428, 15);
@@ -998,7 +998,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::SimpleClicker.Properties.Resources.baseline_help_outline_black_18dp;
+            this.pictureBox1.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(431, 333);
             this.pictureBox1.Name = "pictureBox1";
@@ -1012,8 +1012,9 @@
             // 
             // MoreOptionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(485, 379);
             this.Controls.Add(this.moreOptionsTabControl);
             this.Controls.Add(this.pictureBox1);
@@ -1022,6 +1023,7 @@
             this.Name = "MoreOptionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "More options...";
+            this.Load += new System.EventHandler(this.MoreOptionsForm_Load);
             this.interfacesTab.ResumeLayout(false);
             this.interfacesTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pauseColorBox)).EndInit();
