@@ -1,5 +1,5 @@
 # SimpleClicker
-[![Build status](https://ci.appveyor.com/api/projects/status/hd2qx03k0ako0shj/branch/main?svg=true)](https://ci.appveyor.com/project/rashlight/simpleclicker/branch/main)
+[![rashlight](https://circleci.com/gh/rashlight/SimpleClicker.svg?style=svg)](https://app.circleci.com/pipelines/github/rashlight/SimpleClicker)
 [![CodeFactor](https://www.codefactor.io/repository/github/rashlight/simpleclicker/badge)](https://www.codefactor.io/repository/github/rashlight/simpleclicker)
 
 ## [Download latest version](https://github.com/rashlight/SimpleClicker/releases)
