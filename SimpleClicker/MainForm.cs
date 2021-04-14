@@ -90,6 +90,11 @@ namespace SimpleClicker
             return b == 0 ? a : GetGCD(b, a % b);
         }
 
+        /* 
+         * In general, WinForms can scales the window relating to resolution & DPI.
+         * However, since we uses custom form size, manual scaling are required
+         * to make it disply correctly.
+         */
         private void ChangeUIScaling()
         {
             try

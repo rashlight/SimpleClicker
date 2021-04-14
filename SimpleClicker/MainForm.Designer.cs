@@ -127,8 +127,8 @@
             // lapsControl
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.lapsControl, true);
-            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lapsControl.Location = new System.Drawing.Point(0, 3);
             this.lapsControl.Name = "lapsControl";
             this.lapsControl.Size = new System.Drawing.Size(507, 279);
@@ -138,13 +138,12 @@
             // settingsControl
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.settingsControl, true);
-            this.settingsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.settingsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.settingsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.settingsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.settingsControl.Location = new System.Drawing.Point(0, 0);
             this.settingsControl.Name = "settingsControl";
             this.settingsControl.Size = new System.Drawing.Size(507, 279);
             this.settingsControl.TabIndex = 0;
-            this.settingsControl.Visible = true;
             // 
             // metroStyleManager
             // 
