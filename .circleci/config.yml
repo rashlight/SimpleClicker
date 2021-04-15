@@ -9,4 +9,4 @@
     
      steps:
        - checkout
-       - run: msbuid.exe
+       - run: msbuild.exe
