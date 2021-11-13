@@ -294,7 +294,7 @@ có thể không đầy đủ / chính xâc.</value>
 Off: Không hiện thời gian chờ.</value>
   </data>
   <data name="secretHelpText" xml:space="preserve">
-    <value>Chú ý: Chỉ MỘT mật mã có thể được dùng.</value>
+    <value>Chạm để xem danh sách mật mã...</value>
   </data>
   <data name="extrasTabText" xml:space="preserve">
     <value>Thêm</value>
@@ -379,5 +379,11 @@ Off: Không hiện thời gian chờ.</value>
   </data>
   <data name="sunsetText" xml:space="preserve">
     <value>M.trời lặn</value>
+  </data>
+  <data name="secretListText" xml:space="preserve">
+    <value>Chú ý: Các mật mã chứa các chức năng thử nghiệm!
+Danh sách mật mã (không bao gồm dấu nháy đôi):
+ - "randomlist" : trộn danh sách mỗi lẫn thêm vòng
+ - "togglebiostime" : hiện thời gian hiện tại khi không hoạt động</value>
   </data>
 </root>

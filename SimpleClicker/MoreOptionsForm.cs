@@ -45,7 +45,8 @@ namespace SimpleClicker
     /// </summary>
     public struct Secrets
     {
-        public const string ENABLE_RANDOMIZE = "\u0069\u006c\u006f\u0076\u0065\u0072\u0061\u006e\u0064\u006f\u006d";
+        public const string ENABLE_RANDOMIZE = "randomlist";
+        public const string TOGGLE_TIMECONTROL = "togglebiostime";
     }
 
     public partial class MoreOptionsForm : MetroForm
@@ -606,18 +607,50 @@ namespace SimpleClicker
             switch (secretBox.Text)
             {
                 case Secrets.ENABLE_RANDOMIZE:
-                    secretButton.Enabled = false;
-                    secretButton.Text = Properties.Languages.secretButtonSuccessText;
                     if (lapSortingComboBox.Items.Count <= LapSorting.DEFAULT_ITEM_COUNT)
                     {
                         lapSortingComboBox.Items.Add("Randomizer");
                         // Preserving for multiple secrets
                         lapSortingComboBox.SelectedIndex = lapSortingComboBox.Items.Count - 1;
                     }
+                    MessageBox.Show("Random list is enabled.", "Secrets!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case Secrets.TOGGLE_TIMECONTROL:
+                    DialogResult dg = MessageBox.Show("Do you want to display current time on idle?", "Secrets!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dg == DialogResult.Yes)
+                    {
+                        Properties.Settings.Default.isBiosTimeEnabled = true;
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.isBiosTimeEnabled = false;
+                        Properties.Settings.Default.Save();
+                        MessageBox.Show("Random list is enabled.", "Secrets!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    MessageBox.Show("Is BIOS time enabled: " + dg.ToString() + "\nEnter this secret again to toggle!",
+                        "Secrets!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
                     break;
                 default:
                     break;
             }
+        }
+
+        private void secretBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                secretButton_Click(secretBox, new EventArgs());
+            }
+        }
+
+        private void secretHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Properties.Languages.secretListText, "SimpleClicker", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)

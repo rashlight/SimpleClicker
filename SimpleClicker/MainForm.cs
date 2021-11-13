@@ -145,7 +145,7 @@ namespace SimpleClicker
             string tickDisplay = Math.Round(time.TotalSeconds - Math.Truncate((double)time.TotalSeconds), Properties.Settings.Default.timePrecision).ToString();
             if (tickDisplay[0] == '1') tickDisplay = "0";
             mainTimerText.Text = delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay;
-            tickTimerText.Text = tickDisplay + " " + Properties.Languages.timeUnitText;
+            tickTimerText.Text = tickDisplay.Substring(1);
         }
 
         public void ChangeModeUI(StopWatchMode mode)
@@ -224,6 +224,7 @@ namespace SimpleClicker
         private void AddDelayLap()
         {
             extendForm.lapsControl.AddLap(true, delayTime + preparedTime - stopWatch.Elapsed);
+            secondaryActionButton.Focus();
         }
 
         private void AddStartLap()
@@ -240,6 +241,7 @@ namespace SimpleClicker
                 default:
                     break;
             }
+            secondaryActionButton.Focus();
         }
 
         private void timer_Tick(object sender, EventArgs e)

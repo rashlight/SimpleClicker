@@ -298,5 +298,17 @@ namespace SimpleClicker.Properties {
                 this["isCompatibilityMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isBiosTimeEnabled {
+            get {
+                return ((bool)(this["isBiosTimeEnabled"]));
+            }
+            set {
+                this["isBiosTimeEnabled"] = value;
+            }
+        }
     }
 }

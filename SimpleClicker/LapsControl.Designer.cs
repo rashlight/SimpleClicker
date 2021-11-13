@@ -30,47 +30,49 @@
         {
             this.components = new System.ComponentModel.Container();
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.lapsListBox = new System.Windows.Forms.ListBox();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.lapsTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lapsListBox
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.lapsListBox, true);
-            this.lapsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lapsListBox.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.lapsListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lapsListBox.FormattingEnabled = true;
-            this.lapsListBox.ItemHeight = 30;
-            this.lapsListBox.Location = new System.Drawing.Point(0, 0);
-            this.lapsListBox.Name = "lapsListBox";
-            this.lapsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lapsListBox.Size = new System.Drawing.Size(507, 274);
-            this.lapsListBox.TabIndex = 0;
             // 
             // metroStyleManager
             // 
             this.metroStyleManager.Owner = null;
+            // 
+            // lapsTextBox
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.lapsTextBox, true);
+            this.lapsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lapsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lapsTextBox.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lapsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lapsTextBox.Location = new System.Drawing.Point(0, 0);
+            this.lapsTextBox.Multiline = true;
+            this.lapsTextBox.Name = "lapsTextBox";
+            this.lapsTextBox.ReadOnly = true;
+            this.lapsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.lapsTextBox.Size = new System.Drawing.Size(507, 285);
+            this.lapsTextBox.TabIndex = 0;
             // 
             // LapsControl
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this, true);
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lapsListBox);
+            this.Controls.Add(this.lapsTextBox);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Name = "LapsControl";
-            this.Size = new System.Drawing.Size(507, 279);
+            this.Size = new System.Drawing.Size(507, 285);
             this.Load += new System.EventHandler(this.LapsControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private MetroFramework.Components.MetroStyleExtender metroStyleExtender;
         private MetroFramework.Components.MetroStyleManager metroStyleManager;
-        private System.Windows.Forms.ListBox lapsListBox;
+        private System.Windows.Forms.TextBox lapsTextBox;
     }
 }

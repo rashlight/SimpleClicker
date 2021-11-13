@@ -5,7 +5,9 @@
 	- Added ability to change theme (dark, light, etc.).
 	- Added ability to change border color.
 	- Fixed a bug that makes language flag not scaling properly.
-	- Fixed bugs that effects UI scaling in different resolutions / DPI settings.
+	- Revert to Font scaling (solves scaling issues but may cause blurry UI)
+	- Secrets can now be viewed via options menu
+	- Changes default time configuration for regular workflow
 
 ## Version 0.9.2.0 (Localisation Update):
 	- Implements localisation for French and Vietnamese.

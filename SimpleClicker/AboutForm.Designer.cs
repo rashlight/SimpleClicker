@@ -60,7 +60,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(134, 51);
+            this.label1.Location = new System.Drawing.Point(121, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 54);
             this.label1.TabIndex = 12;
@@ -73,7 +73,7 @@
             this.versionText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.versionText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.versionText.Location = new System.Drawing.Point(417, 76);
+            this.versionText.Location = new System.Drawing.Point(426, 81);
             this.versionText.Name = "versionText";
             this.versionText.Size = new System.Drawing.Size(85, 23);
             this.versionText.TabIndex = 13;
@@ -86,10 +86,10 @@
             this.aboutTabControl.Controls.Add(this.licenseTab);
             this.aboutTabControl.Controls.Add(this.systemInfoTab);
             this.aboutTabControl.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
-            this.aboutTabControl.Location = new System.Drawing.Point(257, 108);
+            this.aboutTabControl.Location = new System.Drawing.Point(257, 104);
             this.aboutTabControl.Name = "aboutTabControl";
             this.aboutTabControl.SelectedIndex = 0;
-            this.aboutTabControl.Size = new System.Drawing.Size(361, 213);
+            this.aboutTabControl.Size = new System.Drawing.Size(361, 232);
             this.aboutTabControl.TabIndex = 14;
             // 
             // infoTab
@@ -98,7 +98,7 @@
             this.infoTab.HorizontalScrollbarBarColor = true;
             this.infoTab.Location = new System.Drawing.Point(4, 39);
             this.infoTab.Name = "infoTab";
-            this.infoTab.Size = new System.Drawing.Size(353, 170);
+            this.infoTab.Size = new System.Drawing.Size(353, 189);
             this.infoTab.TabIndex = 0;
             this.infoTab.Text = "Infos";
             this.infoTab.VerticalScrollbarBarColor = true;
@@ -115,7 +115,7 @@
             this.infoTextBox.Location = new System.Drawing.Point(0, 7);
             this.infoTextBox.Name = "infoTextBox";
             this.infoTextBox.ReadOnly = true;
-            this.infoTextBox.Size = new System.Drawing.Size(353, 165);
+            this.infoTextBox.Size = new System.Drawing.Size(353, 171);
             this.infoTextBox.TabIndex = 13;
             this.infoTextBox.Text = resources.GetString("infoTextBox.Text");
             this.infoTextBox.Enter += new System.EventHandler(this.UnfocusComponents_Enter);

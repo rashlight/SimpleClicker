@@ -44,7 +44,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.mainActionButton, true);
             this.mainActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mainActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 22F);
+            this.mainActionButton.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mainActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.mainActionButton.Location = new System.Drawing.Point(368, 67);
@@ -60,7 +60,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.secondaryActionButton, true);
             this.secondaryActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.secondaryActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 19F);
+            this.secondaryActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 16F);
             this.secondaryActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.secondaryActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.secondaryActionButton.Location = new System.Drawing.Point(368, 140);

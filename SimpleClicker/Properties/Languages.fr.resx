@@ -294,7 +294,7 @@
 Off : Ne s'affiche pas sur la phase de retardement.</value>
   </data>
   <data name="secretHelpText" xml:space="preserve">
-    <value>Note : UN seul secret peut être appliqué à la fois.</value>
+    <value>Cliquez ici pour la liste des secrets...</value>
   </data>
   <data name="extrasTabText" xml:space="preserve">
     <value>Extras</value>
@@ -379,5 +379,11 @@ Off : Ne s'affiche pas sur la phase de retardement.</value>
   </data>
   <data name="warningCloseWhenRunning" xml:space="preserve">
     <value>La minuterie est toujours en marche! Vous voulez vraiment sortir?</value>
+  </data>
+  <data name="secretListText" xml:space="preserve">
+    <value>Note: Ces secrets sont expérimentaux!
+Liste Secrète (sans guillemets):
+ - "randomlist" : tours de shuffle tous les ajouts
+ - "togglebiostime" : afficher l'heure actuelle en cas d'inactivité</value>
   </data>
 </root>

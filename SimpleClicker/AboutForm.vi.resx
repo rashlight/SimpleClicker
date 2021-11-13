@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="infoTextBox.Text" xml:space="preserve">
-    <value>* Một giả lập đồng hồ với pha chuẩn bị, pha đợi ngẫu nhiên và độ chính xác cao.
+    <value>* Một đồng hồ bấm giờ với pha chuẩn bị, pha đợi ngẫu nhiên và độ chính xác cao.
 
 * Sử dụng khả năng của Real-Time Clock (RTC), phần mềm này vượt ra khỏi giới hạn của UI đề đo đạc với khả năng chính xác lớn, với nhiều chức năng khác:
     - Nhiều pha giờ,

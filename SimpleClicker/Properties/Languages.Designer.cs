@@ -621,11 +621,23 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Note: Only ONE secret could be applied at a time..
+        ///   Looks up a localized string similar to Click here for the list of secrets....
         /// </summary>
         public static string secretHelpText {
             get {
                 return ResourceManager.GetString("secretHelpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note: These secrets are experimental!
+        ///Secret List (without quotation marks):
+        /// - &quot;randomlist&quot; : shuffle laps every additions
+        /// - &quot;togglebiostime&quot; : show current time when idle.
+        /// </summary>
+        public static string secretListText {
+            get {
+                return ResourceManager.GetString("secretListText", resourceCulture);
             }
         }
         
