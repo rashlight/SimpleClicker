@@ -90,9 +90,14 @@ namespace SimpleClicker
             extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
         }
 
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            mainActionButton.Focus();
+        }
+
         private void MainForm_MouseEnter(object sender, EventArgs e)
         {
-            this.Focus();
+            mainActionButton.Focus();
         }
 
         private int GetGCD(int a, int b)
@@ -393,14 +398,14 @@ namespace SimpleClicker
             }
         }
 
-        private void mainTimerText_Enter(object sender, EventArgs e)
+        private void mainTimerText_MouseDown(object sender, MouseEventArgs e)
         {
-            mainActionButton.Focus();
+            secondaryActionButton.Focus();
         }
 
-        private void tickTimerText_Enter(object sender, EventArgs e)
+        private void tickTimerText_MouseDown(object sender, MouseEventArgs e)
         {
-            mainActionButton.Focus();
+            secondaryActionButton.Focus();
         }
 
         [DllImport("user32.dll")]

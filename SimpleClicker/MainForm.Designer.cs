@@ -44,7 +44,7 @@
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.mainActionButton, true);
             this.mainActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mainActionButton.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mainActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.mainActionButton.Location = new System.Drawing.Point(368, 67);
@@ -83,11 +83,12 @@
             this.tickTimerText.Location = new System.Drawing.Point(13, 156);
             this.tickTimerText.Name = "tickTimerText";
             this.tickTimerText.ReadOnly = true;
+            this.tickTimerText.ShortcutsEnabled = false;
             this.tickTimerText.Size = new System.Drawing.Size(339, 40);
             this.tickTimerText.TabIndex = 3;
             this.tickTimerText.Text = "Ready to start.";
             this.tickTimerText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tickTimerText.Enter += new System.EventHandler(this.tickTimerText_Enter);
+            this.tickTimerText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tickTimerText_MouseDown);
             // 
             // mainTimerText
             // 
@@ -100,11 +101,12 @@
             this.mainTimerText.Location = new System.Drawing.Point(13, 67);
             this.mainTimerText.Name = "mainTimerText";
             this.mainTimerText.ReadOnly = true;
+            this.mainTimerText.ShortcutsEnabled = false;
             this.mainTimerText.Size = new System.Drawing.Size(340, 94);
             this.mainTimerText.TabIndex = 2;
             this.mainTimerText.Text = "00:00:00";
             this.mainTimerText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mainTimerText.Enter += new System.EventHandler(this.mainTimerText_Enter);
+            this.mainTimerText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainTimerText_MouseDown);
             // 
             // timer
             // 
@@ -131,6 +133,7 @@
             this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "Simple Clicker";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);

@@ -8,6 +8,8 @@
 	- Revert to Font scaling (solves scaling issues but may cause blurry UI)
 	- Secrets can now be viewed via options menu
 	- Changes default time configuration for regular workflow
+	- Improve performance for lapping
+	- Fix a bug that makes text selectable when it shouldn't
 
 ## Version 0.9.2.0 (Localisation Update):
 	- Implements localisation for French and Vietnamese.
