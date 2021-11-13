@@ -172,7 +172,7 @@
     <value>Précision Temporelle</value>
   </data>
   <data name="updateThresholdText" xml:space="preserve">
-    <value>Seuil De Mise À Jour</value>
+    <value>Seuil de Mise à Jour</value>
   </data>
   <data name="delayToText" xml:space="preserve">
     <value>à</value>
@@ -220,13 +220,13 @@
     <value>Couleur du retard</value>
   </data>
   <data name="delayTimeShowsText" xml:space="preserve">
-    <value>Afficher le délai d'attente</value>
+    <value>Afficher le temps de retard</value>
   </data>
   <data name="pauseTimeColorText" xml:space="preserve">
     <value>Couleur de la pause</value>
   </data>
   <data name="preparationTimeColorText" xml:space="preserve">
-    <value>Temps de prép. couleur</value>
+    <value>Temps de prép couleur</value>
   </data>
   <data name="startTimeColorText" xml:space="preserve">
     <value>Couleur de départ</value>

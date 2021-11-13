@@ -36,8 +36,6 @@ namespace SimpleClicker
             }
 
             LocalizeUI();
-            ChangeTheme(Properties.Settings.Default.darkModeType);
-            ChangeBorder(Properties.Settings.Default.borderColorType);
         }
 
         private void LocalizeUI()
@@ -63,11 +61,7 @@ namespace SimpleClicker
                 else metroStyleManager.Theme = MetroThemeStyle.Dark;
             }
             else metroStyleManager.Theme = theme;
-        }
-
-        public void ChangeBorder(MetroColorStyle color)
-        {
-            metroStyleManager.Style = color;
+            lappingToggle.Theme = metroStyleManager.Theme;
         }
 
         private void lappingToggle_CheckedChanged(object sender, EventArgs e)

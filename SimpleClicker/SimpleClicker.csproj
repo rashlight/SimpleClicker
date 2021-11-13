@@ -176,6 +176,12 @@
     <Compile Include="SettingsControl.Designer.cs">
       <DependentUpon>SettingsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimeSetupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeSetupForm.Designer.cs">
+      <DependentUpon>TimeSetupForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutForm.fr.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="SettingsControl.resx">
       <DependentUpon>SettingsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TimeSetupForm.resx">
+      <DependentUpon>TimeSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="changelog.md" />
     <None Include="packages.config" />
@@ -238,7 +247,6 @@
   <ItemGroup>
     <Content Include="favicon_black.ico" />
     <Content Include="favicon_white.ico" />
-    <Content Include="MetroFramework.txt" />
     <None Include="Resources\baseline_help_outline_white_18dp.png" />
     <None Include="Resources\brown_simpleclicker.png" />
     <None Include="Resources\blue_simpleclicker.png" />

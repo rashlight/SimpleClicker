@@ -190,7 +190,7 @@
     <value>Delay time color</value>
   </data>
   <data name="delayTimeShowsText" xml:space="preserve">
-    <value>Show remaining delay time</value>
+    <value>Show delay time</value>
   </data>
   <data name="languageHelpText" xml:space="preserve">
     <value>Changes the language. Note that some may not

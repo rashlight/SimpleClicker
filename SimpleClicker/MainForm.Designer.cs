@@ -35,12 +35,8 @@
             this.tickTimerText = new System.Windows.Forms.TextBox();
             this.mainTimerText = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.elementsPanel = new System.Windows.Forms.Panel();
-            this.lapsControl = new SimpleClicker.LapsControl();
-            this.settingsControl = new SimpleClicker.SettingsControl();
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.elementsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,47 +111,16 @@
             this.timer.Interval = 10;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // elementsPanel
-            // 
-            this.elementsPanel.Controls.Add(this.lapsControl);
-            this.elementsPanel.Controls.Add(this.settingsControl);
-            this.elementsPanel.Location = new System.Drawing.Point(18, 218);
-            this.elementsPanel.Name = "elementsPanel";
-            this.elementsPanel.Size = new System.Drawing.Size(507, 279);
-            this.elementsPanel.TabIndex = 6;
-            // 
-            // lapsControl
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.lapsControl, true);
-            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lapsControl.Location = new System.Drawing.Point(0, 3);
-            this.lapsControl.Name = "lapsControl";
-            this.lapsControl.Size = new System.Drawing.Size(507, 279);
-            this.lapsControl.TabIndex = 1;
-            this.lapsControl.Visible = false;
-            // 
-            // settingsControl
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.settingsControl, true);
-            this.settingsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.settingsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.settingsControl.Location = new System.Drawing.Point(0, 0);
-            this.settingsControl.Name = "settingsControl";
-            this.settingsControl.Size = new System.Drawing.Size(507, 279);
-            this.settingsControl.TabIndex = 0;
-            // 
             // metroStyleManager
             // 
             this.metroStyleManager.Owner = this;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(542, 502);
-            this.Controls.Add(this.elementsPanel);
+            this.ClientSize = new System.Drawing.Size(542, 226);
             this.Controls.Add(this.secondaryActionButton);
             this.Controls.Add(this.mainActionButton);
             this.Controls.Add(this.tickTimerText);
@@ -168,7 +133,8 @@
             this.Text = "Simple Clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.elementsPanel.ResumeLayout(false);
+            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,9 +147,6 @@
         private System.Windows.Forms.TextBox tickTimerText;
         private System.Windows.Forms.TextBox mainTimerText;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Panel elementsPanel;
-        private SettingsControl settingsControl;
-        private LapsControl lapsControl;
         private MetroFramework.Components.MetroStyleExtender metroStyleExtender;
         private MetroFramework.Components.MetroStyleManager metroStyleManager;
     }

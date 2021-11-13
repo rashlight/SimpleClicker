@@ -197,7 +197,7 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show remaining delay time.
+        ///   Looks up a localized string similar to Show delay time.
         /// </summary>
         public static string delayTimeShowsText {
             get {

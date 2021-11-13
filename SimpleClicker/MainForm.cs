@@ -46,9 +46,10 @@ namespace SimpleClicker
         public TimeSpan lastLap = new TimeSpan();
         public Stopwatch stopWatch = new Stopwatch();
         public ResourceManager localizationManager = new ResourceManager(typeof(Properties.Resources));
+        public TimeSetupForm extendForm = new TimeSetupForm();
 
         private Size defaultFormSize = new Size(542, 226);
-        private Size expandedFormSize = new Size(542, 502);
+        private Size expandedFormSize = new Size(542, 502); // 276
         private Color defaultBackColor = Color.White;
         private Color defaultForeColor = Color.Black;
 
@@ -73,67 +74,29 @@ namespace SimpleClicker
 
             preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
             delayTime = TimeSpan.FromSeconds(Properties.Settings.Default.delayTimeStop - Properties.Settings.Default.delayTimeStart);
-
-            ChangeUIScaling();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ToggleOptionsMenuVisibility(true);
             ChangeModeUI(StopWatchMode.Default);
-            ToggleOptionsMenuSize(true);
             ChangeTheme(Properties.Settings.Default.darkModeType);
             ChangeBorder(Properties.Settings.Default.borderColorType);
+        }
+
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
+        }
+
+        private void MainForm_MouseEnter(object sender, EventArgs e)
+        {
+            this.Focus();
         }
 
         private int GetGCD(int a, int b)
         {
             return b == 0 ? a : GetGCD(b, a % b);
-        }
-
-        /* 
-         * In general, WinForms can scales the window relating to resolution & DPI.
-         * However, since we uses custom form size, manual scaling are required
-         * to make it disply correctly.
-         */
-        private void ChangeUIScaling()
-        {
-            try
-            {
-                string dpiWidth = "Unknown";
-                string dpiHeight = "Unknown";
-
-                ManagementObjectSearcher searcher =
-                        new ManagementObjectSearcher("root\\CIMV2",
-                        "SELECT PixelsPerXLogicalInch, PixelsPerYLogicalInch FROM Win32_DesktopMonitor");
-
-                foreach (ManagementObject queryObj in searcher.Get())
-                {
-                    dpiWidth = queryObj["PixelsPerXLogicalInch"].ToString();
-                    dpiHeight = queryObj["PixelsPerYLogicalInch"].ToString();
-                }
-
-                scalingFactorWidth = Convert.ToSingle(dpiWidth) / BUILD_DPI_WIDTH;
-                scalingFactorHeight = Convert.ToSingle(dpiHeight) / BUILD_DPI_HEIGHT;
-
-                defaultFormSize = new Size(
-                    (int)(defaultFormSize.Width * scalingFactorWidth),
-                    (int)(defaultFormSize.Height * scalingFactorHeight)
-                );
-
-                expandedFormSize = new Size(
-                    (int)(expandedFormSize.Width * scalingFactorWidth),
-                    (int)(expandedFormSize.Height * scalingFactorHeight)
-                );
-            }
-            catch
-            {
-                // WMI is disabled, rather having it blur than to make mess-up UI
-                isScalable = false;
-                this.Name += " (Compatibility Mode)";
-                this.AutoScaleMode = AutoScaleMode.None;
-                this.PerformAutoScale();
-            }
-
         }
 
         public void ChangeTheme(MetroThemeStyle theme)
@@ -148,15 +111,12 @@ namespace SimpleClicker
             }
             else metroStyleManager.Theme = theme;
 
-            settingsControl.ChangeTheme(metroStyleManager.Theme);
-            lapsControl.ChangeTheme(metroStyleManager.Theme);
+            extendForm.ChangeTheme(theme);
         }
 
         public void ChangeBorder(MetroColorStyle color)
         {
             metroStyleManager.Style = color;
-            settingsControl.ChangeBorder(color);
-            lapsControl.ChangeBorder(color);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -194,14 +154,15 @@ namespace SimpleClicker
                 case StopWatchMode.Options:
                     mainActionButton.Enabled = false;
                     secondaryActionButton.Text = Properties.Languages.backButtonText;
-                    settingsControl.Visible = true;
+                    extendForm.settingsControl.Visible = true;
                     break;
                 case StopWatchMode.Default:
                     mainActionButton.Enabled = true;
                     mainActionButton.Text = Properties.Languages.startButtonText;
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
                     tickTimerText.Text = Properties.Languages.tickIdleText;
-                    settingsControl.Visible = false;
+                    extendForm.settingsControl.Visible = true;
+                    extendForm.lapsControl.Visible = false;
                     // Temporary disable theme to properly apply dark mode (when possible)
                     metroStyleExtender.SetApplyMetroTheme(mainTimerText, false);
                     mainTimerText.ForeColor = defaultForeColor;
@@ -213,6 +174,8 @@ namespace SimpleClicker
                     mainActionButton.Text = Properties.Languages.waitButtonText;
                     secondaryActionButton.Text = Properties.Languages.lapButtonText;
                     mainTimerText.ForeColor = Properties.Settings.Default.preparationTimeColor;
+                    extendForm.settingsControl.Visible = false;
+                    extendForm.lapsControl.Visible = true;
                     break;
                 case StopWatchMode.Delayed:
                     if (isDelayLapAllowed) secondaryActionButton.Enabled = true;
@@ -227,7 +190,7 @@ namespace SimpleClicker
                     else secondaryActionButton.Enabled = false;
                     mainActionButton.Text = Properties.Languages.stopButtonText;
                     secondaryActionButton.Text = Properties.Languages.lapButtonText;
-                    if (!Properties.Settings.Default.isLappingEnabled  || (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0)) secondaryActionButton.Enabled = false;
+                    if (!Properties.Settings.Default.isLappingEnabled  || (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0)) secondaryActionButton.Enabled = false;
                     mainTimerText.ForeColor = Properties.Settings.Default.startTimeColor;
                     break;
                 case StopWatchMode.Paused:
@@ -241,21 +204,23 @@ namespace SimpleClicker
             }
         }
         
-        private void ToggleOptionsMenuSize(bool isMinimized)
+        private void ToggleOptionsMenuVisibility(bool isMinimized)
         {
             if (isMinimized)
             {
-                this.Size = defaultFormSize;
+                extendForm.Hide();
             }
             else
             {
-                this.Size = expandedFormSize;
+                extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
+                extendForm.Show();
+                this.Focus();
             }
         }
 
         private void AddDelayLap()
         {
-            lapsControl.AddLap(true, delayTime + preparedTime - stopWatch.Elapsed);
+            extendForm.lapsControl.AddLap(true, delayTime + preparedTime - stopWatch.Elapsed);
         }
 
         private void AddStartLap()
@@ -263,11 +228,11 @@ namespace SimpleClicker
             switch (displayType)
             {
                 case LapDisplayType.TIME_PER_LAPS:
-                    lapsControl.AddLap(false, stopWatch.Elapsed - lastLap);
+                    extendForm.lapsControl.AddLap(false, stopWatch.Elapsed - lastLap);
                     lastLap = stopWatch.Elapsed;
                     break;
                 case LapDisplayType.REAL_TIME:
-                    lapsControl.AddLap(false, stopWatch.Elapsed - delayTime - preparedTime);
+                    extendForm.lapsControl.AddLap(false, stopWatch.Elapsed - delayTime - preparedTime);
                     break;
                 default:
                     break;
@@ -378,39 +343,33 @@ namespace SimpleClicker
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     currentMode = StopWatchMode.Default;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuSize(true);
+                    ToggleOptionsMenuVisibility(true);
                     break;
                 case StopWatchMode.Default:
                     // Options button
                     currentMode = StopWatchMode.Options;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuSize(false);
+                    ToggleOptionsMenuVisibility(false);
                     currentMode = StopWatchMode.Options;
                     break;
                 case StopWatchMode.Prepared:
                     MessageBox.Show(Properties.Languages.infoWaitForSignal, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Delayed:
-                    settingsControl.Visible = false;
-                    lapsControl.Visible = true;
                     this.Size = expandedFormSize;
                     AddDelayLap();
-                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
+                    if (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Started:
-                    settingsControl.Visible = false;
-                    lapsControl.Visible = true;
                     this.Size = expandedFormSize;
                     AddStartLap();
-                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
+                    if (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Paused:
                     currentMode = StopWatchMode.Default;
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
-                    lapsControl.ResetLap();
+                    extendForm.lapsControl.ResetLap();
                     this.Size = defaultFormSize;
-                    lapsControl.Visible = false;
-                    settingsControl.Visible = true;
                     DisplayTime(TimeSpan.Zero);
                     ChangeModeUI(currentMode);
                     break;
@@ -421,12 +380,12 @@ namespace SimpleClicker
 
         private void mainTimerText_Enter(object sender, EventArgs e)
         {
-            elementsPanel.Focus();
+            mainActionButton.Focus();
         }
 
         private void tickTimerText_Enter(object sender, EventArgs e)
         {
-            elementsPanel.Focus();
+            mainActionButton.Focus();
         }
 
         [DllImport("user32.dll")]
