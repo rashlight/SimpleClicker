@@ -45,8 +45,8 @@ namespace SimpleClicker
     /// </summary>
     public struct Secrets
     {
-        public const string ENABLE_RANDOMIZE = "randomlist";
-        public const string TOGGLE_TIMECONTROL = "togglebiostime";
+        public const string ENABLE_RANDOMIZE = "random";
+        public const string TOGGLE_TIMECONTROL = "biostime";
     }
 
     public partial class MoreOptionsForm : MetroForm
@@ -626,14 +626,16 @@ namespace SimpleClicker
                     {
                         Properties.Settings.Default.isBiosTimeEnabled = false;
                         Properties.Settings.Default.Save();
-                        MessageBox.Show("Random list is enabled.", "Secrets!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    MessageBox.Show("Is BIOS time enabled: " + dg.ToString() + "\nEnter this secret again to toggle!",
+                    MessageBox.Show(
+                        "Is BIOS time enabled: " + dg.ToString() + "\n"
+                            + "Reset to take effects, Enter this secret again to toggle!\n",
                         "Secrets!",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information
                     );
+
                     break;
                 default:
                     break;

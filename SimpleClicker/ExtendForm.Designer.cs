@@ -74,7 +74,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Time Setup Form";
             this.Load += new System.EventHandler(this.TimeExtendForm_Load);
-            this.MouseEnter += new System.EventHandler(this.TimeExtendForm_MouseEnter);
+            this.MouseEnter += new System.EventHandler(this.ExtendForm_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
 

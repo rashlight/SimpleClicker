@@ -83,21 +83,16 @@ namespace SimpleClicker
             ChangeModeUI(StopWatchMode.Default);
             ChangeTheme(Properties.Settings.Default.darkModeType);
             ChangeBorder(Properties.Settings.Default.borderColorType);
+            if (Properties.Settings.Default.isBiosTimeEnabled)
+            {
+                biosTimer.Enabled = true;
+                biosTimer_Tick(this, new EventArgs());
+            }
         }
 
         private void MainForm_LocationChanged(object sender, EventArgs e)
         {
             extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
-        }
-
-        private void MainForm_Activated(object sender, EventArgs e)
-        {
-            mainActionButton.Focus();
-        }
-
-        private void MainForm_MouseEnter(object sender, EventArgs e)
-        {
-            mainActionButton.Focus();
         }
 
         private int GetGCD(int a, int b)
@@ -166,7 +161,6 @@ namespace SimpleClicker
                     mainActionButton.Enabled = true;
                     mainActionButton.Text = Properties.Languages.startButtonText;
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
-                    tickTimerText.Text = Properties.Languages.tickIdleText;
                     extendForm.settingsControl.Visible = true;
                     extendForm.lapsControl.Visible = false;
                     // Temporary disable theme to properly apply dark mode (when possible)
@@ -210,7 +204,7 @@ namespace SimpleClicker
             }
         }
         
-        private void ToggleExtendMenuVisibility(bool isVisible, bool isFocus = false)
+        private void ToggleExtendMenuVisibility(bool isVisible, bool isFocus = true)
         {
             if (!isVisible)
             {
@@ -304,12 +298,14 @@ namespace SimpleClicker
                     MessageBox.Show(Properties.Languages.warningNoStartTimer, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Default:
+                    biosTimer.Enabled = false;
                     bool isLapCounted = Properties.Settings.Default.isLappingEnabled;     
                     if (isLapCounted && Properties.Settings.Default.lappingCount == 0)
                     {
                         bool isInfoAccepted = MessageBox.Show(Properties.Languages.infoNoLapRecord, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes;
                         if (!isInfoAccepted) return;
                     }
+                    DisplayTime(TimeSpan.Zero);
                     currentMode = StopWatchMode.Prepared;
                     stopWatch.Reset();
                     delayTime = TimeSpan.FromSeconds(GetRandomNumber(Properties.Settings.Default.delayTimeStart, Properties.Settings.Default.delayTimeStop));
@@ -392,6 +388,8 @@ namespace SimpleClicker
                     }
                     DisplayTime(TimeSpan.Zero);
                     ChangeModeUI(currentMode);
+                    tickTimerText.Text = Properties.Languages.tickIdleText;
+                    biosTimer.Enabled = true;
                     break;
                 default:
                     break;
@@ -400,16 +398,22 @@ namespace SimpleClicker
 
         private void mainTimerText_MouseDown(object sender, MouseEventArgs e)
         {
-            secondaryActionButton.Focus();
+            this.ActiveControl = null;
         }
 
         private void tickTimerText_MouseDown(object sender, MouseEventArgs e)
         {
-            secondaryActionButton.Focus();
+            this.ActiveControl = null;
         }
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private void biosTimer_Tick(object sender, EventArgs e)
+        {
+            mainTimerText.Text = DateTime.Now.ToString("HH:mm:ss");
+            tickTimerText.Text = DateTime.Now.ToString("dddd, MMMM dd");
+        }
     }
 }

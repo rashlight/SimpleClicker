@@ -37,6 +37,7 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.biosTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +87,7 @@
             this.tickTimerText.ShortcutsEnabled = false;
             this.tickTimerText.Size = new System.Drawing.Size(339, 40);
             this.tickTimerText.TabIndex = 3;
+            this.tickTimerText.TabStop = false;
             this.tickTimerText.Text = "Ready to start.";
             this.tickTimerText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tickTimerText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tickTimerText_MouseDown);
@@ -104,6 +106,7 @@
             this.mainTimerText.ShortcutsEnabled = false;
             this.mainTimerText.Size = new System.Drawing.Size(340, 94);
             this.mainTimerText.TabIndex = 2;
+            this.mainTimerText.TabStop = false;
             this.mainTimerText.Text = "00:00:00";
             this.mainTimerText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mainTimerText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainTimerText_MouseDown);
@@ -116,6 +119,11 @@
             // metroStyleManager
             // 
             this.metroStyleManager.Owner = this;
+            // 
+            // biosTimer
+            // 
+            this.biosTimer.Interval = 1000;
+            this.biosTimer.Tick += new System.EventHandler(this.biosTimer_Tick);
             // 
             // MainForm
             // 
@@ -133,11 +141,9 @@
             this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "Simple Clicker";
-            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
-            this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,6 +158,7 @@
         private System.Windows.Forms.Timer timer;
         private MetroFramework.Components.MetroStyleExtender metroStyleExtender;
         private MetroFramework.Components.MetroStyleManager metroStyleManager;
+        private System.Windows.Forms.Timer biosTimer;
     }
 }
 

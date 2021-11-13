@@ -39,7 +39,7 @@ namespace SimpleClicker
             lapsControl.ChangeTheme(metroStyleManager.Theme);
         }
 
-        private void TimeExtendForm_MouseEnter(object sender, EventArgs e)
+        private void ExtendForm_MouseEnter(object sender, EventArgs e)
         {
             this.Focus();
         }

@@ -1,15 +1,15 @@
 ﻿## Version 1.0.0.0 (Tweaking Update):
 	- Further changing UI transcriptions.
-	- Change support button to an about form with similar functionality.
-	- The setting tabs' position will be saved when opened.
-	- Added ability to change theme (dark, light, etc.).
-	- Added ability to change border color.
-	- Fixed a bug that makes language flag not scaling properly.
+	- Change support button to an about form with similar functionality
+	- The setting tabs' position will be saved when opened
+	- Added ability to change theme (dark, light, etc.) and border color
 	- Revert to Font scaling (solves scaling issues but may cause blurry UI)
 	- Secrets can now be viewed via options menu
 	- Changes default time configuration for regular workflow
 	- Improve performance for lapping
 	- Fix a bug that makes text selectable when it shouldn't
+	- Modify secret text for usability
+	- Time will now displays as ".x" instead of "0.x"
 
 ## Version 0.9.2.0 (Localisation Update):
 	- Implements localisation for French and Vietnamese.
