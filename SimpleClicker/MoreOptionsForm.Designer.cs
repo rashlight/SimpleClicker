@@ -156,7 +156,7 @@
             this.interfacesTab.HorizontalScrollbarBarColor = true;
             this.interfacesTab.Location = new System.Drawing.Point(4, 39);
             this.interfacesTab.Name = "interfacesTab";
-            this.interfacesTab.Size = new System.Drawing.Size(461, 262);
+            this.interfacesTab.Size = new System.Drawing.Size(461, 269);
             this.interfacesTab.TabIndex = 1;
             this.interfacesTab.Text = "Interfaces";
             this.interfacesTab.VerticalScrollbarBarColor = true;
@@ -575,8 +575,8 @@
             this.moreOptionsTabControl.Controls.Add(this.extrasTab);
             this.moreOptionsTabControl.Location = new System.Drawing.Point(8, 63);
             this.moreOptionsTabControl.Name = "moreOptionsTabControl";
-            this.moreOptionsTabControl.SelectedIndex = 0;
-            this.moreOptionsTabControl.Size = new System.Drawing.Size(469, 305);
+            this.moreOptionsTabControl.SelectedIndex = 1;
+            this.moreOptionsTabControl.Size = new System.Drawing.Size(469, 312);
             this.moreOptionsTabControl.TabIndex = 9;
             this.moreOptionsTabControl.SelectedIndexChanged += new System.EventHandler(this.moreOptionsTabControl_SelectedIndexChanged);
             // 
