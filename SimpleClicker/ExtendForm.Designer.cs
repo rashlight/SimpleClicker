@@ -1,6 +1,6 @@
 ﻿namespace SimpleClicker
 {
-    partial class TimeSetupForm
+    partial class ExtendForm
     {
         /// <summary>
         /// Required designer variable.

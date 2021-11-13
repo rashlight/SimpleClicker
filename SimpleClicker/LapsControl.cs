@@ -25,7 +25,6 @@ namespace SimpleClicker
         private void LapsControl_Load(object sender, EventArgs e)
         {
             ChangeTheme(Properties.Settings.Default.darkModeType);
-            MessageBox.Show(this.Visible.ToString());
         }
 
         public void ChangeTheme(MetroThemeStyle theme)

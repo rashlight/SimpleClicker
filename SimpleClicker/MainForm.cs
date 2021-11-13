@@ -46,14 +46,15 @@ namespace SimpleClicker
         public TimeSpan lastLap = new TimeSpan();
         public Stopwatch stopWatch = new Stopwatch();
         public ResourceManager localizationManager = new ResourceManager(typeof(Properties.Resources));
-        public TimeSetupForm extendForm = new TimeSetupForm();
+        public ExtendForm extendForm = new ExtendForm();
 
-        private Size defaultFormSize = new Size(542, 226);
-        private Size expandedFormSize = new Size(542, 502); // 276
+        // Note: defaultFormSize = new Size(0, 226);
+        private Size expandedFormSizeOffset = new Size(0, 276); // y = 502
         private Color defaultBackColor = Color.White;
         private Color defaultForeColor = Color.Black;
 
         public static bool isScalable = true;
+        public static bool isExpanded = false;
         public static float scalingFactorWidth = 1f;
         public static float scalingFactorHeight = 1f;
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
@@ -78,7 +79,7 @@ namespace SimpleClicker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ToggleOptionsMenuVisibility(true);
+            ToggleExtendMenuVisibility(false);
             ChangeModeUI(StopWatchMode.Default);
             ChangeTheme(Properties.Settings.Default.darkModeType);
             ChangeBorder(Properties.Settings.Default.borderColorType);
@@ -204,17 +205,19 @@ namespace SimpleClicker
             }
         }
         
-        private void ToggleOptionsMenuVisibility(bool isMinimized)
+        private void ToggleExtendMenuVisibility(bool isVisible, bool isFocus = false)
         {
-            if (isMinimized)
+            if (!isVisible)
             {
                 extendForm.Hide();
+                isExpanded = false;
             }
             else
             {
                 extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
                 extendForm.Show();
-                this.Focus();
+                if (isFocus) this.Focus();
+                isExpanded = true;
             }
         }
 
@@ -343,25 +346,32 @@ namespace SimpleClicker
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     currentMode = StopWatchMode.Default;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuVisibility(true);
+                    ToggleExtendMenuVisibility(false);
                     break;
                 case StopWatchMode.Default:
                     // Options button
                     currentMode = StopWatchMode.Options;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuVisibility(false);
-                    currentMode = StopWatchMode.Options;
+                    ToggleExtendMenuVisibility(true);
                     break;
                 case StopWatchMode.Prepared:
                     MessageBox.Show(Properties.Languages.infoWaitForSignal, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Delayed:
-                    this.Size = expandedFormSize;
+                    if (!isExpanded)
+                    {
+                        ToggleExtendMenuVisibility(true);
+                        extendForm.lapsControl.Visible = true;
+                    }
                     AddDelayLap();
                     if (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Started:
-                    this.Size = expandedFormSize;
+                    if (!isExpanded)
+                    {
+                        ToggleExtendMenuVisibility(true);
+                        extendForm.lapsControl.Visible = true;
+                    }
                     AddStartLap();
                     if (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
@@ -369,7 +379,10 @@ namespace SimpleClicker
                     currentMode = StopWatchMode.Default;
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     extendForm.lapsControl.ResetLap();
-                    this.Size = defaultFormSize;
+                    if (isExpanded)
+                    {
+                        ToggleExtendMenuVisibility(false);
+                    }
                     DisplayTime(TimeSpan.Zero);
                     ChangeModeUI(currentMode);
                     break;

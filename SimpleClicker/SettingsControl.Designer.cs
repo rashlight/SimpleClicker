@@ -76,7 +76,7 @@
             this.lappingToggle.AutoSize = true;
             this.lappingToggle.BackColor = System.Drawing.SystemColors.Control;
             this.lappingToggle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lappingToggle.Location = new System.Drawing.Point(19, 56);
+            this.lappingToggle.Location = new System.Drawing.Point(18, 56);
             this.lappingToggle.Name = "lappingToggle";
             this.lappingToggle.Size = new System.Drawing.Size(80, 21);
             this.lappingToggle.TabIndex = 4;
@@ -91,7 +91,7 @@
             this.lappingChooser.Enabled = false;
             this.lappingChooser.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lappingChooser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lappingChooser.Location = new System.Drawing.Point(112, 53);
+            this.lappingChooser.Location = new System.Drawing.Point(133, 53);
             this.lappingChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -104,7 +104,7 @@
             -2147483648});
             this.lappingChooser.Name = "lappingChooser";
             this.lappingChooser.ReadOnly = true;
-            this.lappingChooser.Size = new System.Drawing.Size(136, 27);
+            this.lappingChooser.Size = new System.Drawing.Size(125, 27);
             this.lappingChooser.TabIndex = 11;
             this.lappingChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lappingChooser.ThousandsSeparator = true;
@@ -123,7 +123,7 @@
             this.preparationTimeText.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.preparationTimeText.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.preparationTimeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.preparationTimeText.Location = new System.Drawing.Point(262, 16);
+            this.preparationTimeText.Location = new System.Drawing.Point(264, 16);
             this.preparationTimeText.Name = "preparationTimeText";
             this.preparationTimeText.Size = new System.Drawing.Size(221, 29);
             this.preparationTimeText.TabIndex = 12;
@@ -143,7 +143,7 @@
             0,
             0,
             131072});
-            this.prepTimeChooser.Location = new System.Drawing.Point(261, 53);
+            this.prepTimeChooser.Location = new System.Drawing.Point(270, 53);
             this.prepTimeChooser.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -151,7 +151,7 @@
             0});
             this.prepTimeChooser.Name = "prepTimeChooser";
             this.prepTimeChooser.ReadOnly = true;
-            this.prepTimeChooser.Size = new System.Drawing.Size(221, 27);
+            this.prepTimeChooser.Size = new System.Drawing.Size(212, 27);
             this.prepTimeChooser.TabIndex = 13;
             this.prepTimeChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.prepTimeChooser.ThousandsSeparator = true;

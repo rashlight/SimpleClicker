@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SimpleClicker
 {
-    public partial class TimeSetupForm : Form
+    public partial class ExtendForm : Form
     {
-        public TimeSetupForm()
+        public ExtendForm()
         {
             InitializeComponent();
         }

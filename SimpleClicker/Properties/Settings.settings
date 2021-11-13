@@ -9,16 +9,16 @@
       <Value Profile="(Default)">-1</Value>
     </Setting>
     <Setting Name="delayTimeStart" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.5</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="delayTimeStop" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="updateThreshold" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="preparationTime" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="timePrecision" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
