@@ -646,12 +646,12 @@ namespace SimpleClicker
 
                     MessageBox.Show(
                         "Is BIOS time enabled: " + dg.ToString() + "\n"
-                            + "Reset to take effects, Enter this secret again to toggle!\n",
+                            + "We will restart now, enter this secret again to toggle!\n",
                         "Secrets!",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information
                     );
-
+                    Application.Restart();
                     break;
                 default:
                     break;
