@@ -383,7 +383,7 @@ Off: Doesn't show on delay phase.</value>
   <data name="secretListText" xml:space="preserve">
     <value>Note: These secrets are experimental!
 Secret List (without quotation marks):
- - "randomlist" : shuffle laps every additions
- - "togglebiostime" : show current time when idle</value>
+ - "random" : shuffle laps every additions
+ - "biostime" : show current time when idle</value>
   </data>
 </root>

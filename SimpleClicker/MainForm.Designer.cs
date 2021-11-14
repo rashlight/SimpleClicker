@@ -56,6 +56,7 @@
             this.mainActionButton.Text = "Start";
             this.mainActionButton.UseVisualStyleBackColor = false;
             this.mainActionButton.Click += new System.EventHandler(this.mainActionButton_Click);
+            this.mainActionButton.MouseEnter += new System.EventHandler(this.mainActionButton_MouseEnter);
             // 
             // secondaryActionButton
             // 
@@ -72,6 +73,7 @@
             this.secondaryActionButton.Text = "Options";
             this.secondaryActionButton.UseVisualStyleBackColor = false;
             this.secondaryActionButton.Click += new System.EventHandler(this.secondaryActionButton_Click);
+            this.secondaryActionButton.MouseEnter += new System.EventHandler(this.secondaryActionButton_MouseEnter);
             // 
             // tickTimerText
             // 

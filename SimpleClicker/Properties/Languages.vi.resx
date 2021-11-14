@@ -384,6 +384,6 @@ Off: Không hiện thời gian chờ.</value>
     <value>Chú ý: Các mật mã chứa các chức năng thử nghiệm!
 Danh sách mật mã (không bao gồm dấu nháy đôi):
  - "randomlist" : trộn danh sách mỗi lẫn thêm vòng
- - "togglebiostime" : hiện thời gian hiện tại khi không hoạt động</value>
+ - "biostime" : hiện thời gian hiện tại khi không hoạt động</value>
   </data>
 </root>

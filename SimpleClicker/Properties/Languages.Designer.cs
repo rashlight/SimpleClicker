@@ -632,8 +632,8 @@ namespace SimpleClicker.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Note: These secrets are experimental!
         ///Secret List (without quotation marks):
-        /// - &quot;randomlist&quot; : shuffle laps every additions
-        /// - &quot;togglebiostime&quot; : show current time when idle.
+        /// - &quot;random&quot; : shuffle laps every additions
+        /// - &quot;biostime&quot; : show current time when idle.
         /// </summary>
         public static string secretListText {
             get {

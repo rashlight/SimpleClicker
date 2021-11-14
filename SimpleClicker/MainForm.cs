@@ -161,6 +161,8 @@ namespace SimpleClicker
                     mainActionButton.Enabled = true;
                     mainActionButton.Text = Properties.Languages.startButtonText;
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
+                    if (!Properties.Settings.Default.isBiosTimeEnabled)
+                        tickTimerText.Text = Properties.Languages.tickIdleText;
                     extendForm.settingsControl.Visible = true;
                     extendForm.lapsControl.Visible = false;
                     // Temporary disable theme to properly apply dark mode (when possible)
@@ -174,6 +176,7 @@ namespace SimpleClicker
                     mainActionButton.Text = Properties.Languages.waitButtonText;
                     secondaryActionButton.Text = Properties.Languages.lapButtonText;
                     mainTimerText.ForeColor = Properties.Settings.Default.preparationTimeColor;
+                    tickTimerText.Text = "Get ready...";
                     extendForm.settingsControl.Visible = false;
                     extendForm.lapsControl.Visible = true;
                     break;
@@ -388,12 +391,22 @@ namespace SimpleClicker
                     }
                     DisplayTime(TimeSpan.Zero);
                     ChangeModeUI(currentMode);
-                    tickTimerText.Text = Properties.Languages.tickIdleText;
-                    biosTimer.Enabled = true;
+                    if (Properties.Settings.Default.isBiosTimeEnabled)
+                        biosTimer.Enabled = true;
                     break;
                 default:
                     break;
             }
+        }
+
+        private void mainActionButton_MouseEnter(object sender, EventArgs e)
+        {
+            mainActionButton.Focus();
+        }
+
+        private void secondaryActionButton_MouseEnter(object sender, EventArgs e)
+        {
+            secondaryActionButton.Focus();
         }
 
         private void mainTimerText_MouseDown(object sender, MouseEventArgs e)
@@ -414,6 +427,6 @@ namespace SimpleClicker
         {
             mainTimerText.Text = DateTime.Now.ToString("HH:mm:ss");
             tickTimerText.Text = DateTime.Now.ToString("dddd, MMMM dd");
-        }
+        }  
     }
 }

@@ -602,8 +602,6 @@ namespace SimpleClicker
 
         private void secretButton_Click(object sender, EventArgs e)
         {
-            metroStyleExtender.SetApplyMetroTheme(lapAllowanceLabel, true);
-            metroStyleManager.Theme = MetroFramework.MetroThemeStyle.Dark;
             switch (secretBox.Text)
             {
                 case Secrets.ENABLE_RANDOMIZE:
