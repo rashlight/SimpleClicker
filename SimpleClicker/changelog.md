@@ -1,4 +1,10 @@
-﻿## Version 1.0.0.1 (Fixes):
+﻿## Version 1.0.0.2 (Fixes):
+	- Correct some UI and text syntax
+	- Add new AM/PM in sunrise/sunset label for visibility
+	- Fixes bug that makes a form component display in taskbar
+	- Prevent 'About...' form from resizing
+
+## Version 1.0.0.1 (Fixes):
 	- Update reset options
 	- Update assembly information
 	- A secret will now restart on execute

@@ -182,7 +182,7 @@
             this.pauseColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pauseColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.pauseColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorLabel.Location = new System.Drawing.Point(9, 229);
+            this.pauseColorLabel.Location = new System.Drawing.Point(8, 229);
             this.pauseColorLabel.Name = "pauseColorLabel";
             this.pauseColorLabel.Size = new System.Drawing.Size(166, 30);
             this.pauseColorLabel.TabIndex = 38;
@@ -233,7 +233,7 @@
             this.startColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.startColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.startColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.startColorLabel.Location = new System.Drawing.Point(7, 186);
+            this.startColorLabel.Location = new System.Drawing.Point(8, 185);
             this.startColorLabel.Name = "startColorLabel";
             this.startColorLabel.Size = new System.Drawing.Size(154, 30);
             this.startColorLabel.TabIndex = 23;
@@ -368,7 +368,7 @@
             this.pauseColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.pauseColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pauseColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorHelp.Location = new System.Drawing.Point(421, 230);
+            this.pauseColorHelp.Location = new System.Drawing.Point(421, 231);
             this.pauseColorHelp.Name = "pauseColorHelp";
             this.pauseColorHelp.Size = new System.Drawing.Size(30, 30);
             this.pauseColorHelp.TabIndex = 39;
@@ -381,7 +381,7 @@
             this.alwaysOnTopHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.alwaysOnTopHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.alwaysOnTopHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.alwaysOnTopHelp.Location = new System.Drawing.Point(421, 59);
+            this.alwaysOnTopHelp.Location = new System.Drawing.Point(421, 60);
             this.alwaysOnTopHelp.Name = "alwaysOnTopHelp";
             this.alwaysOnTopHelp.Size = new System.Drawing.Size(30, 30);
             this.alwaysOnTopHelp.TabIndex = 37;
@@ -394,7 +394,7 @@
             this.startColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.startColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.startColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.startColorHelp.Location = new System.Drawing.Point(421, 186);
+            this.startColorHelp.Location = new System.Drawing.Point(421, 188);
             this.startColorHelp.Name = "startColorHelp";
             this.startColorHelp.Size = new System.Drawing.Size(30, 30);
             this.startColorHelp.TabIndex = 34;
@@ -407,7 +407,7 @@
             this.delayColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.delayColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.delayColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.delayColorHelp.Location = new System.Drawing.Point(421, 142);
+            this.delayColorHelp.Location = new System.Drawing.Point(421, 143);
             this.delayColorHelp.Name = "delayColorHelp";
             this.delayColorHelp.Size = new System.Drawing.Size(30, 30);
             this.delayColorHelp.TabIndex = 33;
@@ -420,7 +420,7 @@
             this.preparationColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.preparationColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.preparationColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.preparationColorHelp.Location = new System.Drawing.Point(421, 100);
+            this.preparationColorHelp.Location = new System.Drawing.Point(421, 101);
             this.preparationColorHelp.Name = "preparationColorHelp";
             this.preparationColorHelp.Size = new System.Drawing.Size(30, 30);
             this.preparationColorHelp.TabIndex = 32;
@@ -433,7 +433,7 @@
             this.delayTimeShowsHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.delayTimeShowsHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.delayTimeShowsHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.delayTimeShowsHelp.Location = new System.Drawing.Point(420, 18);
+            this.delayTimeShowsHelp.Location = new System.Drawing.Point(421, 19);
             this.delayTimeShowsHelp.Name = "delayTimeShowsHelp";
             this.delayTimeShowsHelp.Size = new System.Drawing.Size(30, 30);
             this.delayTimeShowsHelp.TabIndex = 29;
@@ -625,7 +625,7 @@
             this.sunsetHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.sunsetHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sunsetHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.sunsetHelp.Location = new System.Drawing.Point(423, 63);
+            this.sunsetHelp.Location = new System.Drawing.Point(423, 64);
             this.sunsetHelp.Name = "sunsetHelp";
             this.sunsetHelp.Size = new System.Drawing.Size(30, 30);
             this.sunsetHelp.TabIndex = 51;
@@ -638,7 +638,7 @@
             this.sunriseHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.sunriseHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sunriseHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.sunriseHelp.Location = new System.Drawing.Point(423, 15);
+            this.sunriseHelp.Location = new System.Drawing.Point(423, 16);
             this.sunriseHelp.Name = "sunriseHelp";
             this.sunriseHelp.Size = new System.Drawing.Size(30, 30);
             this.sunriseHelp.TabIndex = 47;
@@ -765,7 +765,7 @@
             // 
             this.darkModeComboBox.FormattingEnabled = true;
             this.darkModeComboBox.ItemHeight = 24;
-            this.darkModeComboBox.Location = new System.Drawing.Point(9, 53);
+            this.darkModeComboBox.Location = new System.Drawing.Point(9, 47);
             this.darkModeComboBox.Name = "darkModeComboBox";
             this.darkModeComboBox.Size = new System.Drawing.Size(411, 30);
             this.darkModeComboBox.TabIndex = 44;
@@ -778,7 +778,7 @@
             this.borderColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.borderColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.borderColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.borderColorHelp.Location = new System.Drawing.Point(426, 126);
+            this.borderColorHelp.Location = new System.Drawing.Point(426, 127);
             this.borderColorHelp.Name = "borderColorHelp";
             this.borderColorHelp.Size = new System.Drawing.Size(30, 30);
             this.borderColorHelp.TabIndex = 37;
@@ -791,7 +791,7 @@
             this.darkModeHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.darkModeHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.darkModeHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.darkModeHelp.Location = new System.Drawing.Point(427, 53);
+            this.darkModeHelp.Location = new System.Drawing.Point(427, 49);
             this.darkModeHelp.Name = "darkModeHelp";
             this.darkModeHelp.Size = new System.Drawing.Size(30, 30);
             this.darkModeHelp.TabIndex = 36;
@@ -804,7 +804,7 @@
             this.darkModeText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.darkModeText.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.darkModeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.darkModeText.Location = new System.Drawing.Point(8, 16);
+            this.darkModeText.Location = new System.Drawing.Point(8, 12);
             this.darkModeText.Name = "darkModeText";
             this.darkModeText.Size = new System.Drawing.Size(200, 30);
             this.darkModeText.TabIndex = 34;
@@ -865,7 +865,7 @@
             this.secretHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.secretHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.secretHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.secretHelp.Location = new System.Drawing.Point(422, 102);
+            this.secretHelp.Location = new System.Drawing.Point(422, 103);
             this.secretHelp.Name = "secretHelp";
             this.secretHelp.Size = new System.Drawing.Size(36, 36);
             this.secretHelp.TabIndex = 36;
@@ -892,7 +892,7 @@
             this.languageHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.languageHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.languageHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.languageHelp.Location = new System.Drawing.Point(428, 16);
+            this.languageHelp.Location = new System.Drawing.Point(428, 17);
             this.languageHelp.Name = "languageHelp";
             this.languageHelp.Size = new System.Drawing.Size(30, 30);
             this.languageHelp.TabIndex = 34;

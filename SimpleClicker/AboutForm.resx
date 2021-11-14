@@ -132,13 +132,13 @@
     - and more...</value>
   </data>
   <data name="aboutTextBox.Text" xml:space="preserve">
-    <value>* This project appreciates the contributions of many creations below:
-    - Icon is partly provided by material-design-icons (https://github.com/google/material-design-icons), Apache License Version 2.0
+    <value>* This project uses modules and components below:
+    - Icons and derivatives by material-design-icons (https://github.com/google/material-design-icons), Apache License Version 2.0
     - UI from MetroFramework (https://thielj.github.io/MetroFramework/), MIT License
     - Original artwork made by amaritsu (https://www.instagram.com/amaritsu/), CC BY 4.0 License</value>
   </data>
   <data name="licenseTextBox.Text" xml:space="preserve">
-    <value>SimpleClicker, Copyright (C) 2020-2021 rashlight.
+    <value>SimpleClicker, Copyright (C) 2020-2022 rashlight.
 This program is licensed by the GPLv3, details below:
 
                     GNU GENERAL PUBLIC LICENSE
