@@ -552,6 +552,8 @@ namespace SimpleClicker
         private void resetExtraButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Properties.Languages.warningResetExtraOptions, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+            // Tab saving
+            Properties.Settings.Default.moreOptionsLastSelTab = 0;
             // Laps tab
             Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
             Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
@@ -570,6 +572,8 @@ namespace SimpleClicker
             Properties.Settings.Default.sunsetTime = 19;
             // Extra tab
             Properties.Settings.Default.language = "en-US";
+            // Secrets
+            Properties.Settings.Default.isBiosTimeEnabled = false;
             Properties.Settings.Default.Save();
             MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Restart();
@@ -587,6 +591,8 @@ namespace SimpleClicker
             Properties.Settings.Default.delayTimeStop = 3;
             Properties.Settings.Default.timePrecision = 4;
             Properties.Settings.Default.updateThreshold = 10;
+            // Tab saving
+            Properties.Settings.Default.moreOptionsLastSelTab = 0;
             // Laps tab
             Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
             Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
@@ -605,6 +611,8 @@ namespace SimpleClicker
             Properties.Settings.Default.sunsetTime = 19;
             // Extra tab
             Properties.Settings.Default.language = "en-US";
+            // Secrets
+            Properties.Settings.Default.isBiosTimeEnabled = false;
             Properties.Settings.Default.Save();
             MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Restart();
