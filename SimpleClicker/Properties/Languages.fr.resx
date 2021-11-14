@@ -166,13 +166,13 @@
     <value>Temps de prép</value>
   </data>
   <data name="supportText" xml:space="preserve">
-    <value>Assistance...</value>
+    <value>A propos...</value>
   </data>
   <data name="timePrecisionText" xml:space="preserve">
     <value>Précision Temporelle</value>
   </data>
   <data name="updateThresholdText" xml:space="preserve">
-    <value>Seuil De Mise À Jour</value>
+    <value>Seuil de Mise à Jour</value>
   </data>
   <data name="delayToText" xml:space="preserve">
     <value>à</value>
@@ -196,7 +196,7 @@
     <value>D'abord concentrés</value>
   </data>
   <data name="lapSortingOption1" xml:space="preserve">
-    <value>Dernier focus (par défaut)</value>
+    <value>Dernier focus (Par défaut)</value>
   </data>
   <data name="lapSortingOption2" xml:space="preserve">
     <value>Du meilleur au pire</value>
@@ -211,7 +211,7 @@
     <value>Temps par tours</value>
   </data>
   <data name="lapDisplayTypeOption1" xml:space="preserve">
-    <value>En temps réel (par défaut)</value>
+    <value>En temps réel (Par défaut)</value>
   </data>
   <data name="alwaysOnTopText" xml:space="preserve">
     <value>Toujours au top</value>
@@ -220,13 +220,13 @@
     <value>Couleur du retard</value>
   </data>
   <data name="delayTimeShowsText" xml:space="preserve">
-    <value>Afficher le délai d'attente</value>
+    <value>Afficher le temps de retard</value>
   </data>
   <data name="pauseTimeColorText" xml:space="preserve">
     <value>Couleur de la pause</value>
   </data>
   <data name="preparationTimeColorText" xml:space="preserve">
-    <value>Temps de prép. couleur</value>
+    <value>Temps de prép couleur</value>
   </data>
   <data name="startTimeColorText" xml:space="preserve">
     <value>Couleur de départ</value>
@@ -235,7 +235,7 @@
     <value>Langue</value>
   </data>
   <data name="secretText" xml:space="preserve">
-    <value>Entrez le (s) secret (s):</value>
+    <value>Entrez le(s) secret(s):</value>
   </data>
   <data name="secretButtonIdleText" xml:space="preserve">
     <value>Exécuter!</value>
@@ -253,8 +253,7 @@
     <value>Réinit. du temps...</value>
   </data>
   <data name="languageHelpText" xml:space="preserve">
-    <value>***** TRAVAUX EN COURS *****
-Change la langue. Notez que certains peuvent ne pas
+    <value>Change la langue. Notez que certains peuvent ne pas
 être traduits intégralement / correctement.</value>
   </data>
   <data name="alwaysOnTopHelpText" xml:space="preserve">
@@ -292,10 +291,10 @@ Change la langue. Notez que certains peuvent ne pas
   </data>
   <data name="delayTimeShowsHelpText" xml:space="preserve">
     <value>On : Indique le temps restant sur la phase de retard.
-Éteint : Ne s'affiche pas sur la phase de retardement.</value>
+Off : Ne s'affiche pas sur la phase de retardement.</value>
   </data>
   <data name="secretHelpText" xml:space="preserve">
-    <value>Note : UN seul secret peut être appliqué à la fois.</value>
+    <value>Cliquez ici pour la liste des secrets...</value>
   </data>
   <data name="extrasTabText" xml:space="preserve">
     <value>Extras</value>
@@ -329,5 +328,65 @@ Change la langue. Notez que certains peuvent ne pas
   </data>
   <data name="lapIntervalText" xml:space="preserve">
     <value>Lap</value>
+  </data>
+  <data name="attributionTabText" xml:space="preserve">
+    <value>Attribution</value>
+  </data>
+  <data name="borderColorHelpText" xml:space="preserve">
+    <value>Change la couleur de la bordure en haut de la fenêtre.</value>
+  </data>
+  <data name="borderColorText" xml:space="preserve">
+    <value>Couleur de la bordure</value>
+  </data>
+  <data name="darkModeHelpText" xml:space="preserve">
+    <value>Modifie les options du mode sombre. Lorsqu'il est réglé sur "System", cela change de thème en fonction du jour / de la nuit.</value>
+  </data>
+  <data name="darkModeOption1" xml:space="preserve">
+    <value>Système</value>
+  </data>
+  <data name="darkModeOption2" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="darkModeOption3" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="darkModeText" xml:space="preserve">
+    <value>Mode sombre</value>
+  </data>
+  <data name="infoTabText" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="licenseTabText" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="sunriseHelpText" xml:space="preserve">
+    <value>Change le thème à Off dans l'option "Default" en mode sombre.</value>
+  </data>
+  <data name="sunriseText" xml:space="preserve">
+    <value>Lever soleil</value>
+  </data>
+  <data name="sunsetText" xml:space="preserve">
+    <value>Coucher soleil</value>
+  </data>
+  <data name="sunsetHelpText" xml:space="preserve">
+    <value>Change le thème à On dans l'option "Default" en mode sombre.</value>
+  </data>
+  <data name="systemInfoTabText" xml:space="preserve">
+    <value>Info système</value>
+  </data>
+  <data name="themeTabText" xml:space="preserve">
+    <value>Thèmes</value>
+  </data>
+  <data name="warningCloseWhenRunning" xml:space="preserve">
+    <value>La minuterie est toujours en marche! Vous voulez vraiment sortir?</value>
+  </data>
+  <data name="secretListText" xml:space="preserve">
+    <value>Note: Ces secrets sont expérimentaux!
+Liste Secrète (sans guillemets):
+ - "random" : tours de shuffle tous les ajouts
+ - "biostime" : afficher l'heure actuelle en cas d'inactivité</value>
+  </data>
+  <data name="preparationPhaseText" xml:space="preserve">
+    <value>Préparez-vous...</value>
   </data>
 </root>

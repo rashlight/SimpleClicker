@@ -33,17 +33,20 @@
             this.mainActionButton = new System.Windows.Forms.Button();
             this.secondaryActionButton = new System.Windows.Forms.Button();
             this.tickTimerText = new System.Windows.Forms.TextBox();
-            this.elementsPanel = new System.Windows.Forms.Panel();
-            this.lapsControl = new SimpleClicker.LapsControl();
-            this.settingsControl = new SimpleClicker.SettingsControl();
             this.mainTimerText = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.elementsPanel.SuspendLayout();
+            this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
+            this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.biosTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // mainActionButton
             // 
-            this.mainActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 22F);
+            this.metroStyleExtender.SetApplyMetroTheme(this.mainActionButton, true);
+            this.mainActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mainActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mainActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.mainActionButton.Location = new System.Drawing.Point(368, 67);
             this.mainActionButton.Name = "mainActionButton";
@@ -51,12 +54,16 @@
             this.mainActionButton.Size = new System.Drawing.Size(157, 67);
             this.mainActionButton.TabIndex = 4;
             this.mainActionButton.Text = "Start";
-            this.mainActionButton.UseVisualStyleBackColor = true;
+            this.mainActionButton.UseVisualStyleBackColor = false;
             this.mainActionButton.Click += new System.EventHandler(this.mainActionButton_Click);
+            this.mainActionButton.MouseEnter += new System.EventHandler(this.mainActionButton_MouseEnter);
             // 
             // secondaryActionButton
             // 
-            this.secondaryActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 19F);
+            this.metroStyleExtender.SetApplyMetroTheme(this.secondaryActionButton, true);
+            this.secondaryActionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.secondaryActionButton.Font = new System.Drawing.Font("Segoe UI Semilight", 16F);
+            this.secondaryActionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.secondaryActionButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.secondaryActionButton.Location = new System.Drawing.Point(368, 140);
             this.secondaryActionButton.Name = "secondaryActionButton";
@@ -64,70 +71,68 @@
             this.secondaryActionButton.Size = new System.Drawing.Size(157, 67);
             this.secondaryActionButton.TabIndex = 5;
             this.secondaryActionButton.Text = "Options";
-            this.secondaryActionButton.UseVisualStyleBackColor = true;
+            this.secondaryActionButton.UseVisualStyleBackColor = false;
             this.secondaryActionButton.Click += new System.EventHandler(this.secondaryActionButton_Click);
+            this.secondaryActionButton.MouseEnter += new System.EventHandler(this.secondaryActionButton_MouseEnter);
             // 
             // tickTimerText
             // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.tickTimerText, true);
+            this.tickTimerText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tickTimerText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tickTimerText.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tickTimerText.Font = new System.Drawing.Font("Segoe UI Semilight", 18F);
+            this.tickTimerText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tickTimerText.Location = new System.Drawing.Point(13, 156);
             this.tickTimerText.Name = "tickTimerText";
+            this.tickTimerText.ReadOnly = true;
+            this.tickTimerText.ShortcutsEnabled = false;
             this.tickTimerText.Size = new System.Drawing.Size(339, 40);
             this.tickTimerText.TabIndex = 3;
+            this.tickTimerText.TabStop = false;
             this.tickTimerText.Text = "Ready to start.";
             this.tickTimerText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tickTimerText.Enter += new System.EventHandler(this.tickTimerText_Enter);
-            // 
-            // elementsPanel
-            // 
-            this.elementsPanel.Controls.Add(this.lapsControl);
-            this.elementsPanel.Controls.Add(this.settingsControl);
-            this.elementsPanel.Location = new System.Drawing.Point(18, 213);
-            this.elementsPanel.Name = "elementsPanel";
-            this.elementsPanel.Size = new System.Drawing.Size(507, 300);
-            this.elementsPanel.TabIndex = 3;
-            // 
-            // lapsControl
-            // 
-            this.lapsControl.Location = new System.Drawing.Point(0, 13);
-            this.lapsControl.Name = "lapsControl";
-            this.lapsControl.Size = new System.Drawing.Size(507, 287);
-            this.lapsControl.TabIndex = 1;
-            this.lapsControl.Visible = false;
-            // 
-            // settingsControl
-            // 
-            this.settingsControl.Location = new System.Drawing.Point(0, 0);
-            this.settingsControl.Name = "settingsControl";
-            this.settingsControl.Size = new System.Drawing.Size(507, 300);
-            this.settingsControl.TabIndex = 0;
+            this.tickTimerText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tickTimerText_MouseDown);
             // 
             // mainTimerText
             // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.mainTimerText, true);
+            this.mainTimerText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mainTimerText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mainTimerText.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.mainTimerText.Font = new System.Drawing.Font("Segoe UI", 42F, System.Drawing.FontStyle.Bold);
+            this.mainTimerText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mainTimerText.Location = new System.Drawing.Point(13, 67);
             this.mainTimerText.Name = "mainTimerText";
+            this.mainTimerText.ReadOnly = true;
+            this.mainTimerText.ShortcutsEnabled = false;
             this.mainTimerText.Size = new System.Drawing.Size(340, 94);
             this.mainTimerText.TabIndex = 2;
+            this.mainTimerText.TabStop = false;
             this.mainTimerText.Text = "00:00:00";
             this.mainTimerText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mainTimerText.Enter += new System.EventHandler(this.mainTimerText_Enter);
+            this.mainTimerText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainTimerText_MouseDown);
             // 
             // timer
             // 
             this.timer.Interval = 10;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // metroStyleManager
+            // 
+            this.metroStyleManager.Owner = this;
+            // 
+            // biosTimer
+            // 
+            this.biosTimer.Interval = 1000;
+            this.biosTimer.Tick += new System.EventHandler(this.biosTimer_Tick);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(542, 529);
-            this.Controls.Add(this.elementsPanel);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(542, 226);
             this.Controls.Add(this.secondaryActionButton);
             this.Controls.Add(this.mainActionButton);
             this.Controls.Add(this.tickTimerText);
@@ -138,7 +143,10 @@
             this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "Simple Clicker";
-            this.elementsPanel.ResumeLayout(false);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,11 +156,11 @@
         private System.Windows.Forms.Button mainActionButton;
         private System.Windows.Forms.Button secondaryActionButton;
         private System.Windows.Forms.TextBox tickTimerText;
-        private System.Windows.Forms.Panel elementsPanel;
-        private SettingsControl settingsControl;
         private System.Windows.Forms.TextBox mainTimerText;
-        private LapsControl lapsControl;
         private System.Windows.Forms.Timer timer;
+        private MetroFramework.Components.MetroStyleExtender metroStyleExtender;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager;
+        private System.Windows.Forms.Timer biosTimer;
     }
 }
 

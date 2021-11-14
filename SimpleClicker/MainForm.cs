@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
@@ -14,6 +15,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 using MetroFramework.Forms;
 
 namespace SimpleClicker
@@ -30,7 +32,7 @@ namespace SimpleClicker
 
     public partial class MainForm : MetroForm
     {
-        public static int stopWatchFrequency = 0; // Used for SettingControl
+        public static int stopWatchFrequency = 0; // Used for AboutForm
 
         public bool isStart = false;
         public bool isOptionsMenuOpened = false;
@@ -44,14 +46,22 @@ namespace SimpleClicker
         public TimeSpan lastLap = new TimeSpan();
         public Stopwatch stopWatch = new Stopwatch();
         public ResourceManager localizationManager = new ResourceManager(typeof(Properties.Resources));
+        public ExtendForm extendForm = new ExtendForm();
 
-        private Size defaultFormSize = new Size(542, 226);
-        private Size expandedFormSize = new Size(542, 529);
+        // Note: defaultFormSize = new Size(0, 226);
+        private Size expandedFormSizeOffset = new Size(0, 276); // y = 502
         private Color defaultBackColor = Color.White;
         private Color defaultForeColor = Color.Black;
 
+        public static bool isScalable = true;
+        public static bool isExpanded = false;
+        public static float scalingFactorWidth = 1f;
+        public static float scalingFactorHeight = 1f;
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         private static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+
+        public const float BUILD_DPI_WIDTH = 120;
+        public const float BUILD_DPI_HEIGHT = 120;
         private const UInt32 SWP_NOSIZE = 0x0001;
         private const UInt32 SWP_NOMOVE = 0x0002;
         private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
@@ -65,8 +75,65 @@ namespace SimpleClicker
 
             preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
             delayTime = TimeSpan.FromSeconds(Properties.Settings.Default.delayTimeStop - Properties.Settings.Default.delayTimeStart);
+            if (delayTime.Ticks < 0 || preparedTime.Ticks < 0)
+            {
+                MessageBox.Show("The time option(s) is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                preparedTime = new TimeSpan(0);
+                delayTime = new TimeSpan(0);
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ToggleExtendMenuVisibility(false);
             ChangeModeUI(StopWatchMode.Default);
-            ToggleOptionsMenuSize(defaultFormSize);
+            ChangeTheme(Properties.Settings.Default.darkModeType);
+            ChangeBorder(Properties.Settings.Default.borderColorType);
+            if (Properties.Settings.Default.isBiosTimeEnabled)
+            {
+                biosTimer.Enabled = true;
+                biosTimer_Tick(this, null);
+            }
+        }
+
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
+        }
+
+        private int GetGCD(int a, int b)
+        {
+            return b == 0 ? a : GetGCD(b, a % b);
+        }
+
+        public void ChangeTheme(MetroThemeStyle theme)
+        {
+            if (theme == MetroThemeStyle.Default)
+            {
+                if (DateTime.Now.Hour >= Properties.Settings.Default.sunriseTime && DateTime.Now.Hour < Properties.Settings.Default.sunsetTime)
+                {
+                    metroStyleManager.Theme = MetroThemeStyle.Light;
+                }
+                else metroStyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else metroStyleManager.Theme = theme;
+
+            extendForm.ChangeTheme(theme);
+        }
+
+        public void ChangeBorder(MetroColorStyle color)
+        {
+            metroStyleManager.Style = color;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (stopWatch.IsRunning && 
+                MessageBox.Show(Properties.Languages.warningCloseWhenRunning, "Simple Clicker",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private double GetRandomNumber(double minimum, double maximum)
@@ -84,7 +151,7 @@ namespace SimpleClicker
             string tickDisplay = Math.Round(time.TotalSeconds - Math.Truncate((double)time.TotalSeconds), Properties.Settings.Default.timePrecision).ToString();
             if (tickDisplay[0] == '1') tickDisplay = "0";
             mainTimerText.Text = delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay;
-            tickTimerText.Text = tickDisplay + " " + Properties.Languages.timeUnitText;
+            tickTimerText.Text = tickDisplay.Substring(1);
         }
 
         public void ChangeModeUI(StopWatchMode mode)
@@ -94,13 +161,21 @@ namespace SimpleClicker
                 case StopWatchMode.Options:
                     mainActionButton.Enabled = false;
                     secondaryActionButton.Text = Properties.Languages.backButtonText;
+                    extendForm.settingsControl.Visible = true;
                     break;
                 case StopWatchMode.Default:
                     mainActionButton.Enabled = true;
                     mainActionButton.Text = Properties.Languages.startButtonText;
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
-                    tickTimerText.Text = Properties.Languages.tickIdleText;
+                    if (!Properties.Settings.Default.isBiosTimeEnabled)
+                        tickTimerText.Text = Properties.Languages.tickIdleText;
+                    else biosTimer_Tick(secondaryActionButton, null);
+                    extendForm.settingsControl.Visible = true;
+                    extendForm.lapsControl.Visible = false;
+                    // Temporary disable theme to properly apply dark mode (when possible)
+                    metroStyleExtender.SetApplyMetroTheme(mainTimerText, false);
                     mainTimerText.ForeColor = defaultForeColor;
+                    metroStyleExtender.SetApplyMetroTheme(mainTimerText, true);
                     break;
                 case StopWatchMode.Prepared:
                     mainActionButton.Enabled = false;
@@ -108,6 +183,9 @@ namespace SimpleClicker
                     mainActionButton.Text = Properties.Languages.waitButtonText;
                     secondaryActionButton.Text = Properties.Languages.lapButtonText;
                     mainTimerText.ForeColor = Properties.Settings.Default.preparationTimeColor;
+                    tickTimerText.Text = Properties.Languages.preparationPhaseText;
+                    extendForm.settingsControl.Visible = false;
+                    extendForm.lapsControl.Visible = true;
                     break;
                 case StopWatchMode.Delayed:
                     if (isDelayLapAllowed) secondaryActionButton.Enabled = true;
@@ -122,7 +200,7 @@ namespace SimpleClicker
                     else secondaryActionButton.Enabled = false;
                     mainActionButton.Text = Properties.Languages.stopButtonText;
                     secondaryActionButton.Text = Properties.Languages.lapButtonText;
-                    if (!Properties.Settings.Default.isLappingEnabled  || (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0)) secondaryActionButton.Enabled = false;
+                    if (!Properties.Settings.Default.isLappingEnabled  || (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0)) secondaryActionButton.Enabled = false;
                     mainTimerText.ForeColor = Properties.Settings.Default.startTimeColor;
                     break;
                 case StopWatchMode.Paused:
@@ -136,14 +214,26 @@ namespace SimpleClicker
             }
         }
         
-        private void ToggleOptionsMenuSize(Size size)
+        private void ToggleExtendMenuVisibility(bool isVisible, bool isFocus = true)
         {
-            this.Size = size;
+            if (!isVisible)
+            {
+                extendForm.Hide();
+                isExpanded = false;
+            }
+            else
+            {
+                extendForm.Location = new Point(this.Location.X, this.Location.Y + this.Size.Height);
+                extendForm.Show();
+                if (isFocus) this.Focus();
+                isExpanded = true;
+            }
         }
 
         private void AddDelayLap()
         {
-            lapsControl.AddLap(true, delayTime + preparedTime - stopWatch.Elapsed);
+            extendForm.lapsControl.AddLap(true, delayTime + preparedTime - stopWatch.Elapsed);
+            secondaryActionButton.Focus();
         }
 
         private void AddStartLap()
@@ -151,15 +241,16 @@ namespace SimpleClicker
             switch (displayType)
             {
                 case LapDisplayType.TIME_PER_LAPS:
-                    lapsControl.AddLap(false, stopWatch.Elapsed - lastLap);
+                    extendForm.lapsControl.AddLap(false, stopWatch.Elapsed - lastLap);
                     lastLap = stopWatch.Elapsed;
                     break;
                 case LapDisplayType.REAL_TIME:
-                    lapsControl.AddLap(false, stopWatch.Elapsed - delayTime - preparedTime);
+                    extendForm.lapsControl.AddLap(false, stopWatch.Elapsed - delayTime - preparedTime);
                     break;
                 default:
                     break;
             }
+            secondaryActionButton.Focus();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -217,19 +308,21 @@ namespace SimpleClicker
                     MessageBox.Show(Properties.Languages.warningNoStartTimer, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Default:
+                    biosTimer.Enabled = false;
                     bool isLapCounted = Properties.Settings.Default.isLappingEnabled;     
                     if (isLapCounted && Properties.Settings.Default.lappingCount == 0)
                     {
                         bool isInfoAccepted = MessageBox.Show(Properties.Languages.infoNoLapRecord, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes;
                         if (!isInfoAccepted) return;
                     }
+                    DisplayTime(TimeSpan.Zero);
                     currentMode = StopWatchMode.Prepared;
                     stopWatch.Reset();
                     delayTime = TimeSpan.FromSeconds(GetRandomNumber(Properties.Settings.Default.delayTimeStart, Properties.Settings.Default.delayTimeStop));
                     lastLap = delayTime + preparedTime;
                     isDelayTimeShows = Properties.Settings.Default.isDelayTimeShows;
-                    isDelayLapAllowed = new[] { LapAllowances.DELAYS_ONLY, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowances);
-                    isStartLapAllowed = new[] { LapAllowances.AFTER_DELAYS, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowances);
+                    isDelayLapAllowed = new[] { LapAllowances.DELAYS_ONLY, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowancesType);
+                    isStartLapAllowed = new[] { LapAllowances.AFTER_DELAYS, LapAllowances.ALL_DURATIONS }.Contains(Properties.Settings.Default.lapsAllowancesType);
                     displayType = Properties.Settings.Default.lapsDisplayType;
                     ChangeModeUI(currentMode);
                     timer.Enabled = true;
@@ -266,59 +359,81 @@ namespace SimpleClicker
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
                     currentMode = StopWatchMode.Default;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuSize(defaultFormSize);
+                    ToggleExtendMenuVisibility(false);
                     break;
                 case StopWatchMode.Default:
                     // Options button
                     currentMode = StopWatchMode.Options;
                     ChangeModeUI(currentMode);
-                    ToggleOptionsMenuSize(expandedFormSize);
-                    currentMode = StopWatchMode.Options;
+                    ToggleExtendMenuVisibility(true);
                     break;
                 case StopWatchMode.Prepared:
                     MessageBox.Show(Properties.Languages.infoWaitForSignal, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case StopWatchMode.Delayed:
-                    settingsControl.Visible = false;
-                    lapsControl.Visible = true;
-                    this.Size = expandedFormSize;
+                    if (!isExpanded)
+                    {
+                        ToggleExtendMenuVisibility(true);
+                        extendForm.lapsControl.Visible = true;
+                    }
                     AddDelayLap();
-                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
+                    if (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Started:
-                    settingsControl.Visible = false;
-                    lapsControl.Visible = true;
-                    this.Size = expandedFormSize;
+                    if (!isExpanded)
+                    {
+                        ToggleExtendMenuVisibility(true);
+                        extendForm.lapsControl.Visible = true;
+                    }
                     AddStartLap();
-                    if (lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
+                    if (extendForm.lapsControl.laps.Count >= Properties.Settings.Default.lappingCount && Properties.Settings.Default.lappingCount >= 0) secondaryActionButton.Enabled = false;
                     break;
                 case StopWatchMode.Paused:
                     currentMode = StopWatchMode.Default;
                     preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
-                    lapsControl.ResetLap();
-                    this.Size = defaultFormSize;
-                    lapsControl.Visible = false;
-                    settingsControl.Visible = true;
+                    extendForm.lapsControl.ResetLap();
+                    if (isExpanded)
+                    {
+                        ToggleExtendMenuVisibility(false);
+                    }
                     DisplayTime(TimeSpan.Zero);
                     ChangeModeUI(currentMode);
+                    if (Properties.Settings.Default.isBiosTimeEnabled)
+                        biosTimer.Enabled = true;
                     break;
                 default:
                     break;
             }
         }
 
-        private void mainTimerText_Enter(object sender, EventArgs e)
+        private void mainActionButton_MouseEnter(object sender, EventArgs e)
         {
-            elementsPanel.Focus();
+            mainActionButton.Focus();
         }
 
-        private void tickTimerText_Enter(object sender, EventArgs e)
+        private void secondaryActionButton_MouseEnter(object sender, EventArgs e)
         {
-            elementsPanel.Focus();
+            secondaryActionButton.Focus();
+        }
+
+        private void mainTimerText_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void tickTimerText_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
         }
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private void biosTimer_Tick(object sender, EventArgs e)
+        {
+            mainTimerText.Text = DateTime.Now.ToString("HH:mm:ss");
+            tickTimerText.Text = DateTime.Now.ToString("dddd, MMMM dd");
+        }  
     }
 }

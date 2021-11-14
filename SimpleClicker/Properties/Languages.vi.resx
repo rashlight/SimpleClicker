@@ -169,7 +169,7 @@
     <value>Độ Chính Xác</value>
   </data>
   <data name="supportText" xml:space="preserve">
-    <value>Hỗ trợ...</value>
+    <value>Về p.mềm...</value>
   </data>
   <data name="preparationTimeText" xml:space="preserve">
     <value>T.Gian Chuẩn Bị</value>
@@ -193,8 +193,7 @@
     <value>Hiện t.gian chờ còn lại</value>
   </data>
   <data name="languageHelpText" xml:space="preserve">
-    <value>***** CHẾ ĐỘ THỬ NGHIỆM *****
-Thay đổi ngôn ngữ. Một số phần của ngôn ngữ
+    <value>Thay đổi ngôn ngữ. Một số phần của ngôn ngữ
 có thể không đầy đủ / chính xâc.</value>
   </data>
   <data name="languageText" xml:space="preserve">
@@ -221,7 +220,7 @@ có thể không đầy đủ / chính xâc.</value>
     <value>T.gian / vòng</value>
   </data>
   <data name="lapDisplayTypeOption1" xml:space="preserve">
-    <value>T.gian thực</value>
+    <value>T.gian thực (Mặc định)</value>
   </data>
   <data name="lapDisplayTypeText" xml:space="preserve">
     <value>Kiểu hiện vòng</value>
@@ -229,15 +228,15 @@ có thể không đầy đủ / chính xâc.</value>
   <data name="lapsAllowanceHelpText" xml:space="preserve">
     <value>Chỉnh thời điểm vòng có thể được ghi:
   - Tất cả t.điểm (Mặc định): Tất cả các vòng sẽ được ghi.
-  - Sau t.gian chờ: Chỉ ghi vòng sau t.gian chờ.
-  - Chỉ trong t.gian chờ: Chỉ ghi vòng trong t.gian chờ.</value>
+  - Sau t.gian chờ: Chỉ ghi vòng sau thời gian chờ.
+  - Chỉ trong t.gian chờ: Chỉ ghi vòng trong thời gian chờ.</value>
   </data>
   <data name="lapsSortingHelpText" xml:space="preserve">
     <value>Sắp xếp vòng:
-  - Chỉnh lên đầu: Vòng đầu sẽ được t.trung.
-  - Chỉnh xuống cuối: Vòng cuối sẽ được t.trung.
-  - Trên xuống: Từ vòng tốt nhất đến tệ nhất.
-  - Dưới lên: Từ vòng tệ nhất đến tốt nhất.</value>
+  - Chỉnh lên đầu: Vòng đầu sẽ được tập trung.
+  - Chỉnh xuống cuối: Vòng cuối sẽ được tập trung.
+  - Trên xuống: Từ vòng chậm nhất đến nhanh nhất.
+  - Dưới lên: Từ vòng nhanh nhất đến chậm nhất.</value>
   </data>
   <data name="lapSortingOption0" xml:space="preserve">
     <value>Chỉnh lên đầu</value>
@@ -267,10 +266,10 @@ có thể không đầy đủ / chính xâc.</value>
     <value>KHÔI PHỤC TOÀN BỘ DỮ LIỆU</value>
   </data>
   <data name="resetExtraText" xml:space="preserve">
-    <value>K.phục t.chọn thêm...</value>
+    <value>K.phục c.đặt thêm...</value>
   </data>
   <data name="resetTimeText" xml:space="preserve">
-    <value>K.phục t.chọn t.gian...</value>
+    <value>K.phục c.đặt t.gian...</value>
   </data>
   <data name="secretButtonIdleText" xml:space="preserve">
     <value>Thực thi!</value>
@@ -291,11 +290,11 @@ có thể không đầy đủ / chính xâc.</value>
     <value>Ngẫu tự</value>
   </data>
   <data name="delayTimeShowsHelpText" xml:space="preserve">
-    <value>On: Hiện thời gian đợi.
-Off: Không hiện thời gian đợi.</value>
+    <value>On: Hiện thời gian chờ.
+Off: Không hiện thời gian chờ.</value>
   </data>
   <data name="secretHelpText" xml:space="preserve">
-    <value>Chú ý: Chỉ MỘT mật mã có thể được dùng.</value>
+    <value>Chạm để xem danh sách mật mã...</value>
   </data>
   <data name="extrasTabText" xml:space="preserve">
     <value>Thêm</value>
@@ -329,5 +328,65 @@ Off: Không hiện thời gian đợi.</value>
   </data>
   <data name="lapIntervalText" xml:space="preserve">
     <value>Vòng</value>
+  </data>
+  <data name="darkModeHelpText" xml:space="preserve">
+    <value>Thay đổi tùy chọn chế độ tối. Khi "Hệ thống" được chọn, thay đổi chế độ dựa vào ngày / đêm.</value>
+  </data>
+  <data name="darkModeOption1" xml:space="preserve">
+    <value>Hệ thống</value>
+  </data>
+  <data name="darkModeOption2" xml:space="preserve">
+    <value>Tắt</value>
+  </data>
+  <data name="darkModeOption3" xml:space="preserve">
+    <value>Bật</value>
+  </data>
+  <data name="darkModeText" xml:space="preserve">
+    <value>Chế độ tối</value>
+  </data>
+  <data name="borderColorHelpText" xml:space="preserve">
+    <value>Thay đổi màu viền bên trên cửa sổ.</value>
+  </data>
+  <data name="borderColorText" xml:space="preserve">
+    <value>Màu viền</value>
+  </data>
+  <data name="warningCloseWhenRunning" xml:space="preserve">
+    <value>Đồng hồ hiện vẫn đang chạy! Bạn có thực sự muốn thoát?</value>
+  </data>
+  <data name="attributionTabText" xml:space="preserve">
+    <value>Ghi danh</value>
+  </data>
+  <data name="infoTabText" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="licenseTabText" xml:space="preserve">
+    <value>Giấy phép</value>
+  </data>
+  <data name="systemInfoTabText" xml:space="preserve">
+    <value>Hệ Thống</value>
+  </data>
+  <data name="themeTabText" xml:space="preserve">
+    <value>Nền</value>
+  </data>
+  <data name="sunriseHelpText" xml:space="preserve">
+    <value>Thời gian để tắt chế độ tối trong tùy chọn "Hệ thống".</value>
+  </data>
+  <data name="sunsetHelpText" xml:space="preserve">
+    <value>Thời gian để bật chế độ tối trong tùy chọn "Hệ thống".</value>
+  </data>
+  <data name="sunriseText" xml:space="preserve">
+    <value>M.trời mọc</value>
+  </data>
+  <data name="sunsetText" xml:space="preserve">
+    <value>M.trời lặn</value>
+  </data>
+  <data name="secretListText" xml:space="preserve">
+    <value>Chú ý: Các mật mã chứa các chức năng thử nghiệm!
+Danh sách mật mã (không bao gồm dấu nháy đôi):
+ - "randomlist" : trộn danh sách mỗi lẫn thêm vòng
+ - "biostime" : hiện thời gian hiện tại khi đang chờ</value>
+  </data>
+  <data name="preparationPhaseText" xml:space="preserve">
+    <value>Chuẩn bị...</value>
   </data>
 </root>

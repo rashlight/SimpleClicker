@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using MetroFramework;
 
 namespace SimpleClicker
 {
@@ -21,10 +22,53 @@ namespace SimpleClicker
             InitializeComponent();
         }
 
+        private void LapsControl_Load(object sender, EventArgs e)
+        {
+            ChangeTheme(Properties.Settings.Default.darkModeType);
+        }
+
+        public void ChangeTheme(MetroThemeStyle theme)
+        {
+            if (theme == MetroThemeStyle.Default)
+            {
+                if (DateTime.Now.Hour >= Properties.Settings.Default.sunriseTime && DateTime.Now.Hour < Properties.Settings.Default.sunsetTime)
+                {
+                    metroStyleManager.Theme = MetroThemeStyle.Light;
+                }
+                else metroStyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else metroStyleManager.Theme = theme;
+        }
+
+        public void DisplayLaps()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < laps.Count; i++)
+            {
+                string lapAdder = i == 0 ? "" : Environment.NewLine;
+                string delayDisplay = laps[i].Item1 == true ? "-" : "";
+                string hoursDisplay = laps[i].Item2.Hours < 10 ? "0" + laps[i].Item2.Hours : laps[i].Item2.Hours.ToString();
+                string minutesDisplay = laps[i].Item2.Minutes < 10 ? "0" + laps[i].Item2.Minutes : laps[i].Item2.Minutes.ToString();
+                string secondsDisplay = laps[i].Item2.Seconds < 10 ? "0" + laps[i].Item2.Seconds : laps[i].Item2.Seconds.ToString();
+                string unitsDisplay = Math.Round(laps[i].Item2.TotalSeconds - Math.Truncate((double)laps[i].Item2.TotalSeconds), Properties.Settings.Default.timePrecision).ToString();
+                sb.Append(lapAdder +
+                    Properties.Languages.lapIntervalText + " " + i + ": " +
+                    delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay +
+                    (unitsDisplay.Length > 2 ? ("." + unitsDisplay.ToString().Substring(2)) : ""));
+            }
+            lapsTextBox.Text = sb.ToString();
+            string sortType = Properties.Settings.Default.lapsSortingType;
+            if (sortType == LapSorting.LAST_FOCUSED || sortType == LapSorting.RANDOMIZE)
+            {
+                lapsTextBox.Select(lapsTextBox.Text.Length, 0);
+                lapsTextBox.ScrollToCaret();
+            }
+        }
+
         public void SortLaps()
         {
             // Sorts items
-            switch (Properties.Settings.Default.lapsSorting)
+            switch (Properties.Settings.Default.lapsSortingType)
             {
                 case LapSorting.FIRST_FOCUSED:
                     break;
@@ -54,7 +98,7 @@ namespace SimpleClicker
             // Check items overflow
             if (Properties.Settings.Default.lappingCount > 0 && laps.Count > Properties.Settings.Default.lappingCount)
             {
-                switch (Properties.Settings.Default.lapsSorting)
+                switch (Properties.Settings.Default.lapsSortingType)
                 {
                     case LapSorting.FIRST_FOCUSED:
                         laps.RemoveAt(laps.Count - 1);
@@ -77,28 +121,6 @@ namespace SimpleClicker
             }
         }
 
-        public void DisplayLaps()
-        {
-            lapsListBox.BeginUpdate();
-            lapsListBox.Items.Clear();
-            for (int i = 0; i < laps.Count; i++)
-            {
-                string delayDisplay = laps[i].Item1 == true ? "-" : "";
-                string hoursDisplay = laps[i].Item2.Hours < 10 ? "0" + laps[i].Item2.Hours : laps[i].Item2.Hours.ToString();
-                string minutesDisplay = laps[i].Item2.Minutes < 10 ? "0" + laps[i].Item2.Minutes : laps[i].Item2.Minutes.ToString();
-                string secondsDisplay = laps[i].Item2.Seconds < 10 ? "0" + laps[i].Item2.Seconds : laps[i].Item2.Seconds.ToString();
-                string unitsDisplay = Math.Round(laps[i].Item2.TotalSeconds - Math.Truncate((double)laps[i].Item2.TotalSeconds), Properties.Settings.Default.timePrecision).ToString();
-                lapsListBox.Items.Add(
-                    Properties.Languages.lapIntervalText + " " + (lapsListBox.Items.Count + 1) + ": " +
-                    delayDisplay + hoursDisplay + ":" + minutesDisplay + ":" + secondsDisplay +
-                    ((unitsDisplay.Length > 2 ? ("." + unitsDisplay.ToString().Substring(2)) : "") + " " + Properties.Languages.timeUnitText)
-                );
-            }
-            lapsListBox.EndUpdate();
-
-            if (Properties.Settings.Default.lapsSorting == LapSorting.LAST_FOCUSED) lapsListBox.TopIndex = lapsListBox.Items.Count - 1;
-        }
-
         public void AddLap(bool isDelayed, TimeSpan time)
         {
             laps.Add(new Tuple<bool, TimeSpan>(isDelayed, time));
@@ -114,7 +136,12 @@ namespace SimpleClicker
         public void ResetLap()
         {
             laps.Clear();
-            lapsListBox.Items.Clear();
+            lapsTextBox.Clear();
+        }
+
+        private void lapsTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            lapsTextBox.Focus();
         }
     }
 }

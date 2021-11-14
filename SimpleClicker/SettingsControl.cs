@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace SimpleClicker
 {
@@ -17,7 +18,10 @@ namespace SimpleClicker
         public SettingsControl()
         {
             InitializeComponent();
+        }
 
+        private void SettingsControl_Load(object sender, EventArgs e)
+        {
             lappingToggle.Checked = Properties.Settings.Default.isLappingEnabled;
             lappingChooser.Value = Properties.Settings.Default.lappingCount;
             delayStartChooser.Value = (decimal)Properties.Settings.Default.delayTimeStart;
@@ -25,7 +29,6 @@ namespace SimpleClicker
             timePrecisionChooser.Value = Properties.Settings.Default.timePrecision;
             updateThresholdChooser.Value = Properties.Settings.Default.updateThreshold;
             prepTimeChooser.Value = (decimal)Properties.Settings.Default.preparationTime;
-            // "en-US" = Properties.Settings.Default.language = ;
 
             if (!lappingToggle.Checked)
             {
@@ -44,7 +47,21 @@ namespace SimpleClicker
             timePrecisionText.Text = Properties.Languages.timePrecisionText;
             updateThresholdText.Text = Properties.Languages.updateThresholdText;
             moreOptionsButton.Text = Properties.Languages.moreOptionsButtonText;
-            supportButton.Text = Properties.Languages.supportText;
+            aboutButton.Text = Properties.Languages.supportText;
+        }
+
+        public void ChangeTheme(MetroThemeStyle theme)
+        {
+            if (theme == MetroThemeStyle.Default)
+            {
+                if (DateTime.Now.Hour >= Properties.Settings.Default.sunriseTime && DateTime.Now.Hour < Properties.Settings.Default.sunsetTime)
+                {
+                    metroStyleManager.Theme = MetroThemeStyle.Light;
+                }
+                else metroStyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else metroStyleManager.Theme = theme;
+            lappingToggle.Theme = metroStyleManager.Theme;
         }
 
         private void lappingToggle_CheckedChanged(object sender, EventArgs e)
@@ -59,14 +76,36 @@ namespace SimpleClicker
             System.Diagnostics.Process.Start("http://github.com/rashlight/SimpleClicker");
         }
 
+        private void lappingChooser_ValueChanged(object sender, EventArgs e)
+        {
+            lappingChooser_MouseUp(lappingChooser, null);
+        }
+
+        private void prepTimeChooser_ValueChanged(object sender, EventArgs e)
+        {
+            prepTimeChooser_MouseUp(prepTimeChooser, null);
+        }
+
         private void delayStartChooser_ValueChanged(object sender, EventArgs e)
         {
             if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
+            delayStartChooser_MouseUp(delayStartChooser, null);
         }
 
         private void delayStopChooser_ValueChanged(object sender, EventArgs e)
         {
             if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
+            delayStopChooser_MouseUp(delayStopChooser, null);
+        }
+
+        private void timePrecisionChooser_ValueChanged(object sender, EventArgs e)
+        {
+            timePrecisionChooser_MouseUp(timePrecisionChooser, null);
+        }
+
+        private void updateThresholdChooser_ValueChanged(object sender, EventArgs e)
+        {
+            updateThresholdChooser_MouseUp(updateThresholdChooser, null);
         }
 
         private void UnfocusComponent_Enter(object sender, EventArgs e)
@@ -118,26 +157,16 @@ namespace SimpleClicker
             Properties.Settings.Default.Save();
         }
 
-        private void supportButton_Click(object sender, EventArgs e)
+        private void aboutButton_Click(object sender, EventArgs e)
         {
-            string supportData =
-                "OSVersion: " + Environment.OSVersion + "\n" +
-                "Is64BitOS: " + Environment.Is64BitOperatingSystem + "\n" +
-                "Is64BitBinary: " + Environment.Is64BitProcess + "\n" +
-                "StopwatchFrequency: " + System.Diagnostics.Stopwatch.Frequency + "\n" +
-                "IsStopwatchHighResolution: " + System.Diagnostics.Stopwatch.IsHighResolution + "\n" +
-                "IsElevated: " + System.Security.Principal.WindowsIdentity.GetCurrent().Owner.IsWellKnown(System.Security.Principal.WellKnownSidType.BuiltinAdministratorsSid) + "\n" +
-                "ProcessorCount: " + Environment.ProcessorCount + "\n" +
-                "SystemPageSize: " + Environment.SystemPageSize + "\n" +
-                "PriorityIndex: " + System.Threading.Thread.CurrentThread.Priority + "\n" +
-                "Language: " + System.Threading.Thread.CurrentThread.CurrentCulture + "\n";
-
-            MessageBox.Show(supportData, System.Diagnostics.Process.GetCurrentProcess().ProcessName + " ver " + System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).ProductVersion, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
 
         private void licenseLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html");
         }
+
     }
 }
