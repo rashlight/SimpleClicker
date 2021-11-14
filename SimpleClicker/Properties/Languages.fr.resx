@@ -386,4 +386,7 @@ Liste Secrète (sans guillemets):
  - "random" : tours de shuffle tous les ajouts
  - "biostime" : afficher l'heure actuelle en cas d'inactivité</value>
   </data>
+  <data name="preparationPhaseText" xml:space="preserve">
+    <value>Préparez-vous...</value>
+  </data>
 </root>

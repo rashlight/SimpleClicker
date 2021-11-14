@@ -549,6 +549,15 @@ namespace SimpleClicker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get ready....
+        /// </summary>
+        public static string preparationPhaseText {
+            get {
+                return ResourceManager.GetString("preparationPhaseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preparation time color.
         /// </summary>
         public static string preparationTimeColorText {

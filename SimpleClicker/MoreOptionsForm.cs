@@ -202,7 +202,7 @@ namespace SimpleClicker
                     lapAllowancesComboBox.SelectedIndex = 2;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the file manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The lap allowance is corrupted!\nYou will need to reset all (Extras) or edit the file manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -229,7 +229,7 @@ namespace SimpleClicker
                     }
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The lap sorting is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -242,7 +242,7 @@ namespace SimpleClicker
                     lapDisplayComboBox.SelectedIndex = 1;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The lap display is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -258,7 +258,7 @@ namespace SimpleClicker
                     darkModeComboBox.SelectedIndex = 2;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The dark mode option is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -277,7 +277,7 @@ namespace SimpleClicker
                     languageComboBox.SelectedIndex = 2;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The tab position is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -301,7 +301,7 @@ namespace SimpleClicker
             }
             catch
             {
-                MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The tab setting is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 moreOptionsTabControl.SelectedIndex = 0;
             }
         }

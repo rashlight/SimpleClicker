@@ -75,6 +75,12 @@ namespace SimpleClicker
 
             preparedTime = TimeSpan.FromSeconds(Properties.Settings.Default.preparationTime);
             delayTime = TimeSpan.FromSeconds(Properties.Settings.Default.delayTimeStop - Properties.Settings.Default.delayTimeStart);
+            if (delayTime.Ticks < 0 || preparedTime.Ticks < 0)
+            {
+                MessageBox.Show("The time option(s) is corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                preparedTime = new TimeSpan(0);
+                delayTime = new TimeSpan(0);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -163,6 +169,7 @@ namespace SimpleClicker
                     secondaryActionButton.Text = Properties.Languages.optionsButtonText;
                     if (!Properties.Settings.Default.isBiosTimeEnabled)
                         tickTimerText.Text = Properties.Languages.tickIdleText;
+                    else biosTimer_Tick(secondaryActionButton, null);
                     extendForm.settingsControl.Visible = true;
                     extendForm.lapsControl.Visible = false;
                     // Temporary disable theme to properly apply dark mode (when possible)
@@ -176,7 +183,7 @@ namespace SimpleClicker
                     mainActionButton.Text = Properties.Languages.waitButtonText;
                     secondaryActionButton.Text = Properties.Languages.lapButtonText;
                     mainTimerText.ForeColor = Properties.Settings.Default.preparationTimeColor;
-                    tickTimerText.Text = "Get ready...";
+                    tickTimerText.Text = Properties.Languages.preparationPhaseText;
                     extendForm.settingsControl.Visible = false;
                     extendForm.lapsControl.Visible = true;
                     break;

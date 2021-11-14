@@ -386,4 +386,7 @@ Danh sách mật mã (không bao gồm dấu nháy đôi):
  - "randomlist" : trộn danh sách mỗi lẫn thêm vòng
  - "biostime" : hiện thời gian hiện tại khi đang chờ</value>
   </data>
+  <data name="preparationPhaseText" xml:space="preserve">
+    <value>Chuẩn bị...</value>
+  </data>
 </root>

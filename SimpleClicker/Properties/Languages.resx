@@ -386,4 +386,7 @@ Secret List (without quotation marks):
  - "random" : shuffle laps every additions
  - "biostime" : show current time when idle</value>
   </data>
+  <data name="preparationPhaseText" xml:space="preserve">
+    <value>Get ready...</value>
+  </data>
 </root>
