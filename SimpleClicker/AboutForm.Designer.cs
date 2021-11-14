@@ -126,7 +126,7 @@
             this.attributionsTab.HorizontalScrollbarBarColor = true;
             this.attributionsTab.Location = new System.Drawing.Point(4, 39);
             this.attributionsTab.Name = "attributionsTab";
-            this.attributionsTab.Size = new System.Drawing.Size(353, 170);
+            this.attributionsTab.Size = new System.Drawing.Size(353, 189);
             this.attributionsTab.TabIndex = 3;
             this.attributionsTab.Text = "Attributions";
             this.attributionsTab.VerticalScrollbarBarColor = true;
@@ -155,7 +155,7 @@
             this.licenseTab.HorizontalScrollbarBarColor = true;
             this.licenseTab.Location = new System.Drawing.Point(4, 39);
             this.licenseTab.Name = "licenseTab";
-            this.licenseTab.Size = new System.Drawing.Size(353, 170);
+            this.licenseTab.Size = new System.Drawing.Size(353, 189);
             this.licenseTab.TabIndex = 2;
             this.licenseTab.Text = "License";
             this.licenseTab.VerticalScrollbarBarColor = true;
@@ -182,7 +182,7 @@
             this.systemInfoTab.HorizontalScrollbarBarColor = true;
             this.systemInfoTab.Location = new System.Drawing.Point(4, 39);
             this.systemInfoTab.Name = "systemInfoTab";
-            this.systemInfoTab.Size = new System.Drawing.Size(353, 170);
+            this.systemInfoTab.Size = new System.Drawing.Size(353, 189);
             this.systemInfoTab.TabIndex = 1;
             this.systemInfoTab.Text = "System Info";
             this.systemInfoTab.VerticalScrollbarBarColor = true;
@@ -229,6 +229,7 @@
             this.Controls.Add(this.versionText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

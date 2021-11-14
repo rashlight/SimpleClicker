@@ -167,7 +167,7 @@
             this.pauseColorPicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pauseColorPicker.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.pauseColorPicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorPicker.Location = new System.Drawing.Point(245, 227);
+            this.pauseColorPicker.Location = new System.Drawing.Point(245, 228);
             this.pauseColorPicker.Name = "pauseColorPicker";
             this.pauseColorPicker.Size = new System.Drawing.Size(153, 35);
             this.pauseColorPicker.TabIndex = 40;
@@ -182,7 +182,7 @@
             this.pauseColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pauseColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.pauseColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorLabel.Location = new System.Drawing.Point(9, 228);
+            this.pauseColorLabel.Location = new System.Drawing.Point(9, 229);
             this.pauseColorLabel.Name = "pauseColorLabel";
             this.pauseColorLabel.Size = new System.Drawing.Size(166, 30);
             this.pauseColorLabel.TabIndex = 38;
@@ -313,16 +313,16 @@
             this.delayTimeShowsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.delayTimeShowsLabel.Location = new System.Drawing.Point(8, 18);
             this.delayTimeShowsLabel.Name = "delayTimeShowsLabel";
-            this.delayTimeShowsLabel.Size = new System.Drawing.Size(264, 30);
+            this.delayTimeShowsLabel.Size = new System.Drawing.Size(165, 30);
             this.delayTimeShowsLabel.TabIndex = 7;
-            this.delayTimeShowsLabel.Text = "Show remaining delay time";
+            this.delayTimeShowsLabel.Text = "Show delay time";
             // 
             // pauseColorBox
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.pauseColorBox, true);
             this.pauseColorBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pauseColorBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorBox.Location = new System.Drawing.Point(404, 227);
+            this.pauseColorBox.Location = new System.Drawing.Point(404, 228);
             this.pauseColorBox.Name = "pauseColorBox";
             this.pauseColorBox.Size = new System.Drawing.Size(10, 35);
             this.pauseColorBox.TabIndex = 44;
@@ -368,7 +368,7 @@
             this.pauseColorHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
             this.pauseColorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pauseColorHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorHelp.Location = new System.Drawing.Point(421, 229);
+            this.pauseColorHelp.Location = new System.Drawing.Point(421, 230);
             this.pauseColorHelp.Name = "pauseColorHelp";
             this.pauseColorHelp.Size = new System.Drawing.Size(30, 30);
             this.pauseColorHelp.TabIndex = 39;

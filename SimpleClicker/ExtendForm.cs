@@ -16,6 +16,7 @@ namespace SimpleClicker
         public ExtendForm()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
         }
 
         private void TimeExtendForm_Load(object sender, EventArgs e)
@@ -37,6 +38,11 @@ namespace SimpleClicker
 
             settingsControl.ChangeTheme(metroStyleManager.Theme);
             lapsControl.ChangeTheme(metroStyleManager.Theme);
+        }
+
+        private void ExtendForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void ExtendForm_MouseEnter(object sender, EventArgs e)
