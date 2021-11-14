@@ -1,4 +1,9 @@
-﻿## Version 1.0.0.0 (Tweaking Update):
+﻿## Version 1.0.0.1 (Fixes):
+	- Update reset options
+	- Update assembly information
+	- A secret will now restart on execute
+
+## Version 1.0.0.0 (Tweaking Update):
 	- Further changing UI transcriptions.
 	- Change support button to an about form with similar functionality
 	- The setting tabs' position will be saved when opened
