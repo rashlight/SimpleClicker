@@ -64,18 +64,6 @@
             this.lapSortingLabel = new System.Windows.Forms.Label();
             this.lapDisplayTypeLabel = new System.Windows.Forms.Label();
             this.moreOptionsTabControl = new MetroFramework.Controls.MetroTabControl();
-            this.extrasTab = new MetroFramework.Controls.MetroTabPage();
-            this.languageComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.secretHelp = new System.Windows.Forms.PictureBox();
-            this.flagPictureBox = new System.Windows.Forms.PictureBox();
-            this.languageHelp = new System.Windows.Forms.PictureBox();
-            this.languageLabel = new System.Windows.Forms.Label();
-            this.secretButton = new System.Windows.Forms.Button();
-            this.secretBox = new System.Windows.Forms.TextBox();
-            this.secretLabel = new System.Windows.Forms.Label();
-            this.resetAllButton = new System.Windows.Forms.Button();
-            this.resetExtraButton = new System.Windows.Forms.Button();
-            this.resetTimeButton = new System.Windows.Forms.Button();
             this.themesTab = new MetroFramework.Controls.MetroTabPage();
             this.defaultDarkModePanel = new MetroFramework.Controls.MetroPanel();
             this.sunsetHelp = new System.Windows.Forms.PictureBox();
@@ -92,6 +80,18 @@
             this.darkModeHelp = new System.Windows.Forms.PictureBox();
             this.darkModeText = new System.Windows.Forms.Label();
             this.borderColorText = new System.Windows.Forms.Label();
+            this.extrasTab = new MetroFramework.Controls.MetroTabPage();
+            this.languageComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.secretHelp = new System.Windows.Forms.PictureBox();
+            this.flagPictureBox = new System.Windows.Forms.PictureBox();
+            this.languageHelp = new System.Windows.Forms.PictureBox();
+            this.languageLabel = new System.Windows.Forms.Label();
+            this.secretButton = new System.Windows.Forms.Button();
+            this.secretBox = new System.Windows.Forms.TextBox();
+            this.secretLabel = new System.Windows.Forms.Label();
+            this.resetAllButton = new System.Windows.Forms.Button();
+            this.resetExtraButton = new System.Windows.Forms.Button();
+            this.resetTimeButton = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -113,10 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lapsSortingHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lapsAllowanceHelp)).BeginInit();
             this.moreOptionsTabControl.SuspendLayout();
-            this.extrasTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.secretHelp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flagPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.languageHelp)).BeginInit();
             this.themesTab.SuspendLayout();
             this.defaultDarkModePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sunsetHelp)).BeginInit();
@@ -125,6 +121,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sunriseChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borderColorHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darkModeHelp)).BeginInit();
+            this.extrasTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.secretHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flagPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.languageHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
@@ -182,7 +182,7 @@
             this.pauseColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pauseColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.pauseColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pauseColorLabel.Location = new System.Drawing.Point(12, 228);
+            this.pauseColorLabel.Location = new System.Drawing.Point(9, 228);
             this.pauseColorLabel.Name = "pauseColorLabel";
             this.pauseColorLabel.Size = new System.Drawing.Size(166, 30);
             this.pauseColorLabel.TabIndex = 38;
@@ -206,7 +206,7 @@
             this.alwaysOnTopLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.alwaysOnTopLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.alwaysOnTopLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.alwaysOnTopLabel.Location = new System.Drawing.Point(11, 58);
+            this.alwaysOnTopLabel.Location = new System.Drawing.Point(8, 58);
             this.alwaysOnTopLabel.Name = "alwaysOnTopLabel";
             this.alwaysOnTopLabel.Size = new System.Drawing.Size(144, 30);
             this.alwaysOnTopLabel.TabIndex = 35;
@@ -233,7 +233,7 @@
             this.startColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.startColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.startColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.startColorLabel.Location = new System.Drawing.Point(11, 186);
+            this.startColorLabel.Location = new System.Drawing.Point(7, 186);
             this.startColorLabel.Name = "startColorLabel";
             this.startColorLabel.Size = new System.Drawing.Size(154, 30);
             this.startColorLabel.TabIndex = 23;
@@ -260,7 +260,7 @@
             this.delayColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.delayColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.delayColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.delayColorLabel.Location = new System.Drawing.Point(10, 141);
+            this.delayColorLabel.Location = new System.Drawing.Point(7, 141);
             this.delayColorLabel.Name = "delayColorLabel";
             this.delayColorLabel.Size = new System.Drawing.Size(164, 30);
             this.delayColorLabel.TabIndex = 21;
@@ -287,7 +287,7 @@
             this.preparationColorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.preparationColorLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.preparationColorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.preparationColorLabel.Location = new System.Drawing.Point(10, 99);
+            this.preparationColorLabel.Location = new System.Drawing.Point(7, 99);
             this.preparationColorLabel.Name = "preparationColorLabel";
             this.preparationColorLabel.Size = new System.Drawing.Size(219, 30);
             this.preparationColorLabel.TabIndex = 9;
@@ -311,7 +311,7 @@
             this.delayTimeShowsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.delayTimeShowsLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.delayTimeShowsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.delayTimeShowsLabel.Location = new System.Drawing.Point(11, 18);
+            this.delayTimeShowsLabel.Location = new System.Drawing.Point(8, 18);
             this.delayTimeShowsLabel.Name = "delayTimeShowsLabel";
             this.delayTimeShowsLabel.Size = new System.Drawing.Size(264, 30);
             this.delayTimeShowsLabel.TabIndex = 7;
@@ -575,179 +575,10 @@
             this.moreOptionsTabControl.Controls.Add(this.extrasTab);
             this.moreOptionsTabControl.Location = new System.Drawing.Point(8, 64);
             this.moreOptionsTabControl.Name = "moreOptionsTabControl";
-            this.moreOptionsTabControl.SelectedIndex = 0;
+            this.moreOptionsTabControl.SelectedIndex = 1;
             this.moreOptionsTabControl.Size = new System.Drawing.Size(469, 312);
             this.moreOptionsTabControl.TabIndex = 9;
             this.moreOptionsTabControl.SelectedIndexChanged += new System.EventHandler(this.moreOptionsTabControl_SelectedIndexChanged);
-            // 
-            // extrasTab
-            // 
-            this.extrasTab.Controls.Add(this.languageComboBox);
-            this.extrasTab.Controls.Add(this.secretHelp);
-            this.extrasTab.Controls.Add(this.flagPictureBox);
-            this.extrasTab.Controls.Add(this.languageHelp);
-            this.extrasTab.Controls.Add(this.languageLabel);
-            this.extrasTab.Controls.Add(this.secretButton);
-            this.extrasTab.Controls.Add(this.secretBox);
-            this.extrasTab.Controls.Add(this.secretLabel);
-            this.extrasTab.Controls.Add(this.resetAllButton);
-            this.extrasTab.Controls.Add(this.resetExtraButton);
-            this.extrasTab.Controls.Add(this.resetTimeButton);
-            this.extrasTab.HorizontalScrollbarBarColor = true;
-            this.extrasTab.Location = new System.Drawing.Point(4, 39);
-            this.extrasTab.Name = "extrasTab";
-            this.extrasTab.Size = new System.Drawing.Size(461, 269);
-            this.extrasTab.TabIndex = 2;
-            this.extrasTab.Text = "Extras";
-            this.extrasTab.VerticalScrollbarBarColor = true;
-            // 
-            // languageComboBox
-            // 
-            this.languageComboBox.FormattingEnabled = true;
-            this.languageComboBox.ItemHeight = 24;
-            this.languageComboBox.Items.AddRange(new object[] {
-            "English (US / UK)",
-            "French (Français)",
-            "Vietnamese (Tiếng Việt)"});
-            this.languageComboBox.Location = new System.Drawing.Point(168, 15);
-            this.languageComboBox.Name = "languageComboBox";
-            this.languageComboBox.Size = new System.Drawing.Size(254, 30);
-            this.languageComboBox.TabIndex = 45;
-            this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged);
-            // 
-            // secretHelp
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.secretHelp, true);
-            this.secretHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.secretHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
-            this.secretHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.secretHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.secretHelp.Location = new System.Drawing.Point(422, 102);
-            this.secretHelp.Name = "secretHelp";
-            this.secretHelp.Size = new System.Drawing.Size(36, 36);
-            this.secretHelp.TabIndex = 36;
-            this.secretHelp.TabStop = false;
-            this.secretHelp.Click += new System.EventHandler(this.secretHelp_Click);
-            // 
-            // flagPictureBox
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.flagPictureBox, true);
-            this.flagPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.flagPictureBox.BackgroundImage = global::SimpleClicker.Properties.Resources.us_uk;
-            this.flagPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flagPictureBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.flagPictureBox.Location = new System.Drawing.Point(114, 15);
-            this.flagPictureBox.Name = "flagPictureBox";
-            this.flagPictureBox.Size = new System.Drawing.Size(45, 30);
-            this.flagPictureBox.TabIndex = 35;
-            this.flagPictureBox.TabStop = false;
-            // 
-            // languageHelp
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.languageHelp, true);
-            this.languageHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.languageHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
-            this.languageHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.languageHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.languageHelp.Location = new System.Drawing.Point(428, 16);
-            this.languageHelp.Name = "languageHelp";
-            this.languageHelp.Size = new System.Drawing.Size(30, 30);
-            this.languageHelp.TabIndex = 34;
-            this.languageHelp.TabStop = false;
-            // 
-            // languageLabel
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.languageLabel, true);
-            this.languageLabel.AutoSize = true;
-            this.languageLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.languageLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
-            this.languageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.languageLabel.Location = new System.Drawing.Point(1, 14);
-            this.languageLabel.Name = "languageLabel";
-            this.languageLabel.Size = new System.Drawing.Size(104, 30);
-            this.languageLabel.TabIndex = 33;
-            this.languageLabel.Text = "Language";
-            // 
-            // secretButton
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.secretButton, true);
-            this.secretButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.secretButton.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.secretButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.secretButton.Location = new System.Drawing.Point(236, 60);
-            this.secretButton.Name = "secretButton";
-            this.secretButton.Size = new System.Drawing.Size(222, 32);
-            this.secretButton.TabIndex = 26;
-            this.secretButton.Text = "Execute!";
-            this.secretButton.UseVisualStyleBackColor = false;
-            this.secretButton.Click += new System.EventHandler(this.secretButton_Click);
-            // 
-            // secretBox
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.secretBox, true);
-            this.secretBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.secretBox.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.secretBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.secretBox.Location = new System.Drawing.Point(3, 102);
-            this.secretBox.Name = "secretBox";
-            this.secretBox.Size = new System.Drawing.Size(413, 36);
-            this.secretBox.TabIndex = 25;
-            this.secretBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.secretBox_KeyDown);
-            // 
-            // secretLabel
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.secretLabel, true);
-            this.secretLabel.AutoSize = true;
-            this.secretLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.secretLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
-            this.secretLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.secretLabel.Location = new System.Drawing.Point(1, 62);
-            this.secretLabel.Name = "secretLabel";
-            this.secretLabel.Size = new System.Drawing.Size(209, 30);
-            this.secretLabel.TabIndex = 24;
-            this.secretLabel.Text = "Enter secret(s) below:";
-            // 
-            // resetAllButton
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.resetAllButton, true);
-            this.resetAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.resetAllButton.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.resetAllButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.resetAllButton.Location = new System.Drawing.Point(3, 209);
-            this.resetAllButton.Name = "resetAllButton";
-            this.resetAllButton.Size = new System.Drawing.Size(455, 54);
-            this.resetAllButton.TabIndex = 23;
-            this.resetAllButton.Text = "RESET ALL OPTIONS TO DEFAULT";
-            this.resetAllButton.UseVisualStyleBackColor = false;
-            this.resetAllButton.Click += new System.EventHandler(this.resetAllButton_Click);
-            // 
-            // resetExtraButton
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.resetExtraButton, true);
-            this.resetExtraButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.resetExtraButton.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.resetExtraButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.resetExtraButton.Location = new System.Drawing.Point(236, 149);
-            this.resetExtraButton.Name = "resetExtraButton";
-            this.resetExtraButton.Size = new System.Drawing.Size(222, 50);
-            this.resetExtraButton.TabIndex = 22;
-            this.resetExtraButton.Text = "Reset ex. options...";
-            this.resetExtraButton.UseVisualStyleBackColor = false;
-            this.resetExtraButton.Click += new System.EventHandler(this.resetExtraButton_Click);
-            // 
-            // resetTimeButton
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.resetTimeButton, true);
-            this.resetTimeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.resetTimeButton.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.resetTimeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.resetTimeButton.Location = new System.Drawing.Point(3, 149);
-            this.resetTimeButton.Name = "resetTimeButton";
-            this.resetTimeButton.Size = new System.Drawing.Size(227, 50);
-            this.resetTimeButton.TabIndex = 21;
-            this.resetTimeButton.Text = "Reset time options...";
-            this.resetTimeButton.UseVisualStyleBackColor = false;
-            this.resetTimeButton.Click += new System.EventHandler(this.resetTimeButton_Click);
             // 
             // themesTab
             // 
@@ -992,6 +823,175 @@
             this.borderColorText.TabIndex = 30;
             this.borderColorText.Text = "Border color";
             // 
+            // extrasTab
+            // 
+            this.extrasTab.Controls.Add(this.languageComboBox);
+            this.extrasTab.Controls.Add(this.secretHelp);
+            this.extrasTab.Controls.Add(this.flagPictureBox);
+            this.extrasTab.Controls.Add(this.languageHelp);
+            this.extrasTab.Controls.Add(this.languageLabel);
+            this.extrasTab.Controls.Add(this.secretButton);
+            this.extrasTab.Controls.Add(this.secretBox);
+            this.extrasTab.Controls.Add(this.secretLabel);
+            this.extrasTab.Controls.Add(this.resetAllButton);
+            this.extrasTab.Controls.Add(this.resetExtraButton);
+            this.extrasTab.Controls.Add(this.resetTimeButton);
+            this.extrasTab.HorizontalScrollbarBarColor = true;
+            this.extrasTab.Location = new System.Drawing.Point(4, 39);
+            this.extrasTab.Name = "extrasTab";
+            this.extrasTab.Size = new System.Drawing.Size(461, 269);
+            this.extrasTab.TabIndex = 2;
+            this.extrasTab.Text = "Extras";
+            this.extrasTab.VerticalScrollbarBarColor = true;
+            // 
+            // languageComboBox
+            // 
+            this.languageComboBox.FormattingEnabled = true;
+            this.languageComboBox.ItemHeight = 24;
+            this.languageComboBox.Items.AddRange(new object[] {
+            "English (US / UK)",
+            "French (Français)",
+            "Vietnamese (Tiếng Việt)"});
+            this.languageComboBox.Location = new System.Drawing.Point(168, 15);
+            this.languageComboBox.Name = "languageComboBox";
+            this.languageComboBox.Size = new System.Drawing.Size(254, 30);
+            this.languageComboBox.TabIndex = 45;
+            this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged);
+            // 
+            // secretHelp
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.secretHelp, true);
+            this.secretHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.secretHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
+            this.secretHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.secretHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.secretHelp.Location = new System.Drawing.Point(422, 102);
+            this.secretHelp.Name = "secretHelp";
+            this.secretHelp.Size = new System.Drawing.Size(36, 36);
+            this.secretHelp.TabIndex = 36;
+            this.secretHelp.TabStop = false;
+            this.secretHelp.Click += new System.EventHandler(this.secretHelp_Click);
+            // 
+            // flagPictureBox
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.flagPictureBox, true);
+            this.flagPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.flagPictureBox.BackgroundImage = global::SimpleClicker.Properties.Resources.us_uk;
+            this.flagPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flagPictureBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flagPictureBox.Location = new System.Drawing.Point(114, 15);
+            this.flagPictureBox.Name = "flagPictureBox";
+            this.flagPictureBox.Size = new System.Drawing.Size(45, 30);
+            this.flagPictureBox.TabIndex = 35;
+            this.flagPictureBox.TabStop = false;
+            // 
+            // languageHelp
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.languageHelp, true);
+            this.languageHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.languageHelp.BackgroundImage = global::SimpleClicker.Properties.Resources.help_icon_light;
+            this.languageHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.languageHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.languageHelp.Location = new System.Drawing.Point(428, 16);
+            this.languageHelp.Name = "languageHelp";
+            this.languageHelp.Size = new System.Drawing.Size(30, 30);
+            this.languageHelp.TabIndex = 34;
+            this.languageHelp.TabStop = false;
+            // 
+            // languageLabel
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.languageLabel, true);
+            this.languageLabel.AutoSize = true;
+            this.languageLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.languageLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
+            this.languageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.languageLabel.Location = new System.Drawing.Point(1, 14);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(104, 30);
+            this.languageLabel.TabIndex = 33;
+            this.languageLabel.Text = "Language";
+            // 
+            // secretButton
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.secretButton, true);
+            this.secretButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.secretButton.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.secretButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.secretButton.Location = new System.Drawing.Point(236, 60);
+            this.secretButton.Name = "secretButton";
+            this.secretButton.Size = new System.Drawing.Size(222, 32);
+            this.secretButton.TabIndex = 26;
+            this.secretButton.Text = "Execute!";
+            this.secretButton.UseVisualStyleBackColor = false;
+            this.secretButton.Click += new System.EventHandler(this.secretButton_Click);
+            // 
+            // secretBox
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.secretBox, true);
+            this.secretBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.secretBox.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.secretBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.secretBox.Location = new System.Drawing.Point(3, 102);
+            this.secretBox.Name = "secretBox";
+            this.secretBox.Size = new System.Drawing.Size(413, 36);
+            this.secretBox.TabIndex = 25;
+            this.secretBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.secretBox_KeyDown);
+            // 
+            // secretLabel
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.secretLabel, true);
+            this.secretLabel.AutoSize = true;
+            this.secretLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.secretLabel.Font = new System.Drawing.Font("Segoe UI", 12.5F);
+            this.secretLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.secretLabel.Location = new System.Drawing.Point(1, 62);
+            this.secretLabel.Name = "secretLabel";
+            this.secretLabel.Size = new System.Drawing.Size(209, 30);
+            this.secretLabel.TabIndex = 24;
+            this.secretLabel.Text = "Enter secret(s) below:";
+            // 
+            // resetAllButton
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.resetAllButton, true);
+            this.resetAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.resetAllButton.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.resetAllButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.resetAllButton.Location = new System.Drawing.Point(3, 209);
+            this.resetAllButton.Name = "resetAllButton";
+            this.resetAllButton.Size = new System.Drawing.Size(455, 54);
+            this.resetAllButton.TabIndex = 23;
+            this.resetAllButton.Text = "RESET ALL OPTIONS TO DEFAULT";
+            this.resetAllButton.UseVisualStyleBackColor = false;
+            this.resetAllButton.Click += new System.EventHandler(this.resetAllButton_Click);
+            // 
+            // resetExtraButton
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.resetExtraButton, true);
+            this.resetExtraButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.resetExtraButton.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.resetExtraButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.resetExtraButton.Location = new System.Drawing.Point(236, 149);
+            this.resetExtraButton.Name = "resetExtraButton";
+            this.resetExtraButton.Size = new System.Drawing.Size(222, 50);
+            this.resetExtraButton.TabIndex = 22;
+            this.resetExtraButton.Text = "Reset ex. options...";
+            this.resetExtraButton.UseVisualStyleBackColor = false;
+            this.resetExtraButton.Click += new System.EventHandler(this.resetExtraButton_Click);
+            // 
+            // resetTimeButton
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.resetTimeButton, true);
+            this.resetTimeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.resetTimeButton.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.resetTimeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.resetTimeButton.Location = new System.Drawing.Point(3, 149);
+            this.resetTimeButton.Name = "resetTimeButton";
+            this.resetTimeButton.Size = new System.Drawing.Size(227, 50);
+            this.resetTimeButton.TabIndex = 21;
+            this.resetTimeButton.Text = "Reset time options...";
+            this.resetTimeButton.UseVisualStyleBackColor = false;
+            this.resetTimeButton.Click += new System.EventHandler(this.resetTimeButton_Click);
+            // 
             // toolTip
             // 
             this.toolTip.AutoPopDelay = 60000;
@@ -1045,11 +1045,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lapsSortingHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lapsAllowanceHelp)).EndInit();
             this.moreOptionsTabControl.ResumeLayout(false);
-            this.extrasTab.ResumeLayout(false);
-            this.extrasTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.secretHelp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flagPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.languageHelp)).EndInit();
             this.themesTab.ResumeLayout(false);
             this.themesTab.PerformLayout();
             this.defaultDarkModePanel.ResumeLayout(false);
@@ -1060,6 +1055,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.sunriseChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borderColorHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.darkModeHelp)).EndInit();
+            this.extrasTab.ResumeLayout(false);
+            this.extrasTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.secretHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flagPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.languageHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);

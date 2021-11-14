@@ -7,9 +7,10 @@
 	- Secrets can now be viewed via options menu
 	- Changes default time configuration for regular workflow
 	- Improve performance for lapping
-	- Fix a bug that makes text selectable when it shouldn't
-	- Modify secret text for usability
+	- Fix bug that makes text selectable when it shouldn't
+	- Added new secret, also modify text for usability
 	- Time will now displays as ".x" instead of "0.x"
+	- Unlocked all options selector
 
 ## Version 0.9.2.0 (Localisation Update):
 	- Implements localisation for French and Vietnamese.

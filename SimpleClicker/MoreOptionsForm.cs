@@ -644,7 +644,7 @@ namespace SimpleClicker
         {
             if (e.KeyData == Keys.Enter)
             {
-                secretButton_Click(secretBox, new EventArgs());
+                secretButton_Click(secretBox, null);
             }
         }
 

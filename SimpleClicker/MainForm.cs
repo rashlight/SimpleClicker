@@ -86,7 +86,7 @@ namespace SimpleClicker
             if (Properties.Settings.Default.isBiosTimeEnabled)
             {
                 biosTimer.Enabled = true;
-                biosTimer_Tick(this, new EventArgs());
+                biosTimer_Tick(this, null);
             }
         }
 

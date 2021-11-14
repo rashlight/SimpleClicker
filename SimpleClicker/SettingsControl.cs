@@ -76,14 +76,36 @@ namespace SimpleClicker
             System.Diagnostics.Process.Start("http://github.com/rashlight/SimpleClicker");
         }
 
+        private void lappingChooser_ValueChanged(object sender, EventArgs e)
+        {
+            lappingChooser_MouseUp(lappingChooser, null);
+        }
+
+        private void prepTimeChooser_ValueChanged(object sender, EventArgs e)
+        {
+            prepTimeChooser_MouseUp(prepTimeChooser, null);
+        }
+
         private void delayStartChooser_ValueChanged(object sender, EventArgs e)
         {
             if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
+            delayStartChooser_MouseUp(delayStartChooser, null);
         }
 
         private void delayStopChooser_ValueChanged(object sender, EventArgs e)
         {
             if (delayStartChooser.Value > delayStopChooser.Value) delayStartChooser.Value = delayStopChooser.Value;
+            delayStopChooser_MouseUp(delayStopChooser, null);
+        }
+
+        private void timePrecisionChooser_ValueChanged(object sender, EventArgs e)
+        {
+            timePrecisionChooser_MouseUp(timePrecisionChooser, null);
+        }
+
+        private void updateThresholdChooser_ValueChanged(object sender, EventArgs e)
+        {
+            updateThresholdChooser_MouseUp(updateThresholdChooser, null);
         }
 
         private void UnfocusComponent_Enter(object sender, EventArgs e)
@@ -145,5 +167,6 @@ namespace SimpleClicker
         {
             System.Diagnostics.Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html");
         }
+
     }
 }

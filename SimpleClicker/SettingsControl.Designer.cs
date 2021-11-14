@@ -93,9 +93,9 @@
             this.lappingChooser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lappingChooser.Location = new System.Drawing.Point(133, 53);
             this.lappingChooser.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            2147483647,
+            0,
+            0,
             0});
             this.lappingChooser.Minimum = new decimal(new int[] {
             1,
@@ -103,7 +103,6 @@
             0,
             -2147483648});
             this.lappingChooser.Name = "lappingChooser";
-            this.lappingChooser.ReadOnly = true;
             this.lappingChooser.Size = new System.Drawing.Size(125, 27);
             this.lappingChooser.TabIndex = 11;
             this.lappingChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -113,6 +112,7 @@
             0,
             0,
             0});
+            this.lappingChooser.ValueChanged += new System.EventHandler(this.lappingChooser_ValueChanged);
             this.lappingChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lappingChooser_MouseUp);
             // 
             // preparationTimeText
@@ -145,12 +145,11 @@
             131072});
             this.prepTimeChooser.Location = new System.Drawing.Point(270, 53);
             this.prepTimeChooser.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            2147483647,
+            0,
+            0,
             0});
             this.prepTimeChooser.Name = "prepTimeChooser";
-            this.prepTimeChooser.ReadOnly = true;
             this.prepTimeChooser.Size = new System.Drawing.Size(212, 27);
             this.prepTimeChooser.TabIndex = 13;
             this.prepTimeChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -160,6 +159,7 @@
             0,
             0,
             0});
+            this.prepTimeChooser.ValueChanged += new System.EventHandler(this.prepTimeChooser_ValueChanged);
             this.prepTimeChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.prepTimeChooser_MouseUp);
             // 
             // updateThresholdText
@@ -170,7 +170,7 @@
             this.updateThresholdText.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.updateThresholdText.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.updateThresholdText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.updateThresholdText.Location = new System.Drawing.Point(19, 183);
+            this.updateThresholdText.Location = new System.Drawing.Point(19, 185);
             this.updateThresholdText.Name = "updateThresholdText";
             this.updateThresholdText.Size = new System.Drawing.Size(245, 29);
             this.updateThresholdText.TabIndex = 14;
@@ -184,11 +184,11 @@
             this.updateThresholdChooser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.updateThresholdChooser.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateThresholdChooser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.updateThresholdChooser.Location = new System.Drawing.Point(270, 182);
+            this.updateThresholdChooser.Location = new System.Drawing.Point(270, 184);
             this.updateThresholdChooser.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            2147483647,
+            0,
+            0,
             0});
             this.updateThresholdChooser.Minimum = new decimal(new int[] {
             1,
@@ -196,7 +196,6 @@
             0,
             0});
             this.updateThresholdChooser.Name = "updateThresholdChooser";
-            this.updateThresholdChooser.ReadOnly = true;
             this.updateThresholdChooser.Size = new System.Drawing.Size(213, 34);
             this.updateThresholdChooser.TabIndex = 15;
             this.updateThresholdChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -206,6 +205,7 @@
             0,
             0,
             0});
+            this.updateThresholdChooser.ValueChanged += new System.EventHandler(this.updateThresholdChooser_ValueChanged);
             this.updateThresholdChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.updateThresholdChooser_MouseUp);
             // 
             // aboutButton
@@ -214,7 +214,7 @@
             this.aboutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.aboutButton.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.aboutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.aboutButton.Location = new System.Drawing.Point(328, 223);
+            this.aboutButton.Location = new System.Drawing.Point(328, 225);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(154, 39);
             this.aboutButton.TabIndex = 19;
@@ -228,7 +228,7 @@
             this.moreOptionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.moreOptionsButton.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.moreOptionsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.moreOptionsButton.Location = new System.Drawing.Point(20, 223);
+            this.moreOptionsButton.Location = new System.Drawing.Point(20, 225);
             this.moreOptionsButton.Name = "moreOptionsButton";
             this.moreOptionsButton.Size = new System.Drawing.Size(302, 39);
             this.moreOptionsButton.TabIndex = 20;
@@ -265,7 +265,6 @@
             0,
             0});
             this.timePrecisionChooser.Name = "timePrecisionChooser";
-            this.timePrecisionChooser.ReadOnly = true;
             this.timePrecisionChooser.Size = new System.Drawing.Size(266, 34);
             this.timePrecisionChooser.TabIndex = 22;
             this.timePrecisionChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -275,6 +274,7 @@
             0,
             0,
             0});
+            this.timePrecisionChooser.ValueChanged += new System.EventHandler(this.timePrecisionChooser_ValueChanged);
             this.timePrecisionChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.timePrecisionChooser_MouseUp);
             // 
             // delayTimeText
@@ -307,12 +307,11 @@
             131072});
             this.delayStartChooser.Location = new System.Drawing.Point(169, 92);
             this.delayStartChooser.Maximum = new decimal(new int[] {
-            10000,
+            2147483647,
             0,
             0,
             0});
             this.delayStartChooser.Name = "delayStartChooser";
-            this.delayStartChooser.ReadOnly = true;
             this.delayStartChooser.Size = new System.Drawing.Size(137, 34);
             this.delayStartChooser.TabIndex = 24;
             this.delayStartChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -338,12 +337,11 @@
             131072});
             this.delayStopChooser.Location = new System.Drawing.Point(346, 92);
             this.delayStopChooser.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            2147483647,
+            0,
+            0,
             0});
             this.delayStopChooser.Name = "delayStopChooser";
-            this.delayStopChooser.ReadOnly = true;
             this.delayStopChooser.Size = new System.Drawing.Size(136, 34);
             this.delayStopChooser.TabIndex = 26;
             this.delayStopChooser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -395,7 +393,7 @@
             this.Controls.Add(this.lappingToggle);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Name = "SettingsControl";
-            this.Size = new System.Drawing.Size(507, 279);
+            this.Size = new System.Drawing.Size(507, 285);
             this.Load += new System.EventHandler(this.SettingsControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lappingChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepTimeChooser)).EndInit();
