@@ -11,6 +11,7 @@
 	- Added new secret, also modify text for usability
 	- Time will now displays as ".x" instead of "0.x"
 	- Unlocked all options selector
+	- Tab saving in More Options will work now
 
 ## Version 0.9.2.0 (Localisation Update):
 	- Implements localisation for French and Vietnamese.

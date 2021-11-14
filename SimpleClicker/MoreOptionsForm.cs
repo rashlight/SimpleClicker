@@ -229,7 +229,7 @@ namespace SimpleClicker
                     }
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the file manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -242,7 +242,7 @@ namespace SimpleClicker
                     lapDisplayComboBox.SelectedIndex = 1;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the file manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -258,7 +258,7 @@ namespace SimpleClicker
                     darkModeComboBox.SelectedIndex = 2;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the file manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -277,7 +277,7 @@ namespace SimpleClicker
                     languageComboBox.SelectedIndex = 2;
                     break;
                 default:
-                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the file manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -294,6 +294,16 @@ namespace SimpleClicker
             delayColorBox.BackColor = Properties.Settings.Default.delayTimeColor;
             startColorBox.BackColor = Properties.Settings.Default.startTimeColor;
             pauseColorBox.BackColor = Properties.Settings.Default.pauseTimeColor;
+
+            try
+            {
+                moreOptionsTabControl.SelectedIndex = Properties.Settings.Default.moreOptionsLastSelTab;
+            }
+            catch
+            {
+                MessageBox.Show("The settings might be corrupted!\nYou will need to reset all (Extras) or edit the configuration manually.", Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                moreOptionsTabControl.SelectedIndex = 0;
+            }
         }
 
         private void ChangeColorTooltip()
