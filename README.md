@@ -1,6 +1,6 @@
 <h1>SimpleClicker</h1>
 
-*A stopwatch/timer with a preparation phase, a random delay and precise timing*
+*A simple, fast and lightweight stopwatch/timer for Windows*
 
 [![main:](https://img.shields.io/badge/main%3A-blue)](https://github.com/rashlight/SimpleClicker/tree/main)
 [![CircleCI](https://circleci.com/gh/rashlight/SimpleClicker/tree/main.svg?style=shield)](https://circleci.com/gh/rashlight/SimpleClicker/tree/main)
@@ -19,7 +19,7 @@
 - Direct calls to RTC, giving high measuring precision
 - Configurable time phases (preparation, delay and normal)
 - A lap counter with multiple display modes
-- Easy and interchangable UI (with dark mode!)
+- Easy to use and interchangable UI (with dark mode!)
 - Lightweight
 
 # Build from source
