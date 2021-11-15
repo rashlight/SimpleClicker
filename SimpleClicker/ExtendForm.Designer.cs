@@ -31,11 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtendForm));
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
+            this.lapsControl = new SimpleClicker.LapsControl();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.settingsControl = new SimpleClicker.SettingsControl();
-            this.lapsControl = new SimpleClicker.LapsControl();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lapsControl
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.lapsControl, true);
+            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lapsControl.Location = new System.Drawing.Point(18, -1);
+            this.lapsControl.Name = "lapsControl";
+            this.lapsControl.Size = new System.Drawing.Size(507, 279);
+            this.lapsControl.TabIndex = 1;
             // 
             // metroStyleManager
             // 
@@ -49,16 +59,6 @@
             this.settingsControl.Name = "settingsControl";
             this.settingsControl.Size = new System.Drawing.Size(507, 279);
             this.settingsControl.TabIndex = 0;
-            // 
-            // lapsControl
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.lapsControl, true);
-            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lapsControl.Location = new System.Drawing.Point(18, -1);
-            this.lapsControl.Name = "lapsControl";
-            this.lapsControl.Size = new System.Drawing.Size(507, 279);
-            this.lapsControl.TabIndex = 1;
             // 
             // ExtendForm
             // 
