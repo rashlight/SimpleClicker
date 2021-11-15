@@ -3,7 +3,6 @@
 	- Fixes bug that makes a form component display in taskbar
 	- Prevent 'About...' form from resizing
 	- Fixes bug that makes form auto-shrink when move outside of screen
-	
 
 ## Version 1.0.0.1 (Fixes):
 	- Update reset options
