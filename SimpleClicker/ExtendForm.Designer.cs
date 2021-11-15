@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExtendForm));
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.lapsControl = new SimpleClicker.LapsControl();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
@@ -39,8 +40,8 @@
             // lapsControl
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.lapsControl, true);
-            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lapsControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lapsControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lapsControl.Location = new System.Drawing.Point(18, -1);
             this.lapsControl.Name = "lapsControl";
             this.lapsControl.Size = new System.Drawing.Size(507, 279);
@@ -59,7 +60,7 @@
             this.settingsControl.Size = new System.Drawing.Size(507, 279);
             this.settingsControl.TabIndex = 0;
             // 
-            // TimeSetupForm
+            // ExtendForm
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this, true);
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -70,9 +71,11 @@
             this.Controls.Add(this.lapsControl);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TimeSetupForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ExtendForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Time Setup Form";
+            this.Text = "Form Extender";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExtendForm_FormClosing);
             this.Load += new System.EventHandler(this.TimeExtendForm_Load);
             this.MouseEnter += new System.EventHandler(this.ExtendForm_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();

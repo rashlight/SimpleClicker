@@ -49,6 +49,13 @@ namespace SimpleClicker
         public const string TOGGLE_TIMECONTROL = "biostime";
     }
 
+    public enum ResetMode
+    { 
+        TIME = 0,
+        EXTRA = 1,
+        ALL = 2
+    }
+
     public partial class MoreOptionsForm : MetroForm
     {
         private bool isRequestLanguageChange = false;
@@ -397,6 +404,45 @@ namespace SimpleClicker
             action.Invoke(color);
         }
 
+        private void ResetTimeConfig()
+        {
+            Properties.Settings.Default.isLappingEnabled = true;
+            Properties.Settings.Default.preparationTime = 0;
+            Properties.Settings.Default.lappingCount = -1;
+            Properties.Settings.Default.delayTimeStart = 0;
+            Properties.Settings.Default.delayTimeStop = 0;
+            Properties.Settings.Default.timePrecision = 5;
+            Properties.Settings.Default.updateThreshold = 10;
+            Properties.Settings.Default.Save();
+        }
+
+        private void ResetExtraConfig()
+        {
+            // Tab saving
+            Properties.Settings.Default.moreOptionsLastSelTab = 0;
+            // Laps tab
+            Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
+            Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
+            Properties.Settings.Default.lapsDisplayType = LapDisplayType.REAL_TIME;
+            // Interfaces tab
+            Properties.Settings.Default.isDelayTimeShows = true;
+            Properties.Settings.Default.isAlwaysOnTop = false;
+            Properties.Settings.Default.preparationTimeColor = Color.Silver;
+            Properties.Settings.Default.delayTimeColor = Color.FromArgb(255, 128, 0); // Orange-ish
+            Properties.Settings.Default.startTimeColor = Color.Green;
+            Properties.Settings.Default.pauseTimeColor = Color.FromArgb(0, 128, 255); // Blue-ish
+            // Themes tab
+            Properties.Settings.Default.darkModeType = MetroThemeStyle.Default;
+            Properties.Settings.Default.borderColorType = MetroColorStyle.Blue;
+            Properties.Settings.Default.sunriseTime = 7;
+            Properties.Settings.Default.sunsetTime = 19;
+            // Extra tab
+            Properties.Settings.Default.language = "en-US";
+            // Secrets
+            Properties.Settings.Default.isBiosTimeEnabled = false;
+            Properties.Settings.Default.Save();
+        }
+
         private void lapAllowancesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (lapAllowancesComboBox.SelectedIndex)
@@ -536,84 +582,24 @@ namespace SimpleClicker
         private void resetTimeButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Properties.Languages.warningResetTimeOptions, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
-            Properties.Settings.Default.isLappingEnabled = true;
-            Properties.Settings.Default.preparationTime = 3;
-            Properties.Settings.Default.lappingCount = -1;
-            Properties.Settings.Default.delayTimeStart = 0.5;
-            Properties.Settings.Default.delayTimeStop = 3;
-            Properties.Settings.Default.timePrecision = 4;
-            Properties.Settings.Default.updateThreshold = 10;
-            Properties.Settings.Default.Save();
-            MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ResetTimeConfig();
+            MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);          
             Application.Restart();
-            Environment.Exit(0);
         }
 
         private void resetExtraButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Properties.Languages.warningResetExtraOptions, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
-            // Tab saving
-            Properties.Settings.Default.moreOptionsLastSelTab = 0;
-            // Laps tab
-            Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
-            Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
-            Properties.Settings.Default.lapsDisplayType = LapDisplayType.REAL_TIME;
-            // Interfaces tab
-            Properties.Settings.Default.isDelayTimeShows = true;
-            Properties.Settings.Default.isAlwaysOnTop = false;
-            Properties.Settings.Default.preparationTimeColor = Color.Silver;
-            Properties.Settings.Default.delayTimeColor = Color.FromArgb(255, 128, 0); // Orange-ish
-            Properties.Settings.Default.startTimeColor = Color.Green;
-            Properties.Settings.Default.pauseTimeColor = Color.FromArgb(0, 128, 255); // Blue-ish
-            // Themes tab
-            Properties.Settings.Default.darkModeType = MetroThemeStyle.Default;
-            Properties.Settings.Default.borderColorType = MetroColorStyle.Blue;
-            Properties.Settings.Default.sunriseTime = 7;
-            Properties.Settings.Default.sunsetTime = 19;
-            // Extra tab
-            Properties.Settings.Default.language = "en-US";
-            // Secrets
-            Properties.Settings.Default.isBiosTimeEnabled = false;
-            Properties.Settings.Default.Save();
-            MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ResetExtraConfig();         
+            MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);           
             Application.Restart();
-            Environment.Exit(0);
         }
 
         private void resetAllButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Properties.Languages.warningResetAllOptions, Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
-            // Settings tab
-            Properties.Settings.Default.isLappingEnabled = true;
-            Properties.Settings.Default.preparationTime = 3;
-            Properties.Settings.Default.lappingCount = -1;
-            Properties.Settings.Default.delayTimeStart = 0.5;
-            Properties.Settings.Default.delayTimeStop = 3;
-            Properties.Settings.Default.timePrecision = 4;
-            Properties.Settings.Default.updateThreshold = 10;
-            // Tab saving
-            Properties.Settings.Default.moreOptionsLastSelTab = 0;
-            // Laps tab
-            Properties.Settings.Default.lapsAllowancesType = LapAllowances.ALL_DURATIONS;
-            Properties.Settings.Default.lapsSortingType = LapSorting.LAST_FOCUSED;
-            Properties.Settings.Default.lapsDisplayType = LapDisplayType.REAL_TIME;
-            // Interfaces tab
-            Properties.Settings.Default.isDelayTimeShows = true;
-            Properties.Settings.Default.isAlwaysOnTop = false;
-            Properties.Settings.Default.preparationTimeColor = Color.Silver;
-            Properties.Settings.Default.delayTimeColor = Color.FromArgb(255, 128, 0); // Orange-ish
-            Properties.Settings.Default.startTimeColor = Color.Green;
-            Properties.Settings.Default.pauseTimeColor = Color.FromArgb(0, 128, 255); // Blue-ish
-            // Themes tab
-            Properties.Settings.Default.darkModeType = MetroThemeStyle.Default;
-            Properties.Settings.Default.borderColorType = MetroColorStyle.Blue;
-            Properties.Settings.Default.sunriseTime = 7;
-            Properties.Settings.Default.sunsetTime = 19;
-            // Extra tab
-            Properties.Settings.Default.language = "en-US";
-            // Secrets
-            Properties.Settings.Default.isBiosTimeEnabled = false;
-            Properties.Settings.Default.Save();
+            ResetTimeConfig();
+            ResetExtraConfig();
             MessageBox.Show(Properties.Languages.infoResetCompleted, Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Restart();
         }

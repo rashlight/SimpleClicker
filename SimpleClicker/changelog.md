@@ -1,4 +1,10 @@
-﻿## Version 1.0.0.1 (Fixes):
+﻿## Version 1.0.0.2 (Fixes):
+	- Correct some UI and text syntax
+	- Fixes bug that makes a form component display in taskbar
+	- Prevent 'About...' form from resizing
+	- Fixes bug that makes form auto-shrink when move outside of screen
+
+## Version 1.0.0.1 (Fixes):
 	- Update reset options
 	- Update assembly information
 	- A secret will now restart on execute
